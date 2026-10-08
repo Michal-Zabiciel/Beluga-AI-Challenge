@@ -1,0 +1,15 @@
+cd /tmp
+
+wget https://download.java.net/java/GA/jdk15.0.2/0d1cfde4252546c6931946de8db48ee2/7/GPL/openjdk-15.0.2_linux-x64_bin.tar.gz
+
+sudo mkdir -p /usr/lib/jvm
+sudo tar -xzf openjdk-15.0.2_linux-x64_bin.tar.gz -C /usr/lib/jvm
+
+sudo update-alternatives --install /usr/bin/java java /usr/lib/jvm/jdk-15.0.2/bin/java 1500
+sudo update-alternatives --install /usr/bin/javac javac /usr/lib/jvm/jdk-15.0.2/bin/javac 1500
+
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+java -version
+javac -version
