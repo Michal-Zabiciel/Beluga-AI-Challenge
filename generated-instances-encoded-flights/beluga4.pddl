@@ -1,5 +1,5 @@
 (define
-	(problem beluga-problem_s1_j14_r2_oc00_f3)
+	(problem beluga-beluga4)
 	(:domain beluga)
   (:objects
 		; Numbers: {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 22, 24, 25, 26, 28, 32}
@@ -53,7 +53,6 @@
 		jig0011 - jig
 		jig0012 - jig
 		jig0013 - jig
-		jig0014 - jig
 		typeA - type
 		typeB - type
 		typeC - type
@@ -65,6 +64,7 @@
 		beluga1 - beluga
 		beluga2 - beluga
 		beluga3 - beluga
+		beluga4 - beluga
 		; Slots for outgoing flights:
 		slot0 - slot
 		slot1 - slot
@@ -216,9 +216,9 @@
 		(is_type jig0003 typeB)
 		(size jig0003 n11)
 		(empty-size jig0003 n08)
-		(is_type jig0004 typeB)
-		(size jig0004 n11)
-		(empty-size jig0004 n08)
+		(is_type jig0004 typeA)
+		(size jig0004 n04)
+		(empty-size jig0004 n04)
 		(is_type jig0005 typeA)
 		(size jig0005 n04)
 		(empty-size jig0005 n04)
@@ -246,9 +246,6 @@
 		(is_type jig0013 typeA)
 		(size jig0013 n04)
 		(empty-size jig0013 n04)
-		(is_type jig0014 typeA)
-		(size jig0014 n04)
-		(empty-size jig0014 n04)
 		; hangars:
 		(empty hangar1)
 		; Flight schedule initial phase:
@@ -256,7 +253,8 @@
 		; Flight order:
 		(next-flight-to-process beluga1 beluga2)
 		(next-flight-to-process beluga2 beluga3)
-		; Number of flights: 3
+		(next-flight-to-process beluga3 beluga4)
+		; Number of flights: 4
 		; Incoming jigs unload order:
 		; Finished Flights
 		; No already completely finished Flights
@@ -271,33 +269,34 @@
 		(next_unload jig0003 dummy-jig)
 		; To Process Flights
 		; Flight: beluga2
-		; 0: jig0004
+		; 0: jig0004 1: jig0005 2: jig0006 3: jig0007 4: jig0008
 		(to_unload jig0004 beluga2)
 		(in jig0004 beluga2)
-		(next_unload jig0004 dummy-jig)
-		; Flight: beluga3
-		; 0: jig0005 1: jig0006 2: jig0007 3: jig0008 4: jig0009 5: jig0010 6: jig0011 7: jig0012 8: jig0013 9: jig0014
-		(to_unload jig0005 beluga3)
-		(in jig0005 beluga3)
+		(next_unload jig0004 jig0005)
+		(in jig0005 beluga2)
 		(next_unload jig0005 jig0006)
-		(in jig0006 beluga3)
+		(in jig0006 beluga2)
 		(next_unload jig0006 jig0007)
-		(in jig0007 beluga3)
+		(in jig0007 beluga2)
 		(next_unload jig0007 jig0008)
-		(in jig0008 beluga3)
-		(next_unload jig0008 jig0009)
-		(in jig0009 beluga3)
+		(in jig0008 beluga2)
+		(next_unload jig0008 dummy-jig)
+		; Flight: beluga3
+		; No jigs
+		(to_unload dummy-jig beluga3)
+		; Flight: beluga4
+		; 0: jig0009 1: jig0010 2: jig0011 3: jig0012 4: jig0013
+		(to_unload jig0009 beluga4)
+		(in jig0009 beluga4)
 		(next_unload jig0009 jig0010)
-		(in jig0010 beluga3)
+		(in jig0010 beluga4)
 		(next_unload jig0010 jig0011)
-		(in jig0011 beluga3)
+		(in jig0011 beluga4)
 		(next_unload jig0011 jig0012)
-		(in jig0012 beluga3)
+		(in jig0012 beluga4)
 		(next_unload jig0012 jig0013)
-		(in jig0013 beluga3)
-		(next_unload jig0013 jig0014)
-		(in jig0014 beluga3)
-		(next_unload jig0014 dummy-jig)
+		(in jig0013 beluga4)
+		(next_unload jig0013 dummy-jig)
 		; Outgoing jigs load order:
 		; Finished Flights
 		; No already completely finished Flights
@@ -305,44 +304,58 @@
 		; No jigs
 		(to_load dummy-type dummy-slot beluga1)
 		; To Process Flights
-		; 0: typeB 1: typeB 2: typeB
-		(to_load typeB slot0 beluga2)
-		(next_load typeB slot0 slot1 beluga2)
-		(next_load typeB slot1 slot2 beluga2)
-		(next_load dummy-type slot2 dummy-slot beluga2)
 		; No jigs
-		(to_load dummy-type dummy-slot beluga3)
+		(to_load dummy-type dummy-slot beluga2)
+		; 0: typeB 1: typeB
+		(to_load typeB slot0 beluga3)
+		(next_load typeB slot0 slot1 beluga3)
+		(next_load dummy-type slot1 dummy-slot beluga3)
+		; 0: typeA 1: typeA 2: typeA
+		(to_load typeA slot0 beluga4)
+		(next_load typeA slot0 slot1 beluga4)
+		(next_load typeA slot1 slot2 beluga4)
+		(next_load dummy-type slot2 dummy-slot beluga4)
 		; Production schedule:
 		; Production line: pl0
-		; 0: jig0002 1: jig0004
-		(to_deliver jig0002 pl0)
-		(next_deliver jig0002 jig0004)
-		(next_deliver jig0004 dummy-jig)
+		; 0: jig0003 1: jig0007
+		(to_deliver jig0003 pl0)
+		(next_deliver jig0003 jig0007)
+		(next_deliver jig0007 dummy-jig)
 		; Production line: pl1
-		; 0: jig0003
-		(to_deliver jig0003 pl1)
-		(next_deliver jig0003 dummy-jig)
+		; 0: jig0001 1: jig0006 2: jig0008
+		(to_deliver jig0001 pl1)
+		(next_deliver jig0001 jig0006)
+		(next_deliver jig0006 jig0008)
+		(next_deliver jig0008 dummy-jig)
 		; Production line: pl2
-		; 0: jig0001
-		(to_deliver jig0001 pl2)
-		(next_deliver jig0001 dummy-jig)
+		; 0: jig0002 1: jig0004 2: jig0005
+		(to_deliver jig0002 pl2)
+		(next_deliver jig0002 jig0004)
+		(next_deliver jig0004 jig0005)
+		(next_deliver jig0005 dummy-jig)
 		; Action cost:
 		(= (total-cost ) 0)
 	)
   (:goal (and
 		; All jigs empty (order defined by production schedule)
+		(empty jig0003)
+		(empty jig0007)
+		(empty jig0001)
+		(empty jig0006)
+		(empty jig0008)
 		(empty jig0002)
 		(empty jig0004)
-		(empty jig0003)
-		(empty jig0001)
+		(empty jig0005)
 		; all Belugas fully unloaded:
 		(to_unload dummy-jig beluga1)
 		(to_unload dummy-jig beluga2)
 		(to_unload dummy-jig beluga3)
+		(to_unload dummy-jig beluga4)
 		; all Belugas fully loaded:
 		(to_load dummy-type dummy-slot beluga1)
 		(to_load dummy-type dummy-slot beluga2)
 		(to_load dummy-type dummy-slot beluga3)
+		(to_load dummy-type dummy-slot beluga4)
 	))
   (:metric minimize (total-cost))
 )
