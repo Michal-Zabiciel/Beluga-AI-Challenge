@@ -1,0 +1,46 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1000s
+INFO     translator memory limit: 10000 MB
+INFO     translator command line string: /usr/local/bin/python3 -m fast_downward.translate domain.pddl problem_1_s43_j308_r20_oc21_f142.pddl --sas-file output.sas
+Parsing...
+Parsing: [0.040s CPU, 0.032s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.007s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.006s wall-clock]
+Preparing model... [0.010s CPU, 0.015s wall-clock]
+Generated 150 rules.
+Computing model... 
+Translator ran out of memory, traceback:
+===============================================================================
+Traceback (most recent call last):
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
+    main()
+    ~~~~^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
+    reachable_action_params) = instantiate.explore(task)
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 117, in explore
+    model = build_model.compute_model(prog)
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 321, in compute_model
+    rule.fire(next_atom, cond_index, queue.push)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 110, in fire
+    enqueue_func(self.effect.predicate, effect_args)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 290, in push
+    eff_tuple = (predicate,) + tuple(args)
+                               ~~~~~^^^^^^
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 189.86s

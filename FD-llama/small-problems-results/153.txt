@@ -1,0 +1,1907 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running search (release).
+INFO     search stdin: 153.sas
+INFO     search time limit: 600s
+INFO     search memory limit: 10000 MB
+INFO     search command line string: /cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/downward --search --if-unit-cost 'let(hlm,landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),let(hff,ff(),iterated([lazy_greedy([hff,hlm],preferred=[hff,hlm]),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=5),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=3),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=2),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=1)],repeat_last=true)))' --if-non-unit-cost 'let(hlm1,eval_modify_costs(landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),cost_type=one),let(hff1,eval_modify_costs(ff(),cost_type=one),let(hlm2,eval_modify_costs(landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),cost_type=plusone),let(hff2,eval_modify_costs(ff(),cost_type=plusone),iterated([lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=5),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=3),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=2),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=1)],repeat_last=true)))))' --always --internal-plan-file sas_plan < 153.sas
+[t=0.000663s, 9784 KB] Search code revision: 0631332-dirty
+[t=0.000663s, 9784 KB] reading input...
+[t=0.465698s, 31596 KB] done reading input!
+[t=0.468685s, 31992 KB] Building successor generator... done!
+[t=0.487803s, 39264 KB] peak memory difference for successor generator creation: 7272 KB
+[t=0.488611s, 39264 KB] time for successor generation creation: 0.018848s
+[t=0.488611s, 39264 KB] Variables: 796
+[t=0.488991s, 39264 KB] FactPairs: 1806
+[t=0.488991s, 39264 KB] Bytes per state: 112
+[t=0.512586s, 58460 KB] Simplifying 302346 unary operators... done! [302346 unary operators]
+[t=0.898629s, 84840 KB] time to simplify: 0.386043s
+[t=0.906604s, 95640 KB] Initializing additive heuristic...
+[t=0.906604s, 95640 KB] Initializing FF heuristic...
+[t=0.906604s, 95640 KB] Initializing landmark sum heuristic...
+[t=0.906604s, 95640 KB] Generating landmark graph...
+[t=0.910591s, 95640 KB] Building a landmark graph with reasonable orders.
+[t=0.914578s, 95640 KB] Initializing Exploration...
+[t=0.943499s, 95640 KB] Generating landmarks using the RPG/SAS+ approach
+[t=3.280106s, 96744 KB] Landmarks generation time: 2.369515s
+[t=3.280106s, 96744 KB] Discovered 178 landmarks, of which 0 are disjunctive and 0 are conjunctive.
+[t=3.280106s, 96744 KB] There are 2508 landmark orderings.
+[t=3.280106s, 96744 KB] approx. reasonable orders
+[t=3.798103s, 96744 KB] Landmarks generation time: 2.891499s
+[t=3.798103s, 96744 KB] Discovered 178 landmarks, of which 0 are disjunctive and 0 are conjunctive.
+[t=3.798103s, 96744 KB] There are 2544 landmark orderings.
+[t=3.798103s, 96744 KB] Landmark graph generation time: 2.891499s
+[t=3.798103s, 96744 KB] Landmark graph contains 178 landmarks, of which 0 are disjunctive and 0 are conjunctive.
+[t=3.798103s, 96744 KB] Landmark graph contains 2544 orderings.
+[t=3.818058s, 96744 KB] Building successor generator... done!
+[t=3.818058s, 96744 KB] peak memory difference for successor generator creation: 0 KB
+[t=3.818058s, 96744 KB] time for successor generation creation: 0.000000s
+[t=3.818058s, 96744 KB] Variables: 796
+[t=3.818428s, 96744 KB] FactPairs: 1806
+[t=3.818428s, 96744 KB] Bytes per state: 112
+[t=3.818428s, 96744 KB] Starting search: lazy_greedy
+[t=3.818651s, 96744 KB] Conducting lazy best first search, (real) bound = 2147483647
+[t=3.824915s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 99
+[t=3.824915s, 96744 KB] New best heuristic value for ff: 96
+[t=3.824915s, 96744 KB] g=0, 1 evaluated, 0 expanded
+[t=3.824915s, 96744 KB] Initial heuristic value for landmark_sum_heuristic: 99
+[t=3.825809s, 96744 KB] Initial heuristic value for ff: 96
+[t=3.830164s, 96744 KB] New best heuristic value for ff: 81
+[t=3.830490s, 96744 KB] g=1, 2 evaluated, 1 expanded
+[t=3.834453s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 97
+[t=3.834453s, 96744 KB] New best heuristic value for ff: 80
+[t=3.834453s, 96744 KB] g=2, 3 evaluated, 2 expanded
+[t=3.845421s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 96
+[t=3.845421s, 96744 KB] g=3, 6 evaluated, 5 expanded
+[t=3.856391s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 94
+[t=3.856391s, 96744 KB] g=4, 9 evaluated, 8 expanded
+[t=3.859382s, 96744 KB] New best heuristic value for ff: 79
+[t=3.859382s, 96744 KB] g=3, 10 evaluated, 9 expanded
+[t=3.880331s, 96744 KB] New best heuristic value for ff: 78
+[t=3.880331s, 96744 KB] g=4, 16 evaluated, 15 expanded
+[t=3.891297s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 92
+[t=3.891297s, 96744 KB] g=6, 19 evaluated, 18 expanded
+[t=3.922203s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 90
+[t=3.923201s, 96744 KB] g=8, 28 evaluated, 27 expanded
+[t=3.947140s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 89
+[t=3.947140s, 96744 KB] g=10, 35 evaluated, 34 expanded
+[t=3.951124s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 88
+[t=3.951124s, 96744 KB] g=11, 36 evaluated, 35 expanded
+[t=3.962085s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 87
+[t=3.962085s, 96744 KB] g=12, 39 evaluated, 38 expanded
+[t=3.969064s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 85
+[t=3.969064s, 96744 KB] New best heuristic value for ff: 75
+[t=3.969064s, 96744 KB] g=13, 41 evaluated, 40 expanded
+[t=3.976044s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 84
+[t=3.976044s, 96744 KB] g=14, 43 evaluated, 42 expanded
+[t=3.987001s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 82
+[t=3.987001s, 96744 KB] g=15, 46 evaluated, 45 expanded
+[t=3.993971s, 96744 KB] New best heuristic value for ff: 74
+[t=3.993971s, 96744 KB] g=16, 48 evaluated, 47 expanded
+[t=4.011926s, 96744 KB] New best heuristic value for ff: 72
+[t=4.011926s, 96744 KB] g=17, 53 evaluated, 52 expanded
+[t=4.018904s, 96744 KB] New best heuristic value for ff: 68
+[t=4.018904s, 96744 KB] g=18, 55 evaluated, 54 expanded
+[t=4.025878s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 80
+[t=4.025878s, 96744 KB] g=19, 57 evaluated, 56 expanded
+[t=4.046819s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 78
+[t=4.046819s, 96744 KB] New best heuristic value for ff: 66
+[t=4.046819s, 96744 KB] g=20, 63 evaluated, 62 expanded
+[t=4.050807s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 76
+[t=4.050807s, 96744 KB] g=21, 64 evaluated, 63 expanded
+[t=4.067764s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 73
+[t=4.067764s, 96744 KB] g=22, 69 evaluated, 68 expanded
+[t=4.071753s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 72
+[t=4.071753s, 96744 KB] g=23, 70 evaluated, 69 expanded
+[t=4.075741s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 69
+[t=4.075965s, 96744 KB] g=24, 71 evaluated, 70 expanded
+[t=4.083445s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 68
+[t=4.083445s, 96744 KB] g=25, 73 evaluated, 72 expanded
+[t=4.087430s, 96744 KB] New best heuristic value for ff: 65
+[t=4.087430s, 96744 KB] g=23, 74 evaluated, 73 expanded
+[t=4.115364s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 66
+[t=4.115364s, 96744 KB] g=27, 82 evaluated, 81 expanded
+[t=4.118351s, 96744 KB] New best heuristic value for ff: 64
+[t=4.118351s, 96744 KB] g=24, 83 evaluated, 82 expanded
+[t=4.122340s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 65
+[t=4.122340s, 96744 KB] g=28, 84 evaluated, 83 expanded
+[t=4.129314s, 96744 KB] New best heuristic value for ff: 62
+[t=4.129314s, 96744 KB] g=29, 86 evaluated, 85 expanded
+[t=4.161232s, 96744 KB] New best heuristic value for ff: 61
+[t=4.161232s, 96744 KB] g=30, 95 evaluated, 94 expanded
+[t=4.182178s, 96744 KB] New best heuristic value for ff: 59
+[t=4.182178s, 96744 KB] g=31, 101 evaluated, 100 expanded
+[t=4.271900s, 96744 KB] New best heuristic value for ff: 58
+[t=4.271900s, 96744 KB] g=34, 127 evaluated, 126 expanded
+[t=4.319788s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 64
+[t=4.319788s, 96744 KB] g=37, 141 evaluated, 140 expanded
+[t=4.357688s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 63
+[t=4.357688s, 96744 KB] g=40, 152 evaluated, 151 expanded
+[t=4.368655s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 62
+[t=4.368655s, 96744 KB] g=42, 155 evaluated, 154 expanded
+[t=4.389604s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 61
+[t=4.389604s, 96744 KB] g=44, 161 evaluated, 160 expanded
+[t=4.407544s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 58
+[t=4.407544s, 96744 KB] g=45, 166 evaluated, 165 expanded
+[t=4.421503s, 96744 KB] New best heuristic value for ff: 56
+[t=4.421503s, 96744 KB] g=45, 170 evaluated, 169 expanded
+[t=4.452430s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 57
+[t=4.452430s, 96744 KB] g=47, 179 evaluated, 178 expanded
+[t=4.676886s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 54
+[t=4.676886s, 96744 KB] g=51, 245 evaluated, 244 expanded
+[t=4.700824s, 96744 KB] New best heuristic value for ff: 55
+[t=4.700824s, 96744 KB] g=52, 252 evaluated, 251 expanded
+[t=4.776595s, 96744 KB] New best heuristic value for ff: 51
+[t=4.776595s, 96744 KB] g=57, 274 evaluated, 273 expanded
+[t=4.797542s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 53
+[t=4.797542s, 96744 KB] g=59, 280 evaluated, 279 expanded
+[t=4.807491s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 52
+[t=4.807491s, 96744 KB] g=60, 283 evaluated, 282 expanded
+[t=4.955121s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 50
+[t=4.955121s, 96744 KB] g=65, 328 evaluated, 327 expanded
+[t=4.959107s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 49
+[t=4.959107s, 96744 KB] g=66, 329 evaluated, 328 expanded
+[t=5.030934s, 96744 KB] New best heuristic value for ff: 50
+[t=5.030934s, 96744 KB] g=69, 351 evaluated, 350 expanded
+[t=5.047894s, 96744 KB] New best heuristic value for ff: 49
+[t=5.047894s, 96744 KB] g=70, 356 evaluated, 355 expanded
+[t=5.077822s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 46
+[t=5.077822s, 96744 KB] g=70, 365 evaluated, 364 expanded
+[t=5.094773s, 96744 KB] New best heuristic value for ff: 48
+[t=5.094773s, 96744 KB] g=71, 370 evaluated, 369 expanded
+[t=5.154619s, 96744 KB] New best heuristic value for ff: 47
+[t=5.154619s, 96744 KB] g=75, 388 evaluated, 387 expanded
+[t=5.168580s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 43
+[t=5.168580s, 96744 KB] g=76, 392 evaluated, 391 expanded
+[t=5.185537s, 96744 KB] New best heuristic value for ff: 46
+[t=5.185537s, 96744 KB] g=78, 397 evaluated, 396 expanded
+[t=5.192518s, 96744 KB] New best heuristic value for ff: 43
+[t=5.192518s, 96744 KB] g=79, 399 evaluated, 398 expanded
+[t=5.198499s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 42
+[t=5.198499s, 96744 KB] g=80, 401 evaluated, 400 expanded
+[t=5.212450s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 41
+[t=5.212450s, 96744 KB] g=81, 405 evaluated, 404 expanded
+[t=5.215440s, 96744 KB] New best heuristic value for ff: 41
+[t=5.215440s, 96744 KB] g=80, 406 evaluated, 405 expanded
+[t=5.225402s, 96744 KB] New best heuristic value for ff: 40
+[t=5.225402s, 96744 KB] g=81, 409 evaluated, 408 expanded
+[t=5.238363s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 40
+[t=5.238363s, 96744 KB] g=83, 413 evaluated, 412 expanded
+[t=5.248324s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 39
+[t=5.248324s, 96744 KB] g=84, 416 evaluated, 415 expanded
+[t=5.257291s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 38
+[t=5.257291s, 96744 KB] g=85, 419 evaluated, 418 expanded
+[t=5.261280s, 96744 KB] New best heuristic value for ff: 39
+[t=5.261280s, 96744 KB] g=86, 420 evaluated, 419 expanded
+[t=5.264268s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 36
+[t=5.264731s, 96744 KB] g=87, 421 evaluated, 420 expanded
+[t=5.352545s, 96744 KB] New best heuristic value for ff: 38
+[t=5.352545s, 96744 KB] g=86, 449 evaluated, 448 expanded
+[t=5.448313s, 96744 KB] New best heuristic value for ff: 37
+[t=5.448313s, 96744 KB] g=91, 480 evaluated, 479 expanded
+[t=5.451304s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 35
+[t=5.451304s, 96744 KB] g=90, 481 evaluated, 480 expanded
+[t=5.454293s, 96744 KB] New best heuristic value for ff: 36
+[t=5.454293s, 96744 KB] g=91, 482 evaluated, 481 expanded
+[t=5.457283s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 33
+[t=5.458282s, 96744 KB] g=92, 483 evaluated, 482 expanded
+[t=5.464262s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 32
+[t=5.464262s, 96744 KB] g=93, 485 evaluated, 484 expanded
+[t=5.470244s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 31
+[t=5.470244s, 96744 KB] g=94, 487 evaluated, 486 expanded
+[t=5.524101s, 96744 KB] New best heuristic value for ff: 35
+[t=5.524101s, 96744 KB] g=97, 505 evaluated, 504 expanded
+[t=5.595923s, 96744 KB] New best heuristic value for ff: 33
+[t=5.595923s, 96744 KB] g=102, 529 evaluated, 528 expanded
+[t=5.640807s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 30
+[t=5.640807s, 96744 KB] New best heuristic value for ff: 31
+[t=5.640807s, 96744 KB] g=104, 544 evaluated, 543 expanded
+[t=5.712633s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 29
+[t=5.712633s, 96744 KB] g=107, 570 evaluated, 569 expanded
+[t=5.831332s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 26
+[t=5.832330s, 96744 KB] g=112, 614 evaluated, 613 expanded
+[t=5.862259s, 96744 KB] New best heuristic value for ff: 30
+[t=5.862259s, 96744 KB] g=115, 625 evaluated, 624 expanded
+[t=5.916121s, 96744 KB] New best heuristic value for ff: 29
+[t=5.916121s, 96744 KB] g=118, 645 evaluated, 644 expanded
+[t=5.922091s, 96744 KB] New best heuristic value for ff: 28
+[t=5.922091s, 96744 KB] g=119, 647 evaluated, 646 expanded
+[t=5.936049s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 23
+[t=5.936049s, 96744 KB] g=120, 652 evaluated, 651 expanded
+[t=5.953006s, 96744 KB] New best heuristic value for ff: 27
+[t=5.953006s, 96744 KB] g=121, 658 evaluated, 657 expanded
+[t=5.966967s, 96744 KB] New best heuristic value for ff: 26
+[t=5.966967s, 96744 KB] g=122, 663 evaluated, 662 expanded
+[t=6.138552s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 22
+[t=6.138552s, 96744 KB] New best heuristic value for ff: 25
+[t=6.138552s, 96744 KB] g=126, 726 evaluated, 725 expanded
+[t=6.143529s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 21
+[t=6.143529s, 96744 KB] New best heuristic value for ff: 24
+[t=6.143529s, 96744 KB] g=127, 728 evaluated, 727 expanded
+[t=6.146506s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 20
+[t=6.146506s, 96744 KB] New best heuristic value for ff: 20
+[t=6.146506s, 96744 KB] g=128, 729 evaluated, 728 expanded
+[t=6.151491s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 19
+[t=6.151491s, 96744 KB] New best heuristic value for ff: 19
+[t=6.151491s, 96744 KB] g=129, 731 evaluated, 730 expanded
+[t=6.156477s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 17
+[t=6.156477s, 96744 KB] g=130, 733 evaluated, 732 expanded
+[t=6.159468s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 16
+[t=6.159468s, 96744 KB] New best heuristic value for ff: 17
+[t=6.159468s, 96744 KB] g=131, 734 evaluated, 733 expanded
+[t=6.162269s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 15
+[t=6.162269s, 96744 KB] New best heuristic value for ff: 16
+[t=6.162269s, 96744 KB] g=132, 735 evaluated, 734 expanded
+[t=6.165255s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 14
+[t=6.165255s, 96744 KB] New best heuristic value for ff: 15
+[t=6.165255s, 96744 KB] g=133, 736 evaluated, 735 expanded
+[t=6.170240s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 13
+[t=6.170240s, 96744 KB] g=134, 738 evaluated, 737 expanded
+[t=6.178218s, 96744 KB] New best heuristic value for ff: 14
+[t=6.178218s, 96744 KB] g=135, 741 evaluated, 740 expanded
+[t=6.198151s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 12
+[t=6.198151s, 96744 KB] g=139, 749 evaluated, 748 expanded
+[t=6.220077s, 96744 KB] New best heuristic value for ff: 13
+[t=6.220077s, 96744 KB] g=141, 758 evaluated, 757 expanded
+[t=6.239013s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 11
+[t=6.239013s, 96744 KB] g=143, 766 evaluated, 765 expanded
+[t=6.243989s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 10
+[t=6.243989s, 96744 KB] g=144, 768 evaluated, 767 expanded
+[t=6.259943s, 96744 KB] New best heuristic value for ff: 11
+[t=6.259943s, 96744 KB] g=146, 775 evaluated, 774 expanded
+[t=6.277881s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 9
+[t=6.277881s, 96744 KB] New best heuristic value for ff: 9
+[t=6.277881s, 96744 KB] g=148, 783 evaluated, 782 expanded
+[t=6.281866s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 8
+[t=6.281866s, 96744 KB] New best heuristic value for ff: 8
+[t=6.281866s, 96744 KB] g=149, 785 evaluated, 784 expanded
+[t=6.285849s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 7
+[t=6.285849s, 96744 KB] g=150, 787 evaluated, 786 expanded
+[t=6.287843s, 96744 KB] New best heuristic value for ff: 7
+[t=6.287843s, 96744 KB] g=151, 788 evaluated, 787 expanded
+[t=6.294881s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 6
+[t=6.294881s, 96744 KB] g=152, 791 evaluated, 790 expanded
+[t=6.296874s, 96744 KB] New best heuristic value for ff: 6
+[t=6.296874s, 96744 KB] g=153, 792 evaluated, 791 expanded
+[t=6.302858s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 5
+[t=6.302858s, 96744 KB] g=154, 795 evaluated, 794 expanded
+[t=6.304851s, 96744 KB] New best heuristic value for ff: 5
+[t=6.304851s, 96744 KB] g=155, 796 evaluated, 795 expanded
+[t=6.310829s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 4
+[t=6.310829s, 96744 KB] g=156, 799 evaluated, 798 expanded
+[t=6.312828s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 3
+[t=6.312828s, 96744 KB] New best heuristic value for ff: 4
+[t=6.312828s, 96744 KB] g=157, 800 evaluated, 799 expanded
+[t=6.316911s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 2
+[t=6.316911s, 96744 KB] g=158, 802 evaluated, 801 expanded
+[t=6.325880s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 1
+[t=6.325880s, 96744 KB] g=160, 806 evaluated, 805 expanded
+[t=6.360796s, 96744 KB] New best heuristic value for ff: 3
+[t=6.360796s, 96744 KB] g=163, 823 evaluated, 822 expanded
+[t=6.385726s, 96744 KB] New best heuristic value for ff: 2
+[t=6.385726s, 96744 KB] g=162, 836 evaluated, 835 expanded
+[t=6.643097s, 96744 KB] New best heuristic value for ff: 1
+[t=6.643097s, 96744 KB] g=172, 966 evaluated, 965 expanded
+[t=6.643097s, 96744 KB] Solution found!
+[t=6.643943s, 96744 KB] Actual search time: 2.825292s
+pick-up-rack jig0002 factory_trailer_1 rack00 fside bside n18 n14 n32 (1)
+unload-beluga jig0003 jig0004 beluga_trailer_1 beluga1 (1)
+put-down-rack jig0003 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0004 jig0005 beluga_trailer_1 beluga1 (1)
+stack-rack jig0004 jig0003 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0005 jig0006 beluga_trailer_1 beluga1 (1)
+stack-rack jig0005 jig0004 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0006 dummy-jig beluga_trailer_1 beluga1 (1)
+stack-rack jig0006 jig0005 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+pick-up-rack jig0001 beluga_trailer_1 rack01 bside fside n18 n05 n23 (1)
+load-beluga jig0001 typed dummy-type beluga1 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga1 beluga2 (1)
+unload-beluga jig0007 jig0008 beluga_trailer_1 beluga2 (1)
+put-down-rack jig0007 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0008 jig0009 beluga_trailer_1 beluga2 (1)
+stack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n19 n01 (1)
+stack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n16 n12 (1)
+unload-beluga jig0009 jig0010 beluga_trailer_1 beluga2 (1)
+unstack-rack jig0003 jig0004 factory_trailer_1 rack00 fside bside n04 n12 n16 (1)
+deliver-to-hangar jig0003 jig0006 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0004 jig0005 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+deliver-to-hangar jig0004 jig0002 factory_trailer_1 hangar2 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n01 n19 (1)
+deliver-to-hangar jig0002 jig0008 factory_trailer_1 hangar3 pl1 n18 n09 (1)
+unstack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+stack-rack jig0009 jig0007 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0010 dummy-jig beluga_trailer_1 beluga2 (1)
+beluga-complete beluga2 beluga3 (1)
+stack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+stack-rack jig0010 jig0009 beluga_trailer_1 rack01 bside fside n04 n15 n11 (1)
+get-from-hangar jig0002 hangar3 factory_trailer_1 (1)
+unstack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n20 n24 (1)
+stack-rack jig0008 jig0010 beluga_trailer_1 rack01 bside fside n04 n11 n07 (1)
+stack-rack jig0002 jig0005 factory_trailer_1 rack00 fside bside n09 n24 n15 (1)
+unstack-rack jig0007 jig0009 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+stack-rack jig0007 jig0002 factory_trailer_1 rack00 fside bside n04 n15 n11 (1)
+unstack-rack jig0009 jig0010 factory_trailer_1 rack01 fside bside n04 n11 n15 (1)
+unstack-rack jig0006 jig0005 beluga_trailer_1 rack00 bside fside n04 n11 n15 (1)
+stack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n15 n11 (1)
+unstack-rack jig0010 jig0008 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0006 jig0008 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unstack-rack jig0005 jig0002 beluga_trailer_1 rack00 bside fside n04 n11 n15 (1)
+stack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n15 n11 (1)
+unstack-rack jig0008 jig0006 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0005 jig0006 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+deliver-to-hangar jig0008 jig0010 factory_trailer_1 hangar3 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0007 beluga_trailer_1 rack00 bside fside n09 n11 n20 (1)
+get-from-hangar jig0003 hangar1 factory_trailer_1 (1)
+stack-rack jig0003 jig0010 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+unstack-rack jig0006 jig0005 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+deliver-to-hangar jig0006 jig0009 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+pick-up-rack jig0005 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+stack-rack jig0002 jig0007 beluga_trailer_1 rack00 bside fside n09 n16 n07 (1)
+stack-rack jig0005 jig0003 factory_trailer_1 rack00 fside bside n04 n07 n03 (1)
+get-from-hangar jig0006 hangar1 factory_trailer_1 (1)
+put-down-rack jig0006 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0006 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0006 typea dummy-type beluga3 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga3 beluga4 (1)
+unstack-rack jig0005 jig0003 factory_trailer_1 rack00 fside bside n04 n03 n07 (1)
+put-down-rack jig0005 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0003 jig0010 factory_trailer_1 rack00 fside bside n04 n07 n11 (1)
+stack-rack jig0003 jig0005 factory_trailer_1 rack01 fside bside n04 n19 n15 (1)
+unstack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n11 n15 (1)
+deliver-to-hangar jig0010 jig0007 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+get-from-hangar jig0004 hangar2 factory_trailer_1 (1)
+stack-rack jig0004 jig0003 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+unstack-rack jig0002 jig0007 beluga_trailer_1 rack00 bside fside n09 n15 n24 (1)
+unstack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+deliver-to-hangar jig0009 jig0005 factory_trailer_1 hangar2 pl0 n04 n04 (1)
+pick-up-rack jig0007 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+stack-rack jig0007 jig0004 factory_trailer_1 rack01 fside bside n04 n11 n07 (1)
+get-from-hangar jig0008 hangar3 factory_trailer_1 (1)
+put-down-rack jig0008 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+unstack-rack jig0007 jig0004 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+stack-rack jig0002 jig0005 beluga_trailer_1 rack01 bside fside n09 n11 n02 (1)
+deliver-to-hangar jig0007 jig0011 factory_trailer_1 hangar3 pl1 n04 n04 (1)
+pick-up-rack jig0008 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0008 typea dummy-type beluga4 beluga_trailer_1 slot0 dummy-slot (1)
+get-from-hangar jig0010 hangar1 factory_trailer_1 (1)
+beluga-complete beluga4 beluga5 (1)
+put-down-rack jig0010 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+pick-up-rack jig0010 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+unstack-rack jig0004 jig0003 factory_trailer_1 rack01 fside bside n04 n02 n06 (1)
+load-beluga jig0010 typea dummy-type beluga5 beluga_trailer_1 slot0 dummy-slot (1)
+unload-beluga jig0011 dummy-jig beluga_trailer_1 beluga5 (1)
+beluga-complete beluga5 beluga6 (1)
+put-down-rack jig0011 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+unload-beluga jig0012 dummy-jig beluga_trailer_1 beluga6 (1)
+stack-rack jig0004 jig0003 factory_trailer_1 rack01 fside bside n04 n06 n02 (1)
+pick-up-rack jig0011 factory_trailer_1 rack00 fside bside n11 n21 n32 (1)
+deliver-to-hangar jig0011 dummy-jig factory_trailer_1 hangar1 pl1 n11 n08 (1)
+put-down-rack jig0012 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unstack-rack jig0002 jig0005 beluga_trailer_1 rack01 bside fside n09 n02 n11 (1)
+get-from-hangar jig0011 hangar1 factory_trailer_1 (1)
+stack-rack jig0011 jig0004 factory_trailer_1 rack01 fside bside n08 n11 n03 (1)
+pick-up-rack jig0012 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+put-down-rack jig0002 beluga_trailer_1 rack00 bside n09 n32 n23 (1)
+unstack-rack jig0005 jig0003 beluga_trailer_1 rack01 bside fside n04 n03 n07 (1)
+stack-rack jig0005 jig0002 beluga_trailer_1 rack00 bside fside n04 n23 n19 (1)
+unstack-rack jig0003 jig0004 beluga_trailer_1 rack01 bside fside n04 n07 n11 (1)
+load-beluga jig0003 typea typea beluga6 beluga_trailer_1 slot0 slot1 (1)
+unstack-rack jig0004 jig0011 beluga_trailer_1 rack01 bside fside n04 n11 n15 (1)
+load-beluga jig0004 typea typea beluga6 beluga_trailer_1 slot1 slot2 (1)
+unstack-rack jig0005 jig0002 beluga_trailer_1 rack00 bside fside n04 n19 n23 (1)
+stack-rack jig0005 jig0011 beluga_trailer_1 rack01 bside fside n04 n15 n11 (1)
+pick-up-rack jig0002 beluga_trailer_1 rack00 bside fside n09 n23 n32 (1)
+put-down-rack jig0012 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+unstack-rack jig0011 jig0005 factory_trailer_1 rack01 fside bside n08 n11 n19 (1)
+stack-rack jig0011 jig0012 factory_trailer_1 rack00 fside bside n08 n28 n20 (1)
+pick-up-rack jig0005 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+deliver-to-hangar jig0005 jig0012 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0011 jig0012 factory_trailer_1 rack00 fside bside n08 n20 n28 (1)
+put-down-rack jig0011 factory_trailer_1 rack01 fside n08 n23 n15 (1)
+stack-rack jig0002 jig0011 beluga_trailer_1 rack01 bside fside n09 n15 n06 (1)
+get-from-hangar jig0005 hangar1 factory_trailer_1 (1)
+stack-rack jig0005 jig0011 factory_trailer_1 rack01 fside bside n04 n06 n02 (1)
+pick-up-rack jig0012 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+unstack-rack jig0002 jig0011 beluga_trailer_1 rack01 bside fside n09 n02 n11 (1)
+deliver-to-hangar jig0012 jig0013 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+get-from-hangar jig0012 hangar1 factory_trailer_1 (1)
+put-down-rack jig0012 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+stack-rack jig0002 jig0011 beluga_trailer_1 rack01 bside fside n09 n11 n02 (1)
+pick-up-rack jig0012 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0012 typea dummy-type beluga6 beluga_trailer_1 slot2 dummy-slot (1)
+unstack-rack jig0002 jig0011 beluga_trailer_1 rack01 bside fside n09 n02 n11 (1)
+beluga-complete beluga6 beluga7 (1)
+load-beluga jig0002 typec dummy-type beluga7 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga7 beluga8 (1)
+unload-beluga jig0013 jig0014 beluga_trailer_1 beluga8 (1)
+put-down-rack jig0013 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+pick-up-rack jig0013 factory_trailer_1 rack00 fside bside n11 n21 n32 (1)
+deliver-to-hangar jig0013 dummy-jig factory_trailer_1 hangar1 pl0 n11 n08 (1)
+unload-beluga jig0014 dummy-jig beluga_trailer_1 beluga8 (1)
+put-down-rack jig0014 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+unstack-rack jig0011 jig0005 beluga_trailer_1 rack01 bside fside n08 n11 n19 (1)
+stack-rack jig0011 jig0014 beluga_trailer_1 rack00 bside fside n08 n21 n13 (1)
+pick-up-rack jig0005 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0005 typea typea beluga8 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0007 hangar3 factory_trailer_1 (1)
+put-down-rack jig0007 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0007 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0007 typea dummy-type beluga8 beluga_trailer_1 slot1 dummy-slot (1)
+beluga-complete beluga8 beluga9 (1)
+get-from-hangar jig0009 hangar2 factory_trailer_1 (1)
+put-down-rack jig0009 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0009 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0009 typea dummy-type beluga9 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga9 beluga10 (1)
+unload-beluga jig0015 jig0016 beluga_trailer_1 beluga10 (1)
+put-down-rack jig0015 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0016 jig0017 beluga_trailer_1 beluga10 (1)
+stack-rack jig0016 jig0015 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0017 jig0018 beluga_trailer_1 beluga10 (1)
+stack-rack jig0017 jig0016 beluga_trailer_1 rack01 bside fside n04 n15 n11 (1)
+unstack-rack jig0011 jig0014 beluga_trailer_1 rack00 bside fside n08 n13 n21 (1)
+stack-rack jig0011 jig0017 beluga_trailer_1 rack01 bside fside n08 n11 n03 (1)
+unload-beluga jig0018 jig0019 beluga_trailer_1 beluga10 (1)
+stack-rack jig0018 jig0014 beluga_trailer_1 rack00 bside fside n04 n21 n17 (1)
+unload-beluga jig0019 dummy-jig beluga_trailer_1 beluga10 (1)
+stack-rack jig0019 jig0018 beluga_trailer_1 rack00 bside fside n04 n17 n13 (1)
+unstack-rack jig0011 jig0017 beluga_trailer_1 rack01 bside fside n08 n03 n11 (1)
+load-beluga jig0011 typeb typeb beluga10 beluga_trailer_1 slot0 slot1 (1)
+unstack-rack jig0017 jig0016 beluga_trailer_1 rack01 bside fside n04 n11 n15 (1)
+stack-rack jig0017 jig0019 beluga_trailer_1 rack00 bside fside n04 n13 n09 (1)
+get-from-hangar jig0013 hangar1 factory_trailer_1 (1)
+unstack-rack jig0016 jig0015 beluga_trailer_1 rack01 bside fside n04 n15 n19 (1)
+stack-rack jig0016 jig0017 beluga_trailer_1 rack00 bside fside n04 n09 n05 (1)
+pick-up-rack jig0015 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+stack-rack jig0015 jig0016 beluga_trailer_1 rack00 bside fside n04 n05 n01 (1)
+put-down-rack jig0013 factory_trailer_1 rack01 fside n08 n23 n15 (1)
+pick-up-rack jig0013 beluga_trailer_1 rack01 bside fside n08 n15 n23 (1)
+load-beluga jig0013 typeb dummy-type beluga10 beluga_trailer_1 slot1 dummy-slot (1)
+[t=6.646565s, 96744 KB] Plan length: 173 step(s).
+[t=6.646646s, 96744 KB] Plan cost: 173
+[t=6.646646s, 96744 KB] Expanded 966 state(s).
+[t=6.646753s, 96744 KB] Reopened 0 state(s).
+[t=6.646753s, 96744 KB] Evaluated 967 state(s).
+[t=6.646753s, 96744 KB] Evaluations: 1934
+[t=6.646933s, 96744 KB] Generated 4549 state(s).
+[t=6.647005s, 96744 KB] Dead ends: 0 state(s).
+[t=6.647076s, 96744 KB] Number of registered states: 967
+[t=6.647147s, 96744 KB] Int hash set load factor: 967/1024 = 0.944336
+[t=6.647147s, 96744 KB] Int hash set resizes: 10
+[t=6.647147s, 96744 KB] Best solution cost so far: 173
+[t=6.647433s, 96744 KB] Solution found - keep searching
+[t=6.647510s, 96744 KB] Building successor generator... done!
+[t=6.647711s, 96744 KB] peak memory difference for successor generator creation: 0 KB
+[t=6.647825s, 96744 KB] time for successor generation creation: 0.000000s
+[t=6.648274s, 96744 KB] Variables: 796
+[t=6.648367s, 96744 KB] FactPairs: 1806
+[t=6.648438s, 96744 KB] Bytes per state: 112
+[t=6.648438s, 96744 KB] Starting search: lazy_wastar
+[t=6.648608s, 96744 KB] Conducting lazy best first search, (real) bound = 173
+[t=6.652487s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 99
+[t=6.652487s, 96744 KB] New best heuristic value for ff: 96
+[t=6.652875s, 96744 KB] g=0, 1 evaluated, 0 expanded
+[t=6.652875s, 96744 KB] Initial heuristic value for landmark_sum_heuristic: 99
+[t=6.653062s, 96744 KB] Initial heuristic value for ff: 96
+[t=6.656386s, 96744 KB] New best heuristic value for ff: 81
+[t=6.656386s, 96744 KB] g=1, 2 evaluated, 1 expanded
+[t=6.660354s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 97
+[t=6.660354s, 96744 KB] New best heuristic value for ff: 80
+[t=6.660354s, 96744 KB] g=2, 3 evaluated, 2 expanded
+[t=6.671303s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 96
+[t=6.671303s, 96744 KB] g=3, 6 evaluated, 5 expanded
+[t=6.681256s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 94
+[t=6.681256s, 96744 KB] g=4, 9 evaluated, 8 expanded
+[t=6.685218s, 96744 KB] New best heuristic value for ff: 79
+[t=6.685218s, 96744 KB] g=3, 10 evaluated, 9 expanded
+[t=6.706127s, 96744 KB] New best heuristic value for ff: 78
+[t=6.706127s, 96744 KB] g=4, 16 evaluated, 15 expanded
+[t=6.717072s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 92
+[t=6.717072s, 96744 KB] g=6, 19 evaluated, 18 expanded
+[t=6.748951s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 90
+[t=6.748951s, 96744 KB] g=8, 28 evaluated, 27 expanded
+[t=6.773856s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 89
+[t=6.773856s, 96744 KB] g=10, 35 evaluated, 34 expanded
+[t=6.777818s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 88
+[t=6.777818s, 96744 KB] g=11, 36 evaluated, 35 expanded
+[t=6.787760s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 87
+[t=6.788757s, 96744 KB] g=12, 39 evaluated, 38 expanded
+[t=6.795708s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 85
+[t=6.795708s, 96744 KB] New best heuristic value for ff: 75
+[t=6.795708s, 96744 KB] g=13, 41 evaluated, 40 expanded
+[t=6.802669s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 84
+[t=6.802669s, 96744 KB] g=14, 43 evaluated, 42 expanded
+[t=6.813620s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 82
+[t=6.813620s, 96744 KB] g=15, 46 evaluated, 45 expanded
+[t=6.820578s, 96744 KB] New best heuristic value for ff: 74
+[t=6.820578s, 96744 KB] g=16, 48 evaluated, 47 expanded
+[t=6.837498s, 96744 KB] New best heuristic value for ff: 72
+[t=6.837498s, 96744 KB] g=17, 53 evaluated, 52 expanded
+[t=6.845449s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 80
+[t=6.845449s, 96744 KB] g=17, 55 evaluated, 54 expanded
+[t=6.848440s, 96744 KB] New best heuristic value for ff: 68
+[t=6.848440s, 96744 KB] g=18, 56 evaluated, 55 expanded
+[t=6.869381s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 78
+[t=6.869381s, 96744 KB] g=19, 62 evaluated, 61 expanded
+[t=6.876355s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 77
+[t=6.876355s, 96744 KB] g=20, 64 evaluated, 63 expanded
+[t=6.894307s, 96744 KB] New best heuristic value for ff: 66
+[t=6.894307s, 96744 KB] g=20, 69 evaluated, 68 expanded
+[t=6.901284s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 76
+[t=6.901284s, 96744 KB] g=21, 71 evaluated, 70 expanded
+[t=6.919226s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 73
+[t=6.919226s, 96744 KB] g=22, 76 evaluated, 75 expanded
+[t=6.923189s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 72
+[t=6.923189s, 96744 KB] g=23, 77 evaluated, 76 expanded
+[t=6.926157s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 69
+[t=6.926157s, 96744 KB] g=24, 78 evaluated, 77 expanded
+[t=6.934111s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 68
+[t=6.934111s, 96744 KB] g=25, 80 evaluated, 79 expanded
+[t=6.937081s, 96744 KB] New best heuristic value for ff: 65
+[t=6.937081s, 96744 KB] g=23, 81 evaluated, 80 expanded
+[t=6.964985s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 66
+[t=6.964985s, 96744 KB] g=27, 89 evaluated, 88 expanded
+[t=6.968959s, 96744 KB] New best heuristic value for ff: 64
+[t=6.968959s, 96744 KB] g=24, 90 evaluated, 89 expanded
+[t=6.972928s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 65
+[t=6.972928s, 96744 KB] g=28, 91 evaluated, 90 expanded
+[t=6.979890s, 96744 KB] New best heuristic value for ff: 62
+[t=6.979890s, 96744 KB] g=29, 93 evaluated, 92 expanded
+[t=7.015784s, 96744 KB] New best heuristic value for ff: 61
+[t=7.015784s, 96744 KB] g=30, 103 evaluated, 102 expanded
+[t=7.033701s, 96744 KB] New best heuristic value for ff: 59
+[t=7.033701s, 96744 KB] g=31, 108 evaluated, 107 expanded
+[t=7.123456s, 96744 KB] New best heuristic value for ff: 58
+[t=7.123456s, 96744 KB] g=34, 134 evaluated, 133 expanded
+[t=7.171329s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 64
+[t=7.171329s, 96744 KB] g=37, 148 evaluated, 147 expanded
+[t=7.357889s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 63
+[t=7.357889s, 96744 KB] g=37, 203 evaluated, 202 expanded, 1 reopened
+[t=7.478600s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 62
+[t=7.478600s, 96744 KB] g=41, 239 evaluated, 238 expanded, 2 reopened
+[t=7.617215s, 96744 KB] New best heuristic value for ff: 57
+[t=7.617215s, 96744 KB] g=39, 282 evaluated, 281 expanded, 5 reopened
+[t=7.697003s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 61
+[t=7.697003s, 96744 KB] g=43, 306 evaluated, 305 expanded, 6 reopened
+[t=7.720880s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 59
+[t=7.721879s, 96744 KB] g=46, 313 evaluated, 312 expanded, 6 reopened
+[t=7.724869s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 58
+[t=7.724869s, 96744 KB] g=47, 314 evaluated, 313 expanded, 6 reopened
+[t=7.735830s, 96744 KB] New best heuristic value for ff: 56
+[t=7.735830s, 96744 KB] g=47, 317 evaluated, 316 expanded, 6 reopened
+[t=7.774662s, 96744 KB] New best heuristic value for ff: 55
+[t=7.774662s, 96744 KB] g=49, 328 evaluated, 327 expanded, 6 reopened
+[t=7.784619s, 96744 KB] New best heuristic value for ff: 54
+[t=7.784619s, 96744 KB] g=50, 331 evaluated, 330 expanded, 6 reopened
+[t=7.933123s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 57
+[t=7.933123s, 96744 KB] g=54, 375 evaluated, 374 expanded, 7 reopened
+[t=8.001910s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 55
+[t=8.001910s, 96744 KB] g=53, 396 evaluated, 395 expanded, 8 reopened
+[t=8.043761s, 96744 KB] New best heuristic value for ff: 52
+[t=8.043761s, 96744 KB] g=49, 408 evaluated, 407 expanded, 8 reopened
+[t=8.090604s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 54
+[t=8.090604s, 96744 KB] g=53, 422 evaluated, 421 expanded, 8 reopened
+[t=8.093552s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 53
+[t=8.093552s, 96744 KB] g=54, 423 evaluated, 422 expanded, 8 reopened
+[t=8.150341s, 96744 KB] New best heuristic value for ff: 50
+[t=8.150341s, 96744 KB] g=56, 440 evaluated, 439 expanded, 8 reopened
+[t=8.169264s, 96744 KB] New best heuristic value for ff: 49
+[t=8.170263s, 96744 KB] g=57, 446 evaluated, 445 expanded, 8 reopened
+[t=8.232074s, 96744 KB] New best heuristic value for ff: 48
+[t=8.232074s, 96744 KB] g=60, 465 evaluated, 464 expanded, 8 reopened
+[t=8.333787s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 52
+[t=8.333787s, 96744 KB] g=59, 500 evaluated, 499 expanded, 12 reopened
+[t=8.428539s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 50
+[t=8.428539s, 96744 KB] g=60, 532 evaluated, 531 expanded, 15 reopened
+[t=8.442474s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 49
+[t=8.442474s, 96744 KB] g=61, 536 evaluated, 535 expanded, 15 reopened
+[t=8.512259s, 96744 KB] New best heuristic value for ff: 47
+[t=8.512259s, 96744 KB] g=65, 557 evaluated, 556 expanded, 15 reopened
+[t=8.552134s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 46
+[t=8.552134s, 96744 KB] New best heuristic value for ff: 46
+[t=8.552134s, 96744 KB] g=66, 569 evaluated, 568 expanded, 15 reopened
+[t=8.714685s, 96744 KB] New best heuristic value for ff: 42
+[t=8.714685s, 96744 KB] g=71, 618 evaluated, 617 expanded, 15 reopened
+[t=8.718654s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 45
+[t=8.718654s, 96744 KB] g=72, 619 evaluated, 618 expanded, 15 reopened
+[t=8.724622s, 96744 KB] New best heuristic value for ff: 41
+[t=8.724622s, 96744 KB] g=72, 621 evaluated, 620 expanded, 15 reopened
+[t=8.728597s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 44
+[t=8.728597s, 96744 KB] g=73, 622 evaluated, 621 expanded, 15 reopened
+[t=8.734560s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 43
+[t=8.734560s, 96744 KB] New best heuristic value for ff: 40
+[t=8.734560s, 96744 KB] g=73, 624 evaluated, 623 expanded, 15 reopened
+[t=8.738529s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 42
+[t=8.738529s, 96744 KB] g=74, 625 evaluated, 624 expanded, 15 reopened
+[t=8.748477s, 96744 KB] New best heuristic value for ff: 39
+[t=8.748477s, 96744 KB] g=74, 628 evaluated, 627 expanded, 15 reopened
+[t=8.751449s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 41
+[t=8.751449s, 96744 KB] g=75, 629 evaluated, 628 expanded, 15 reopened
+[t=8.902049s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 39
+[t=8.902049s, 96744 KB] g=79, 678 evaluated, 677 expanded, 16 reopened
+[t=9.020759s, 96744 KB] New best heuristic value for ff: 38
+[t=9.020759s, 96744 KB] g=77, 716 evaluated, 715 expanded, 16 reopened
+[t=9.033680s, 96744 KB] New best heuristic value for ff: 37
+[t=9.033680s, 96744 KB] g=78, 720 evaluated, 719 expanded, 16 reopened
+[t=9.076537s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 38
+[t=9.076537s, 96744 KB] g=81, 734 evaluated, 733 expanded, 16 reopened
+[t=9.079507s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 37
+[t=9.079507s, 96744 KB] g=82, 735 evaluated, 734 expanded, 16 reopened
+[t=9.089443s, 96744 KB] New best heuristic value for ff: 35
+[t=9.089443s, 96744 KB] g=81, 738 evaluated, 737 expanded, 16 reopened
+[t=9.095402s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 36
+[t=9.095402s, 96744 KB] g=82, 740 evaluated, 739 expanded, 16 reopened
+[t=9.104342s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 35
+[t=9.104342s, 96744 KB] g=83, 743 evaluated, 742 expanded, 16 reopened
+[t=9.111296s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 34
+[t=9.111296s, 96744 KB] g=84, 745 evaluated, 744 expanded, 16 reopened
+[t=9.254892s, 96744 KB] New best heuristic value for ff: 34
+[t=9.254892s, 96744 KB] g=91, 796 evaluated, 795 expanded, 19 reopened
+[t=9.320693s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 33
+[t=9.320693s, 96744 KB] g=94, 821 evaluated, 820 expanded, 22 reopened
+[t=9.377524s, 96744 KB] New best heuristic value for ff: 33
+[t=9.377524s, 96744 KB] g=96, 841 evaluated, 840 expanded, 22 reopened
+[t=9.384496s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 31
+[t=9.384496s, 96744 KB] g=97, 843 evaluated, 842 expanded, 22 reopened
+[t=9.387488s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 30
+[t=9.387488s, 96744 KB] g=98, 844 evaluated, 843 expanded, 22 reopened
+[t=9.401453s, 96744 KB] New best heuristic value for ff: 32
+[t=9.402162s, 96744 KB] g=99, 849 evaluated, 848 expanded, 22 reopened
+[t=9.544213s, 96744 KB] New best heuristic value for ff: 31
+[t=9.544213s, 96744 KB] g=102, 899 evaluated, 898 expanded, 22 reopened
+[t=9.547196s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 27
+[t=9.547196s, 96744 KB] g=102, 900 evaluated, 899 expanded, 22 reopened
+[t=9.576126s, 96744 KB] New best heuristic value for ff: 30
+[t=9.576126s, 96744 KB] g=104, 910 evaluated, 909 expanded, 22 reopened
+[t=9.617009s, 96744 KB] New best heuristic value for ff: 29
+[t=9.617009s, 96744 KB] g=106, 924 evaluated, 923 expanded, 22 reopened
+[t=9.619999s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 26
+[t=9.619999s, 96744 KB] g=106, 925 evaluated, 924 expanded, 22 reopened
+[t=9.663863s, 96744 KB] New best heuristic value for ff: 28
+[t=9.663863s, 96744 KB] g=107, 941 evaluated, 940 expanded, 22 reopened
+[t=9.704753s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 24
+[t=9.704753s, 96744 KB] New best heuristic value for ff: 27
+[t=9.704753s, 96744 KB] g=109, 956 evaluated, 955 expanded, 22 reopened
+[t=9.707744s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 23
+[t=9.707744s, 96744 KB] g=110, 957 evaluated, 956 expanded, 22 reopened
+[t=9.726691s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 22
+[t=9.726691s, 96744 KB] g=112, 964 evaluated, 963 expanded, 22 reopened
+[t=9.737658s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 21
+[t=9.737658s, 96744 KB] g=113, 968 evaluated, 967 expanded, 22 reopened
+[t=9.739656s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 20
+[t=9.739656s, 96744 KB] New best heuristic value for ff: 24
+[t=9.739656s, 96744 KB] g=114, 969 evaluated, 968 expanded, 22 reopened
+[t=9.745337s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 19
+[t=9.745337s, 96744 KB] g=115, 971 evaluated, 970 expanded, 22 reopened
+[t=9.753289s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 17
+[t=9.753289s, 96744 KB] g=116, 974 evaluated, 973 expanded, 22 reopened
+[t=9.758249s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 16
+[t=9.758249s, 96744 KB] g=117, 976 evaluated, 975 expanded, 22 reopened
+[t=9.761221s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 15
+[t=9.761221s, 96744 KB] New best heuristic value for ff: 21
+[t=9.761221s, 96744 KB] g=118, 977 evaluated, 976 expanded, 22 reopened
+[t=9.763233s, 96744 KB] New best heuristic value for ff: 20
+[t=9.763233s, 96744 KB] g=119, 978 evaluated, 977 expanded, 22 reopened
+[t=9.768196s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 14
+[t=9.769194s, 96744 KB] g=119, 980 evaluated, 979 expanded, 22 reopened
+[t=9.799098s, 96744 KB] New best heuristic value for ff: 19
+[t=9.799098s, 96744 KB] g=122, 992 evaluated, 991 expanded, 22 reopened
+[t=9.809062s, 96744 KB] New best heuristic value for ff: 17
+[t=9.809062s, 96744 KB] g=123, 996 evaluated, 995 expanded, 22 reopened
+[t=9.817038s, 96744 KB] New best heuristic value for ff: 16
+[t=9.817038s, 96744 KB] g=124, 999 evaluated, 998 expanded, 22 reopened
+[t=9.820029s, 96744 KB] New best heuristic value for ff: 15
+[t=9.820029s, 96744 KB] g=125, 1000 evaluated, 999 expanded, 22 reopened
+[t=9.822021s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 13
+[t=9.822021s, 96744 KB] New best heuristic value for ff: 14
+[t=9.822021s, 96744 KB] g=126, 1001 evaluated, 1000 expanded, 22 reopened
+[t=9.839954s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 12
+[t=9.839954s, 96744 KB] g=129, 1008 evaluated, 1007 expanded, 22 reopened
+[t=9.870872s, 96744 KB] New best heuristic value for ff: 13
+[t=9.870872s, 96744 KB] g=131, 1021 evaluated, 1020 expanded, 22 reopened
+[t=9.896807s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 11
+[t=9.896807s, 96744 KB] g=133, 1032 evaluated, 1031 expanded, 22 reopened
+[t=9.901785s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 10
+[t=9.901785s, 96744 KB] g=134, 1034 evaluated, 1033 expanded, 22 reopened
+[t=9.917734s, 96744 KB] New best heuristic value for ff: 12
+[t=9.917734s, 96744 KB] g=136, 1041 evaluated, 1040 expanded, 22 reopened
+[t=9.924715s, 96744 KB] New best heuristic value for ff: 11
+[t=9.924715s, 96744 KB] g=137, 1044 evaluated, 1043 expanded, 22 reopened
+[t=9.937675s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 9
+[t=9.937675s, 96744 KB] New best heuristic value for ff: 9
+[t=9.937675s, 96744 KB] g=138, 1050 evaluated, 1049 expanded, 22 reopened
+[t=9.941656s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 8
+[t=9.941656s, 96744 KB] New best heuristic value for ff: 8
+[t=9.941656s, 96744 KB] g=139, 1052 evaluated, 1051 expanded, 22 reopened
+[t=9.946641s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 7
+[t=9.946641s, 96744 KB] g=140, 1054 evaluated, 1053 expanded, 22 reopened
+[t=9.947641s, 96744 KB] New best heuristic value for ff: 7
+[t=9.948635s, 96744 KB] g=141, 1055 evaluated, 1054 expanded, 22 reopened
+[t=9.954615s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 6
+[t=9.954615s, 96744 KB] g=142, 1058 evaluated, 1057 expanded, 22 reopened
+[t=9.955614s, 96744 KB] New best heuristic value for ff: 6
+[t=9.956615s, 96744 KB] g=143, 1059 evaluated, 1058 expanded, 22 reopened
+[t=9.961838s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 5
+[t=9.961838s, 96744 KB] g=144, 1062 evaluated, 1061 expanded, 22 reopened
+[t=9.963822s, 96744 KB] New best heuristic value for ff: 5
+[t=9.963822s, 96744 KB] g=145, 1063 evaluated, 1062 expanded, 22 reopened
+[t=9.969800s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 4
+[t=9.969800s, 96744 KB] g=146, 1066 evaluated, 1065 expanded, 22 reopened
+[t=9.971787s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 3
+[t=9.971787s, 96744 KB] New best heuristic value for ff: 4
+[t=9.971787s, 96744 KB] g=147, 1067 evaluated, 1066 expanded, 22 reopened
+[t=9.976383s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 2
+[t=9.976383s, 96744 KB] g=148, 1069 evaluated, 1068 expanded, 22 reopened
+[t=9.984358s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 1
+[t=9.984358s, 96744 KB] g=150, 1073 evaluated, 1072 expanded, 22 reopened
+[t=10.023251s, 96744 KB] New best heuristic value for ff: 3
+[t=10.023251s, 96744 KB] g=153, 1093 evaluated, 1092 expanded, 22 reopened
+[t=10.048176s, 96744 KB] New best heuristic value for ff: 2
+[t=10.048176s, 96744 KB] g=155, 1107 evaluated, 1106 expanded, 22 reopened
+[t=10.049175s, 96744 KB] New best heuristic value for ff: 1
+[t=10.049372s, 96744 KB] g=156, 1108 evaluated, 1107 expanded, 22 reopened
+[t=10.049372s, 96744 KB] Solution found!
+[t=10.049931s, 96744 KB] Actual search time: 3.401254s
+pick-up-rack jig0002 factory_trailer_1 rack00 fside bside n18 n14 n32 (1)
+unload-beluga jig0003 jig0004 beluga_trailer_1 beluga1 (1)
+put-down-rack jig0003 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0004 jig0005 beluga_trailer_1 beluga1 (1)
+stack-rack jig0004 jig0003 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0005 jig0006 beluga_trailer_1 beluga1 (1)
+stack-rack jig0005 jig0004 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0006 dummy-jig beluga_trailer_1 beluga1 (1)
+stack-rack jig0006 jig0005 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+pick-up-rack jig0001 beluga_trailer_1 rack01 bside fside n18 n05 n23 (1)
+load-beluga jig0001 typed dummy-type beluga1 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga1 beluga2 (1)
+unload-beluga jig0007 jig0008 beluga_trailer_1 beluga2 (1)
+put-down-rack jig0007 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0008 jig0009 beluga_trailer_1 beluga2 (1)
+stack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n19 n01 (1)
+stack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n16 n12 (1)
+unload-beluga jig0009 jig0010 beluga_trailer_1 beluga2 (1)
+unstack-rack jig0003 jig0004 factory_trailer_1 rack00 fside bside n04 n12 n16 (1)
+deliver-to-hangar jig0003 jig0006 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0004 jig0005 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+deliver-to-hangar jig0004 jig0002 factory_trailer_1 hangar2 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n01 n19 (1)
+deliver-to-hangar jig0002 jig0008 factory_trailer_1 hangar3 pl1 n18 n09 (1)
+unstack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+stack-rack jig0009 jig0007 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0010 dummy-jig beluga_trailer_1 beluga2 (1)
+beluga-complete beluga2 beluga3 (1)
+stack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+stack-rack jig0010 jig0009 beluga_trailer_1 rack01 bside fside n04 n15 n11 (1)
+unstack-rack jig0007 jig0009 factory_trailer_1 rack01 fside bside n04 n11 n15 (1)
+stack-rack jig0007 jig0005 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+unstack-rack jig0009 jig0010 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+unstack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n16 n20 (1)
+stack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+stack-rack jig0008 jig0010 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unstack-rack jig0010 jig0008 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n16 n12 (1)
+pick-up-rack jig0008 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+stack-rack jig0008 jig0010 factory_trailer_1 rack00 fside bside n04 n12 n08 (1)
+get-from-hangar jig0002 hangar3 factory_trailer_1 (1)
+put-down-rack jig0002 factory_trailer_1 rack01 fside n09 n23 n14 (1)
+pick-up-rack jig0002 beluga_trailer_1 rack01 bside fside n09 n14 n23 (1)
+unstack-rack jig0008 jig0010 factory_trailer_1 rack00 fside bside n04 n08 n12 (1)
+stack-rack jig0002 jig0006 beluga_trailer_1 rack00 bside fside n09 n12 n03 (1)
+deliver-to-hangar jig0008 jig0010 factory_trailer_1 hangar3 pl1 n04 n04 (1)
+get-from-hangar jig0003 hangar1 factory_trailer_1 (1)
+put-down-rack jig0003 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0003 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0003 typea dummy-type beluga3 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga3 beluga4 (1)
+unstack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n03 n07 (1)
+deliver-to-hangar jig0010 jig0007 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0006 beluga_trailer_1 rack00 bside fside n09 n07 n16 (1)
+get-from-hangar jig0010 hangar1 factory_trailer_1 (1)
+put-down-rack jig0010 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+stack-rack jig0009 jig0010 factory_trailer_1 rack01 fside bside n04 n19 n15 (1)
+unstack-rack jig0007 jig0005 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+deliver-to-hangar jig0007 jig0011 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+unstack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+stack-rack jig0005 jig0009 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+get-from-hangar jig0007 hangar1 factory_trailer_1 (1)
+stack-rack jig0007 jig0005 factory_trailer_1 rack01 fside bside n04 n11 n07 (1)
+pick-up-rack jig0006 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+deliver-to-hangar jig0006 jig0009 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0007 jig0005 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+put-down-rack jig0007 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+stack-rack jig0002 jig0010 beluga_trailer_1 rack01 bside fside n09 n11 n02 (1)
+pick-up-rack jig0007 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0007 typea dummy-type beluga4 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga4 beluga5 (1)
+get-from-hangar jig0006 hangar1 factory_trailer_1 (1)
+put-down-rack jig0006 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+pick-up-rack jig0006 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0006 typea dummy-type beluga5 beluga_trailer_1 slot0 dummy-slot (1)
+unload-beluga jig0011 dummy-jig beluga_trailer_1 beluga5 (1)
+beluga-complete beluga5 beluga6 (1)
+put-down-rack jig0011 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+pick-up-rack jig0011 factory_trailer_1 rack00 fside bside n11 n21 n32 (1)
+unload-beluga jig0012 dummy-jig beluga_trailer_1 beluga6 (1)
+deliver-to-hangar jig0011 dummy-jig factory_trailer_1 hangar1 pl1 n11 n08 (1)
+put-down-rack jig0012 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unstack-rack jig0002 jig0010 beluga_trailer_1 rack01 bside fside n09 n02 n11 (1)
+pick-up-rack jig0012 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+stack-rack jig0012 jig0005 factory_trailer_1 rack01 fside bside n04 n11 n07 (1)
+get-from-hangar jig0011 hangar1 factory_trailer_1 (1)
+put-down-rack jig0011 factory_trailer_1 rack00 fside n08 n32 n24 (1)
+unstack-rack jig0012 jig0005 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+stack-rack jig0012 jig0011 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+stack-rack jig0002 jig0011 beluga_trailer_1 rack00 bside fside n09 n20 n11 (1)
+unstack-rack jig0010 jig0009 beluga_trailer_1 rack01 bside fside n04 n11 n15 (1)
+load-beluga jig0010 typea typea beluga6 beluga_trailer_1 slot0 slot1 (1)
+unstack-rack jig0005 jig0009 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0005 jig0012 factory_trailer_1 rack00 fside bside n04 n11 n07 (1)
+pick-up-rack jig0009 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+deliver-to-hangar jig0009 jig0005 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0002 jig0011 beluga_trailer_1 rack00 bside fside n09 n07 n16 (1)
+get-from-hangar jig0004 hangar2 factory_trailer_1 (1)
+put-down-rack jig0004 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0005 jig0012 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+stack-rack jig0002 jig0011 beluga_trailer_1 rack00 bside fside n09 n20 n11 (1)
+deliver-to-hangar jig0005 jig0012 factory_trailer_1 hangar2 pl0 n04 n04 (1)
+pick-up-rack jig0004 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+get-from-hangar jig0009 hangar1 factory_trailer_1 (1)
+load-beluga jig0004 typea typea beluga6 beluga_trailer_1 slot1 slot2 (1)
+put-down-rack jig0009 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0012 jig0011 factory_trailer_1 rack00 fside bside n04 n11 n15 (1)
+deliver-to-hangar jig0012 jig0013 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+pick-up-rack jig0009 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0009 typea dummy-type beluga6 beluga_trailer_1 slot2 dummy-slot (1)
+unstack-rack jig0002 jig0011 beluga_trailer_1 rack00 bside fside n09 n15 n24 (1)
+beluga-complete beluga6 beluga7 (1)
+load-beluga jig0002 typec dummy-type beluga7 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga7 beluga8 (1)
+unload-beluga jig0013 jig0014 beluga_trailer_1 beluga8 (1)
+put-down-rack jig0013 beluga_trailer_1 rack01 bside n11 n23 n12 (1)
+pick-up-rack jig0013 factory_trailer_1 rack01 fside bside n11 n12 n23 (1)
+unload-beluga jig0014 dummy-jig beluga_trailer_1 beluga8 (1)
+put-down-rack jig0014 beluga_trailer_1 rack01 bside n11 n23 n12 (1)
+pick-up-rack jig0011 beluga_trailer_1 rack00 bside fside n08 n24 n32 (1)
+stack-rack jig0013 jig0014 factory_trailer_1 rack01 fside bside n11 n12 n01 (1)
+get-from-hangar jig0005 hangar2 factory_trailer_1 (1)
+put-down-rack jig0005 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+unstack-rack jig0013 jig0014 factory_trailer_1 rack01 fside bside n11 n01 n12 (1)
+deliver-to-hangar jig0013 dummy-jig factory_trailer_1 hangar2 pl0 n11 n08 (1)
+stack-rack jig0011 jig0014 beluga_trailer_1 rack01 bside fside n08 n12 n04 (1)
+pick-up-rack jig0005 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0005 typea typea beluga8 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0008 hangar3 factory_trailer_1 (1)
+put-down-rack jig0008 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+pick-up-rack jig0008 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0008 typea dummy-type beluga8 beluga_trailer_1 slot1 dummy-slot (1)
+beluga-complete beluga8 beluga9 (1)
+get-from-hangar jig0012 hangar1 factory_trailer_1 (1)
+put-down-rack jig0012 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+pick-up-rack jig0012 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0012 typea dummy-type beluga9 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga9 beluga10 (1)
+unload-beluga jig0015 jig0016 beluga_trailer_1 beluga10 (1)
+put-down-rack jig0015 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0016 jig0017 beluga_trailer_1 beluga10 (1)
+stack-rack jig0016 jig0015 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0017 jig0018 beluga_trailer_1 beluga10 (1)
+stack-rack jig0017 jig0016 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0018 jig0019 beluga_trailer_1 beluga10 (1)
+stack-rack jig0018 jig0017 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+unstack-rack jig0011 jig0014 beluga_trailer_1 rack01 bside fside n08 n04 n12 (1)
+load-beluga jig0011 typeb typeb beluga10 beluga_trailer_1 slot0 slot1 (1)
+unload-beluga jig0019 dummy-jig beluga_trailer_1 beluga10 (1)
+pick-up-rack jig0014 factory_trailer_1 rack01 fside bside n11 n12 n23 (1)
+stack-rack jig0014 jig0015 factory_trailer_1 rack00 fside bside n11 n16 n05 (1)
+get-from-hangar jig0013 hangar2 factory_trailer_1 (1)
+stack-rack jig0019 jig0018 beluga_trailer_1 rack00 bside fside n04 n05 n01 (1)
+put-down-rack jig0013 factory_trailer_1 rack01 fside n08 n23 n15 (1)
+pick-up-rack jig0013 beluga_trailer_1 rack01 bside fside n08 n15 n23 (1)
+load-beluga jig0013 typeb dummy-type beluga10 beluga_trailer_1 slot1 dummy-slot (1)
+[t=10.052221s, 96744 KB] Plan length: 157 step(s).
+[t=10.052221s, 96744 KB] Plan cost: 157
+[t=10.052408s, 96744 KB] Expanded 1108 state(s).
+[t=10.052484s, 96744 KB] Reopened 22 state(s).
+[t=10.052557s, 96744 KB] Evaluated 1109 state(s).
+[t=10.052630s, 96744 KB] Evaluations: 2196
+[t=10.052700s, 96744 KB] Generated 5322 state(s).
+[t=10.052770s, 96744 KB] Dead ends: 0 state(s).
+[t=10.052840s, 96744 KB] Number of registered states: 1087
+[t=10.052912s, 96744 KB] Int hash set load factor: 1087/2048 = 0.530762
+[t=10.052987s, 96744 KB] Int hash set resizes: 11
+[t=10.053058s, 96744 KB] Best solution cost so far: 157
+[t=10.053629s, 96744 KB] Solution found - keep searching
+[t=10.053728s, 96744 KB] Building successor generator... done!
+[t=10.053910s, 96744 KB] peak memory difference for successor generator creation: 0 KB
+[t=10.054003s, 96744 KB] time for successor generation creation: 0.000000s
+[t=10.054173s, 96744 KB] Variables: 796
+[t=10.054561s, 96744 KB] FactPairs: 1806
+[t=10.054630s, 96744 KB] Bytes per state: 112
+[t=10.054698s, 96744 KB] Starting search: lazy_wastar
+[t=10.054787s, 96744 KB] Conducting lazy best first search, (real) bound = 157
+[t=10.058214s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 99
+[t=10.058214s, 96744 KB] New best heuristic value for ff: 96
+[t=10.058214s, 96744 KB] g=0, 1 evaluated, 0 expanded
+[t=10.058214s, 96744 KB] Initial heuristic value for landmark_sum_heuristic: 99
+[t=10.058214s, 96744 KB] Initial heuristic value for ff: 96
+[t=10.062042s, 96744 KB] New best heuristic value for ff: 81
+[t=10.062042s, 96744 KB] g=1, 2 evaluated, 1 expanded
+[t=10.066007s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 97
+[t=10.066007s, 96744 KB] New best heuristic value for ff: 80
+[t=10.066007s, 96744 KB] g=2, 3 evaluated, 2 expanded
+[t=10.076932s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 96
+[t=10.076932s, 96744 KB] g=3, 6 evaluated, 5 expanded
+[t=10.087875s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 94
+[t=10.087875s, 96744 KB] g=4, 9 evaluated, 8 expanded
+[t=10.091842s, 96744 KB] New best heuristic value for ff: 79
+[t=10.091842s, 96744 KB] g=3, 10 evaluated, 9 expanded
+[t=10.112762s, 96744 KB] New best heuristic value for ff: 78
+[t=10.112762s, 96744 KB] g=4, 16 evaluated, 15 expanded
+[t=10.123702s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 92
+[t=10.123702s, 96744 KB] g=6, 19 evaluated, 18 expanded
+[t=10.154596s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 90
+[t=10.154596s, 96744 KB] g=8, 28 evaluated, 27 expanded
+[t=10.179493s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 89
+[t=10.179493s, 96744 KB] g=10, 35 evaluated, 34 expanded
+[t=10.183456s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 88
+[t=10.183456s, 96744 KB] g=11, 36 evaluated, 35 expanded
+[t=10.194401s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 87
+[t=10.194401s, 96744 KB] g=12, 39 evaluated, 38 expanded
+[t=10.201359s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 85
+[t=10.201359s, 96744 KB] New best heuristic value for ff: 75
+[t=10.201359s, 96744 KB] g=13, 41 evaluated, 40 expanded
+[t=10.208317s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 84
+[t=10.208317s, 96744 KB] g=14, 43 evaluated, 42 expanded
+[t=10.219270s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 82
+[t=10.219270s, 96744 KB] g=15, 46 evaluated, 45 expanded
+[t=10.226234s, 96744 KB] New best heuristic value for ff: 74
+[t=10.226234s, 96744 KB] g=16, 48 evaluated, 47 expanded
+[t=10.243163s, 96744 KB] New best heuristic value for ff: 72
+[t=10.243163s, 96744 KB] g=17, 53 evaluated, 52 expanded
+[t=10.251122s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 80
+[t=10.251122s, 96744 KB] g=17, 55 evaluated, 54 expanded
+[t=10.254094s, 96744 KB] New best heuristic value for ff: 68
+[t=10.254094s, 96744 KB] g=18, 56 evaluated, 55 expanded
+[t=10.275015s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 78
+[t=10.275015s, 96744 KB] g=19, 62 evaluated, 61 expanded
+[t=10.282979s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 77
+[t=10.282979s, 96744 KB] g=20, 64 evaluated, 63 expanded
+[t=10.299920s, 96744 KB] New best heuristic value for ff: 66
+[t=10.299920s, 96744 KB] g=20, 69 evaluated, 68 expanded
+[t=10.306881s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 76
+[t=10.306881s, 96744 KB] g=21, 71 evaluated, 70 expanded
+[t=10.324794s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 73
+[t=10.324794s, 96744 KB] g=22, 76 evaluated, 75 expanded
+[t=10.328781s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 72
+[t=10.328781s, 96744 KB] g=23, 77 evaluated, 76 expanded
+[t=10.331767s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 69
+[t=10.331767s, 96744 KB] g=24, 78 evaluated, 77 expanded
+[t=10.339720s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 68
+[t=10.339720s, 96744 KB] g=25, 80 evaluated, 79 expanded
+[t=10.342685s, 96744 KB] New best heuristic value for ff: 65
+[t=10.342685s, 96744 KB] g=23, 81 evaluated, 80 expanded
+[t=10.371587s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 66
+[t=10.371587s, 96744 KB] g=27, 89 evaluated, 88 expanded
+[t=10.374552s, 96744 KB] New best heuristic value for ff: 64
+[t=10.374552s, 96744 KB] g=24, 90 evaluated, 89 expanded
+[t=10.378517s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 65
+[t=10.378517s, 96744 KB] g=28, 91 evaluated, 90 expanded
+[t=10.385475s, 96744 KB] New best heuristic value for ff: 62
+[t=10.385475s, 96744 KB] g=29, 93 evaluated, 92 expanded
+[t=10.420342s, 96744 KB] New best heuristic value for ff: 61
+[t=10.420342s, 96744 KB] g=30, 103 evaluated, 102 expanded
+[t=10.438265s, 96744 KB] New best heuristic value for ff: 59
+[t=10.438265s, 96744 KB] g=31, 108 evaluated, 107 expanded
+[t=10.531017s, 96744 KB] New best heuristic value for ff: 58
+[t=10.532016s, 96744 KB] g=34, 135 evaluated, 134 expanded
+[t=10.586854s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 64
+[t=10.586854s, 96744 KB] g=37, 151 evaluated, 150 expanded
+[t=10.913988s, 96744 KB] New best heuristic value for ff: 57
+[t=10.913988s, 96744 KB] g=36, 247 evaluated, 246 expanded, 1 reopened
+[t=11.065588s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 63
+[t=11.065588s, 96744 KB] g=40, 292 evaluated, 291 expanded, 2 reopened
+[t=11.224181s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 62
+[t=11.225177s, 96744 KB] g=33, 343 evaluated, 342 expanded, 7 reopened
+[t=11.242101s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 61
+[t=11.242101s, 96744 KB] g=35, 348 evaluated, 347 expanded, 7 reopened
+[t=11.311909s, 96744 KB] New best heuristic value for ff: 55
+[t=11.311909s, 96744 KB] g=36, 369 evaluated, 368 expanded, 8 reopened
+[t=11.401662s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 60
+[t=11.401662s, 96744 KB] g=39, 396 evaluated, 395 expanded, 9 reopened
+[t=11.482451s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 59
+[t=11.482451s, 96744 KB] g=42, 421 evaluated, 420 expanded, 11 reopened
+[t=11.503398s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 58
+[t=11.503398s, 96744 KB] New best heuristic value for ff: 54
+[t=11.503398s, 96744 KB] g=44, 427 evaluated, 426 expanded, 11 reopened
+[t=11.524316s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 57
+[t=11.524316s, 96744 KB] g=46, 433 evaluated, 432 expanded, 11 reopened
+[t=11.824373s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 54
+[t=11.824373s, 96744 KB] g=49, 547 evaluated, 546 expanded, 38 reopened
+[t=11.862258s, 96744 KB] New best heuristic value for ff: 53
+[t=11.862258s, 96744 KB] g=51, 558 evaluated, 557 expanded, 38 reopened
+[t=12.006866s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 51
+[t=12.006866s, 96744 KB] g=55, 600 evaluated, 599 expanded, 38 reopened
+[t=12.017830s, 96744 KB] New best heuristic value for ff: 52
+[t=12.017830s, 96744 KB] g=56, 603 evaluated, 602 expanded, 38 reopened
+[t=12.950391s, 96744 KB] New best heuristic value for ff: 51
+[t=12.950391s, 96744 KB] g=60, 881 evaluated, 880 expanded, 45 reopened
+[t=13.183819s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 50
+[t=13.183819s, 96744 KB] g=62, 949 evaluated, 948 expanded, 45 reopened
+[t=13.197778s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 49
+[t=13.197778s, 96744 KB] g=63, 953 evaluated, 952 expanded, 45 reopened
+[t=13.208748s, 96744 KB] New best heuristic value for ff: 50
+[t=13.208748s, 96744 KB] g=64, 956 evaluated, 955 expanded, 45 reopened
+[t=13.331426s, 96744 KB] New best heuristic value for ff: 49
+[t=13.331426s, 96744 KB] g=65, 997 evaluated, 996 expanded, 49 reopened
+[t=13.358353s, 96744 KB] New best heuristic value for ff: 48
+[t=13.358353s, 96744 KB] g=67, 1005 evaluated, 1004 expanded, 49 reopened
+[t=13.375303s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 48
+[t=13.375303s, 96744 KB] g=69, 1010 evaluated, 1009 expanded, 49 reopened
+[t=13.382280s, 96744 KB] New best heuristic value for ff: 47
+[t=13.382280s, 96744 KB] g=69, 1012 evaluated, 1011 expanded, 49 reopened
+[t=13.511956s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 45
+[t=13.511956s, 96744 KB] g=71, 1053 evaluated, 1052 expanded, 52 reopened
+[t=13.566816s, 96744 KB] New best heuristic value for ff: 46
+[t=13.566816s, 96744 KB] g=73, 1069 evaluated, 1068 expanded, 52 reopened
+[t=13.573792s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 44
+[t=13.573792s, 96744 KB] g=75, 1071 evaluated, 1070 expanded, 52 reopened
+[t=13.587741s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 43
+[t=13.587741s, 96744 KB] New best heuristic value for ff: 45
+[t=13.587741s, 96744 KB] g=76, 1075 evaluated, 1074 expanded, 52 reopened
+[t=13.604688s, 96744 KB] New best heuristic value for ff: 44
+[t=13.604688s, 96744 KB] g=77, 1080 evaluated, 1079 expanded, 52 reopened
+[t=13.865047s, 96744 KB] New best heuristic value for ff: 43
+[t=13.865047s, 96744 KB] g=82, 1165 evaluated, 1164 expanded, 58 reopened
+[t=13.879011s, 96744 KB] New best heuristic value for ff: 41
+[t=13.879011s, 96744 KB] g=83, 1169 evaluated, 1168 expanded, 58 reopened
+[t=13.884994s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 42
+[t=13.884994s, 96744 KB] g=84, 1171 evaluated, 1170 expanded, 58 reopened
+[t=13.888977s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 41
+[t=13.888977s, 96744 KB] New best heuristic value for ff: 40
+[t=13.888977s, 96744 KB] g=84, 1172 evaluated, 1171 expanded, 58 reopened
+[t=13.891962s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 40
+[t=13.891962s, 96744 KB] g=85, 1173 evaluated, 1172 expanded, 58 reopened
+[t=13.894947s, 96744 KB] New best heuristic value for ff: 39
+[t=13.894947s, 96744 KB] g=85, 1174 evaluated, 1173 expanded, 58 reopened
+[t=13.898937s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 39
+[t=13.898937s, 96744 KB] g=86, 1175 evaluated, 1174 expanded, 58 reopened
+[t=13.914894s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 38
+[t=13.914894s, 96744 KB] g=87, 1180 evaluated, 1179 expanded, 58 reopened
+[t=13.930847s, 96744 KB] New best heuristic value for ff: 38
+[t=13.930847s, 96744 KB] g=87, 1186 evaluated, 1185 expanded, 59 reopened
+[t=13.961742s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 37
+[t=13.961742s, 96744 KB] g=87, 1196 evaluated, 1195 expanded, 59 reopened
+[t=14.005593s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 36
+[t=14.005593s, 96744 KB] g=89, 1210 evaluated, 1209 expanded, 59 reopened
+[t=14.030485s, 96744 KB] New best heuristic value for ff: 36
+[t=14.030485s, 96744 KB] g=91, 1218 evaluated, 1217 expanded, 59 reopened
+[t=14.034455s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 35
+[t=14.034455s, 96744 KB] g=91, 1219 evaluated, 1218 expanded, 59 reopened
+[t=14.052376s, 96744 KB] New best heuristic value for ff: 35
+[t=14.052376s, 96744 KB] g=93, 1225 evaluated, 1224 expanded, 59 reopened
+[t=14.062333s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 33
+[t=14.062333s, 96744 KB] g=94, 1228 evaluated, 1227 expanded, 59 reopened
+[t=14.071285s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 32
+[t=14.071285s, 96744 KB] New best heuristic value for ff: 34
+[t=14.071285s, 96744 KB] g=95, 1231 evaluated, 1230 expanded, 59 reopened
+[t=14.074256s, 96744 KB] New best heuristic value for ff: 33
+[t=14.074256s, 96744 KB] g=96, 1232 evaluated, 1231 expanded, 59 reopened
+[t=14.078214s, 96744 KB] New best heuristic value for ff: 32
+[t=14.078214s, 96744 KB] g=96, 1233 evaluated, 1232 expanded, 59 reopened
+[t=14.084170s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 29
+[t=14.084170s, 96744 KB] g=97, 1235 evaluated, 1234 expanded, 59 reopened
+[t=14.087142s, 96744 KB] New best heuristic value for ff: 31
+[t=14.087142s, 96744 KB] g=98, 1236 evaluated, 1235 expanded, 59 reopened
+[t=14.090111s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 28
+[t=14.090111s, 96744 KB] g=99, 1237 evaluated, 1236 expanded, 59 reopened
+[t=14.103052s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 27
+[t=14.103052s, 96744 KB] g=100, 1241 evaluated, 1240 expanded, 59 reopened
+[t=14.106019s, 96744 KB] New best heuristic value for ff: 30
+[t=14.106019s, 96744 KB] g=101, 1242 evaluated, 1241 expanded, 59 reopened
+[t=14.158858s, 96744 KB] New best heuristic value for ff: 29
+[t=14.158858s, 96744 KB] g=101, 1262 evaluated, 1261 expanded, 61 reopened
+[t=14.215693s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 25
+[t=14.215693s, 96744 KB] g=104, 1282 evaluated, 1281 expanded, 62 reopened
+[t=14.237605s, 96744 KB] New best heuristic value for ff: 28
+[t=14.237605s, 96744 KB] g=104, 1289 evaluated, 1288 expanded, 62 reopened
+[t=14.293463s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 24
+[t=14.293463s, 96744 KB] g=108, 1311 evaluated, 1310 expanded, 65 reopened
+[t=14.316400s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 23
+[t=14.316400s, 96744 KB] g=110, 1319 evaluated, 1318 expanded, 65 reopened
+[t=14.338337s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 22
+[t=14.338337s, 96744 KB] g=112, 1327 evaluated, 1326 expanded, 65 reopened
+[t=14.349274s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 21
+[t=14.349274s, 96744 KB] New best heuristic value for ff: 27
+[t=14.349274s, 96744 KB] g=113, 1331 evaluated, 1330 expanded, 65 reopened
+[t=14.355237s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 20
+[t=14.355237s, 96744 KB] New best heuristic value for ff: 23
+[t=14.355237s, 96744 KB] g=114, 1333 evaluated, 1332 expanded, 65 reopened
+[t=14.358207s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 19
+[t=14.358207s, 96744 KB] g=115, 1334 evaluated, 1333 expanded, 65 reopened
+[t=14.360177s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 17
+[t=14.361175s, 96744 KB] New best heuristic value for ff: 18
+[t=14.361190s, 96744 KB] g=116, 1335 evaluated, 1334 expanded, 65 reopened
+[t=14.363646s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 16
+[t=14.363646s, 96744 KB] g=117, 1336 evaluated, 1335 expanded, 65 reopened
+[t=14.366612s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 15
+[t=14.366612s, 96744 KB] g=118, 1337 evaluated, 1336 expanded, 65 reopened
+[t=14.373563s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 14
+[t=14.373563s, 96744 KB] g=119, 1340 evaluated, 1339 expanded, 65 reopened
+[t=14.394477s, 96744 KB] New best heuristic value for ff: 17
+[t=14.394477s, 96744 KB] g=121, 1349 evaluated, 1348 expanded, 66 reopened
+[t=14.422389s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 13
+[t=14.422389s, 96744 KB] g=122, 1362 evaluated, 1361 expanded, 68 reopened
+[t=14.429350s, 96744 KB] New best heuristic value for ff: 16
+[t=14.429350s, 96744 KB] g=120, 1365 evaluated, 1364 expanded, 68 reopened
+[t=14.434318s, 96744 KB] New best heuristic value for ff: 15
+[t=14.434318s, 96744 KB] g=121, 1367 evaluated, 1366 expanded, 68 reopened
+[t=14.447263s, 96744 KB] New best heuristic value for ff: 14
+[t=14.447263s, 96744 KB] g=123, 1372 evaluated, 1371 expanded, 68 reopened
+[t=14.455220s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 12
+[t=14.455220s, 96744 KB] g=125, 1375 evaluated, 1374 expanded, 68 reopened
+[t=14.508076s, 96744 KB] New best heuristic value for ff: 13
+[t=14.508076s, 96744 KB] g=127, 1397 evaluated, 1396 expanded, 68 reopened
+[t=14.612792s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 11
+[t=14.612792s, 96744 KB] g=131, 1440 evaluated, 1439 expanded, 68 reopened
+[t=14.712476s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 10
+[t=14.712476s, 96744 KB] g=129, 1482 evaluated, 1481 expanded, 68 reopened
+[t=14.752341s, 96744 KB] New best heuristic value for ff: 12
+[t=14.752341s, 96744 KB] g=131, 1499 evaluated, 1498 expanded, 68 reopened
+[t=14.762294s, 96744 KB] New best heuristic value for ff: 11
+[t=14.762294s, 96744 KB] g=132, 1503 evaluated, 1502 expanded, 68 reopened
+[t=14.797177s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 9
+[t=14.798174s, 96744 KB] New best heuristic value for ff: 9
+[t=14.798174s, 96744 KB] g=136, 1519 evaluated, 1518 expanded, 68 reopened
+[t=14.802129s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 8
+[t=14.802129s, 96744 KB] New best heuristic value for ff: 8
+[t=14.802129s, 96744 KB] g=137, 1521 evaluated, 1520 expanded, 68 reopened
+[t=14.806096s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 7
+[t=14.806096s, 96744 KB] g=138, 1523 evaluated, 1522 expanded, 68 reopened
+[t=14.808091s, 96744 KB] New best heuristic value for ff: 7
+[t=14.808091s, 96744 KB] g=139, 1524 evaluated, 1523 expanded, 68 reopened
+[t=14.813634s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 6
+[t=14.813634s, 96744 KB] g=140, 1527 evaluated, 1526 expanded, 68 reopened
+[t=14.815624s, 96744 KB] New best heuristic value for ff: 6
+[t=14.815624s, 96744 KB] g=141, 1528 evaluated, 1527 expanded, 68 reopened
+[t=14.821601s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 5
+[t=14.821601s, 96744 KB] g=142, 1531 evaluated, 1530 expanded, 68 reopened
+[t=14.823591s, 96744 KB] New best heuristic value for ff: 5
+[t=14.823591s, 96744 KB] g=143, 1532 evaluated, 1531 expanded, 68 reopened
+[t=14.829570s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 4
+[t=14.829570s, 96744 KB] g=144, 1535 evaluated, 1534 expanded, 68 reopened
+[t=14.831564s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 3
+[t=14.831564s, 96744 KB] New best heuristic value for ff: 4
+[t=14.831564s, 96744 KB] g=145, 1536 evaluated, 1535 expanded, 68 reopened
+[t=14.835214s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 2
+[t=14.835214s, 96744 KB] g=146, 1538 evaluated, 1537 expanded, 68 reopened
+[t=14.844180s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 1
+[t=14.844180s, 96744 KB] g=148, 1542 evaluated, 1541 expanded, 68 reopened
+[t=14.901012s, 96744 KB] New best heuristic value for ff: 3
+[t=14.901012s, 96744 KB] g=151, 1570 evaluated, 1569 expanded, 68 reopened
+[t=14.964837s, 96744 KB] New best heuristic value for ff: 2
+[t=14.964837s, 96744 KB] g=153, 1604 evaluated, 1603 expanded, 68 reopened
+[t=14.965822s, 96744 KB] New best heuristic value for ff: 1
+[t=14.966085s, 96744 KB] g=154, 1605 evaluated, 1604 expanded, 68 reopened
+[t=14.966760s, 96744 KB] Solution found!
+[t=14.967022s, 96744 KB] Actual search time: 4.912278s
+pick-up-rack jig0002 factory_trailer_1 rack00 fside bside n18 n14 n32 (1)
+unload-beluga jig0003 jig0004 beluga_trailer_1 beluga1 (1)
+put-down-rack jig0003 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0004 jig0005 beluga_trailer_1 beluga1 (1)
+stack-rack jig0004 jig0003 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0005 jig0006 beluga_trailer_1 beluga1 (1)
+stack-rack jig0005 jig0004 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0006 dummy-jig beluga_trailer_1 beluga1 (1)
+stack-rack jig0006 jig0005 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+pick-up-rack jig0001 beluga_trailer_1 rack01 bside fside n18 n05 n23 (1)
+load-beluga jig0001 typed dummy-type beluga1 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga1 beluga2 (1)
+unload-beluga jig0007 jig0008 beluga_trailer_1 beluga2 (1)
+put-down-rack jig0007 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0008 jig0009 beluga_trailer_1 beluga2 (1)
+stack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n19 n01 (1)
+stack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n16 n12 (1)
+unload-beluga jig0009 jig0010 beluga_trailer_1 beluga2 (1)
+unstack-rack jig0003 jig0004 factory_trailer_1 rack00 fside bside n04 n12 n16 (1)
+deliver-to-hangar jig0003 jig0006 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0004 jig0005 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+deliver-to-hangar jig0004 jig0002 factory_trailer_1 hangar2 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n01 n19 (1)
+deliver-to-hangar jig0002 jig0008 factory_trailer_1 hangar3 pl1 n18 n09 (1)
+unstack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+stack-rack jig0009 jig0007 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0010 dummy-jig beluga_trailer_1 beluga2 (1)
+beluga-complete beluga2 beluga3 (1)
+stack-rack jig0005 jig0007 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+get-from-hangar jig0002 hangar3 factory_trailer_1 (1)
+stack-rack jig0002 jig0005 factory_trailer_1 rack01 fside bside n09 n11 n02 (1)
+unstack-rack jig0006 jig0008 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+deliver-to-hangar jig0006 jig0009 factory_trailer_1 hangar3 pl0 n04 n04 (1)
+pick-up-rack jig0008 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+put-down-rack jig0010 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unstack-rack jig0009 jig0007 beluga_trailer_1 rack01 bside fside n04 n02 n06 (1)
+stack-rack jig0008 jig0002 factory_trailer_1 rack01 fside bside n04 n06 n02 (1)
+stack-rack jig0009 jig0010 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unstack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+unstack-rack jig0007 jig0005 beluga_trailer_1 rack01 bside fside n04 n02 n06 (1)
+stack-rack jig0007 jig0009 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unstack-rack jig0005 jig0002 beluga_trailer_1 rack01 bside fside n04 n06 n10 (1)
+stack-rack jig0005 jig0007 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unstack-rack jig0002 jig0008 beluga_trailer_1 rack01 bside fside n09 n10 n19 (1)
+stack-rack jig0010 jig0008 factory_trailer_1 rack01 fside bside n04 n19 n15 (1)
+get-from-hangar jig0003 hangar1 factory_trailer_1 (1)
+stack-rack jig0003 jig0010 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+unstack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+deliver-to-hangar jig0009 jig0005 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0007 jig0005 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+stack-rack jig0007 jig0003 factory_trailer_1 rack01 fside bside n04 n11 n07 (1)
+get-from-hangar jig0009 hangar1 factory_trailer_1 (1)
+stack-rack jig0009 jig0007 factory_trailer_1 rack01 fside bside n04 n07 n03 (1)
+pick-up-rack jig0005 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+deliver-to-hangar jig0005 jig0012 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+get-from-hangar jig0005 hangar1 factory_trailer_1 (1)
+put-down-rack jig0005 factory_trailer_1 rack00 fside n04 n32 n28 (1)
+unstack-rack jig0009 jig0007 factory_trailer_1 rack01 fside bside n04 n03 n07 (1)
+stack-rack jig0009 jig0005 factory_trailer_1 rack00 fside bside n04 n28 n24 (1)
+unstack-rack jig0007 jig0003 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+stack-rack jig0007 jig0009 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+unstack-rack jig0003 jig0010 factory_trailer_1 rack01 fside bside n04 n11 n15 (1)
+stack-rack jig0003 jig0007 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+unstack-rack jig0010 jig0008 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0010 jig0003 factory_trailer_1 rack00 fside bside n04 n16 n12 (1)
+pick-up-rack jig0008 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+deliver-to-hangar jig0008 jig0010 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+get-from-hangar jig0008 hangar1 factory_trailer_1 (1)
+put-down-rack jig0008 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0010 jig0003 factory_trailer_1 rack00 fside bside n04 n12 n16 (1)
+deliver-to-hangar jig0010 jig0007 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+stack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n16 n07 (1)
+pick-up-rack jig0008 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0008 typea dummy-type beluga3 beluga_trailer_1 slot0 dummy-slot (1)
+unstack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n07 n16 (1)
+beluga-complete beluga3 beluga4 (1)
+unstack-rack jig0003 jig0007 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+put-down-rack jig0003 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+stack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n20 n11 (1)
+get-from-hangar jig0010 hangar1 factory_trailer_1 (1)
+pick-up-rack jig0003 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0003 typea dummy-type beluga4 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga4 beluga5 (1)
+unload-beluga jig0011 dummy-jig beluga_trailer_1 beluga5 (1)
+put-down-rack jig0010 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0007 jig0009 factory_trailer_1 rack00 fside bside n04 n11 n15 (1)
+deliver-to-hangar jig0007 jig0011 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+get-from-hangar jig0007 hangar1 factory_trailer_1 (1)
+stack-rack jig0007 jig0009 factory_trailer_1 rack00 fside bside n04 n15 n11 (1)
+stack-rack jig0011 jig0002 beluga_trailer_1 rack00 bside fside n11 n11 n00 (1)
+pick-up-rack jig0010 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0010 typea dummy-type beluga5 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga5 beluga6 (1)
+unload-beluga jig0012 dummy-jig beluga_trailer_1 beluga6 (1)
+put-down-rack jig0012 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+pick-up-rack jig0012 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+deliver-to-hangar jig0012 jig0013 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0011 jig0002 beluga_trailer_1 rack00 bside fside n11 n00 n11 (1)
+put-down-rack jig0011 beluga_trailer_1 rack01 bside n11 n23 n12 (1)
+unstack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n11 n20 (1)
+get-from-hangar jig0012 hangar1 factory_trailer_1 (1)
+stack-rack jig0012 jig0007 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+pick-up-rack jig0011 factory_trailer_1 rack01 fside bside n11 n12 n23 (1)
+deliver-to-hangar jig0011 dummy-jig factory_trailer_1 hangar1 pl1 n11 n08 (1)
+put-down-rack jig0002 beluga_trailer_1 rack01 bside n09 n23 n14 (1)
+unstack-rack jig0005 jig0009 beluga_trailer_1 rack00 bside fside n04 n16 n20 (1)
+load-beluga jig0005 typea typea beluga6 beluga_trailer_1 slot0 slot1 (1)
+unstack-rack jig0009 jig0007 beluga_trailer_1 rack00 bside fside n04 n20 n24 (1)
+load-beluga jig0009 typea typea beluga6 beluga_trailer_1 slot1 slot2 (1)
+unstack-rack jig0007 jig0012 beluga_trailer_1 rack00 bside fside n04 n24 n28 (1)
+load-beluga jig0007 typea dummy-type beluga6 beluga_trailer_1 slot2 dummy-slot (1)
+pick-up-rack jig0002 beluga_trailer_1 rack01 bside fside n09 n14 n23 (1)
+beluga-complete beluga6 beluga7 (1)
+load-beluga jig0002 typec dummy-type beluga7 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga7 beluga8 (1)
+unload-beluga jig0013 jig0014 beluga_trailer_1 beluga8 (1)
+put-down-rack jig0013 beluga_trailer_1 rack01 bside n11 n23 n12 (1)
+get-from-hangar jig0011 hangar1 factory_trailer_1 (1)
+stack-rack jig0011 jig0012 factory_trailer_1 rack00 fside bside n08 n28 n20 (1)
+pick-up-rack jig0013 factory_trailer_1 rack01 fside bside n11 n12 n23 (1)
+deliver-to-hangar jig0013 dummy-jig factory_trailer_1 hangar1 pl0 n11 n08 (1)
+unstack-rack jig0012 jig0011 beluga_trailer_1 rack00 bside fside n04 n20 n24 (1)
+load-beluga jig0012 typea typea beluga8 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0004 hangar2 factory_trailer_1 (1)
+put-down-rack jig0004 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0004 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0004 typea dummy-type beluga8 beluga_trailer_1 slot1 dummy-slot (1)
+unload-beluga jig0014 dummy-jig beluga_trailer_1 beluga8 (1)
+beluga-complete beluga8 beluga9 (1)
+get-from-hangar jig0006 hangar3 factory_trailer_1 (1)
+stack-rack jig0006 jig0011 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+put-down-rack jig0014 beluga_trailer_1 rack01 bside n11 n23 n12 (1)
+unstack-rack jig0011 jig0006 beluga_trailer_1 rack00 bside fside n08 n20 n28 (1)
+stack-rack jig0011 jig0014 beluga_trailer_1 rack01 bside fside n08 n12 n04 (1)
+pick-up-rack jig0006 beluga_trailer_1 rack00 bside fside n04 n28 n32 (1)
+load-beluga jig0006 typea dummy-type beluga9 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga9 beluga10 (1)
+unload-beluga jig0015 jig0016 beluga_trailer_1 beluga10 (1)
+put-down-rack jig0015 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0016 jig0017 beluga_trailer_1 beluga10 (1)
+stack-rack jig0016 jig0015 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0017 jig0018 beluga_trailer_1 beluga10 (1)
+stack-rack jig0017 jig0016 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0018 jig0019 beluga_trailer_1 beluga10 (1)
+stack-rack jig0018 jig0017 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+unstack-rack jig0011 jig0014 beluga_trailer_1 rack01 bside fside n08 n04 n12 (1)
+load-beluga jig0011 typeb typeb beluga10 beluga_trailer_1 slot0 slot1 (1)
+unload-beluga jig0019 dummy-jig beluga_trailer_1 beluga10 (1)
+pick-up-rack jig0014 factory_trailer_1 rack01 fside bside n11 n12 n23 (1)
+stack-rack jig0014 jig0015 factory_trailer_1 rack00 fside bside n11 n16 n05 (1)
+stack-rack jig0019 jig0018 beluga_trailer_1 rack00 bside fside n04 n05 n01 (1)
+get-from-hangar jig0013 hangar1 factory_trailer_1 (1)
+put-down-rack jig0013 factory_trailer_1 rack01 fside n08 n23 n15 (1)
+pick-up-rack jig0013 beluga_trailer_1 rack01 bside fside n08 n15 n23 (1)
+load-beluga jig0013 typeb dummy-type beluga10 beluga_trailer_1 slot1 dummy-slot (1)
+[t=14.969067s, 96744 KB] Plan length: 155 step(s).
+[t=14.969115s, 96744 KB] Plan cost: 155
+[t=14.969192s, 96744 KB] Expanded 1605 state(s).
+[t=14.969250s, 96744 KB] Reopened 68 state(s).
+[t=14.969308s, 96744 KB] Evaluated 1606 state(s).
+[t=14.969308s, 96744 KB] Evaluations: 3144
+[t=14.969308s, 96744 KB] Generated 7799 state(s).
+[t=14.969481s, 96744 KB] Dead ends: 0 state(s).
+[t=14.969501s, 96744 KB] Number of registered states: 1538
+[t=14.969570s, 96744 KB] Int hash set load factor: 1538/2048 = 0.750977
+[t=14.969642s, 96744 KB] Int hash set resizes: 11
+[t=14.969708s, 96744 KB] Best solution cost so far: 155
+[t=14.969937s, 96744 KB] Solution found - keep searching
+[t=14.970030s, 96744 KB] Building successor generator... done!
+[t=14.970193s, 96744 KB] peak memory difference for successor generator creation: 0 KB
+[t=14.970305s, 96744 KB] time for successor generation creation: 0.000000s
+[t=14.970375s, 96744 KB] Variables: 796
+[t=14.970837s, 96744 KB] FactPairs: 1806
+[t=14.970907s, 96744 KB] Bytes per state: 112
+[t=14.970973s, 96744 KB] Starting search: lazy_wastar
+[t=14.970973s, 96744 KB] Conducting lazy best first search, (real) bound = 155
+[t=14.975239s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 99
+[t=14.975239s, 96744 KB] New best heuristic value for ff: 96
+[t=14.975239s, 96744 KB] g=0, 1 evaluated, 0 expanded
+[t=14.975239s, 96744 KB] Initial heuristic value for landmark_sum_heuristic: 99
+[t=14.975239s, 96744 KB] Initial heuristic value for ff: 96
+[t=14.979224s, 96744 KB] New best heuristic value for ff: 81
+[t=14.979224s, 96744 KB] g=1, 2 evaluated, 1 expanded
+[t=14.983196s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 97
+[t=14.983196s, 96744 KB] New best heuristic value for ff: 80
+[t=14.983196s, 96744 KB] g=2, 3 evaluated, 2 expanded
+[t=14.994146s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 96
+[t=14.994146s, 96744 KB] g=3, 6 evaluated, 5 expanded
+[t=15.005104s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 94
+[t=15.005104s, 96744 KB] g=4, 9 evaluated, 8 expanded
+[t=15.009084s, 96744 KB] New best heuristic value for ff: 79
+[t=15.009084s, 96744 KB] g=3, 10 evaluated, 9 expanded
+[t=15.029996s, 96744 KB] New best heuristic value for ff: 78
+[t=15.029996s, 96744 KB] g=4, 16 evaluated, 15 expanded
+[t=15.040960s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 92
+[t=15.040960s, 96744 KB] g=6, 19 evaluated, 18 expanded
+[t=15.071881s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 90
+[t=15.071881s, 96744 KB] g=8, 28 evaluated, 27 expanded
+[t=15.096813s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 89
+[t=15.096813s, 96744 KB] g=10, 35 evaluated, 34 expanded
+[t=15.099804s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 88
+[t=15.100555s, 96744 KB] g=11, 36 evaluated, 35 expanded
+[t=15.111722s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 87
+[t=15.111722s, 96744 KB] g=12, 39 evaluated, 38 expanded
+[t=15.121691s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 85
+[t=15.121691s, 96744 KB] New best heuristic value for ff: 75
+[t=15.121691s, 96744 KB] g=13, 42 evaluated, 41 expanded
+[t=15.128663s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 84
+[t=15.129661s, 96744 KB] g=14, 44 evaluated, 43 expanded
+[t=15.139630s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 82
+[t=15.139630s, 96744 KB] g=15, 47 evaluated, 46 expanded
+[t=15.146604s, 96744 KB] New best heuristic value for ff: 74
+[t=15.146604s, 96744 KB] g=16, 49 evaluated, 48 expanded
+[t=15.167549s, 96744 KB] New best heuristic value for ff: 72
+[t=15.167549s, 96744 KB] g=17, 55 evaluated, 54 expanded
+[t=15.174527s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 80
+[t=15.174527s, 96744 KB] g=17, 57 evaluated, 56 expanded
+[t=15.178508s, 96744 KB] New best heuristic value for ff: 68
+[t=15.178508s, 96744 KB] g=18, 58 evaluated, 57 expanded
+[t=15.199421s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 78
+[t=15.199421s, 96744 KB] g=19, 64 evaluated, 63 expanded
+[t=15.206372s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 77
+[t=15.206372s, 96744 KB] g=20, 66 evaluated, 65 expanded
+[t=15.231278s, 96744 KB] New best heuristic value for ff: 66
+[t=15.231278s, 96744 KB] g=20, 73 evaluated, 72 expanded
+[t=15.238232s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 76
+[t=15.238232s, 96744 KB] g=21, 75 evaluated, 74 expanded
+[t=15.256166s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 73
+[t=15.256166s, 96744 KB] g=22, 80 evaluated, 79 expanded
+[t=15.259138s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 72
+[t=15.260134s, 96744 KB] g=23, 81 evaluated, 80 expanded
+[t=15.263099s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 69
+[t=15.263099s, 96744 KB] g=24, 82 evaluated, 81 expanded
+[t=15.271051s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 68
+[t=15.271051s, 96744 KB] g=25, 84 evaluated, 83 expanded
+[t=15.274018s, 96744 KB] New best heuristic value for ff: 65
+[t=15.274018s, 96744 KB] g=23, 85 evaluated, 84 expanded
+[t=15.305916s, 96744 KB] New best heuristic value for ff: 64
+[t=15.305916s, 96744 KB] g=24, 94 evaluated, 93 expanded
+[t=15.333824s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 66
+[t=15.333824s, 96744 KB] g=27, 102 evaluated, 101 expanded
+[t=15.337814s, 96744 KB] New best heuristic value for ff: 63
+[t=15.337814s, 96744 KB] g=26, 103 evaluated, 102 expanded
+[t=15.340796s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 65
+[t=15.341792s, 96744 KB] g=28, 104 evaluated, 103 expanded
+[t=15.348770s, 96744 KB] New best heuristic value for ff: 62
+[t=15.348770s, 96744 KB] g=29, 106 evaluated, 105 expanded
+[t=15.351749s, 96744 KB] New best heuristic value for ff: 61
+[t=15.351749s, 96744 KB] g=27, 107 evaluated, 106 expanded
+[t=15.373692s, 96744 KB] New best heuristic value for ff: 60
+[t=15.373692s, 96744 KB] g=28, 113 evaluated, 112 expanded
+[t=15.471424s, 96744 KB] New best heuristic value for ff: 59
+[t=15.471424s, 96744 KB] g=31, 141 evaluated, 140 expanded
+[t=15.603082s, 96744 KB] New best heuristic value for ff: 58
+[t=15.603082s, 96744 KB] g=34, 179 evaluated, 178 expanded
+[t=15.807541s, 96744 KB] New best heuristic value for ff: 57
+[t=15.807541s, 96744 KB] g=36, 239 evaluated, 238 expanded, 1 reopened
+[t=16.083778s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 64
+[t=16.083778s, 96744 KB] g=37, 354 evaluated, 353 expanded, 36 reopened
+[t=16.546602s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 62
+[t=16.546602s, 96744 KB] g=33, 501 evaluated, 500 expanded, 49 reopened
+[t=16.571523s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 61
+[t=16.571523s, 96744 KB] g=35, 508 evaluated, 507 expanded, 49 reopened
+[t=16.754076s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 60
+[t=16.755074s, 96744 KB] g=39, 562 evaluated, 561 expanded, 50 reopened
+[t=16.799961s, 96744 KB] New best heuristic value for ff: 55
+[t=16.799961s, 96744 KB] g=36, 575 evaluated, 574 expanded, 50 reopened
+[t=16.965574s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 59
+[t=16.966573s, 96744 KB] g=42, 628 evaluated, 627 expanded, 55 reopened
+[t=17.171034s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 58
+[t=17.171034s, 96744 KB] g=44, 697 evaluated, 696 expanded, 65 reopened
+[t=17.195963s, 96744 KB] New best heuristic value for ff: 54
+[t=17.195963s, 96744 KB] g=46, 704 evaluated, 703 expanded, 65 reopened
+[t=17.212905s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 57
+[t=17.212905s, 96744 KB] g=46, 711 evaluated, 710 expanded, 67 reopened
+[t=18.331163s, 96744 KB] New best heuristic value for ff: 53
+[t=18.331163s, 96744 KB] g=42, 1056 evaluated, 1055 expanded, 87 reopened
+[t=18.452823s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 56
+[t=18.452823s, 96744 KB] g=44, 1093 evaluated, 1092 expanded, 89 reopened
+[t=18.455808s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 55
+[t=18.455808s, 96744 KB] g=45, 1094 evaluated, 1093 expanded, 89 reopened
+[t=18.747085s, 96744 KB] New best heuristic value for ff: 51
+[t=18.747085s, 96744 KB] g=46, 1191 evaluated, 1190 expanded, 99 reopened
+[t=26.774904s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 53
+[t=26.774904s, 96744 KB] g=50, 3834 evaluated, 3833 expanded, 353 reopened
+[t=26.784873s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 52
+[t=26.784873s, 96744 KB] g=51, 3837 evaluated, 3836 expanded, 353 reopened
+[t=26.791850s, 96744 KB] New best heuristic value for ff: 50
+[t=26.791850s, 96744 KB] g=51, 3839 evaluated, 3838 expanded, 353 reopened
+[t=27.080161s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 49
+[t=27.080161s, 96744 KB] g=56, 3927 evaluated, 3926 expanded, 353 reopened
+[t=27.133034s, 96744 KB] New best heuristic value for ff: 49
+[t=27.133034s, 96744 KB] g=59, 3943 evaluated, 3942 expanded, 353 reopened
+[t=27.231802s, 96744 KB] New best heuristic value for ff: 48
+[t=27.231802s, 96744 KB] g=60, 3973 evaluated, 3972 expanded, 353 reopened
+[t=27.238775s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 46
+[t=27.238775s, 96744 KB] g=60, 3975 evaluated, 3974 expanded, 353 reopened
+[t=27.242758s, 96744 KB] New best heuristic value for ff: 47
+[t=27.242833s, 96744 KB] g=61, 3976 evaluated, 3975 expanded, 353 reopened
+[t=27.301980s, 96744 KB] New best heuristic value for ff: 46
+[t=27.301980s, 96744 KB] g=62, 3994 evaluated, 3993 expanded, 353 reopened
+[t=27.377772s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 45
+[t=27.377772s, 96744 KB] g=64, 4017 evaluated, 4016 expanded, 353 reopened
+[t=27.380764s, 96744 KB] New best heuristic value for ff: 44
+[t=27.380764s, 96744 KB] g=64, 4018 evaluated, 4017 expanded, 353 reopened
+[t=27.387742s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 44
+[t=27.387742s, 96744 KB] g=65, 4020 evaluated, 4019 expanded, 353 reopened
+[t=27.394722s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 43
+[t=27.394722s, 96744 KB] New best heuristic value for ff: 43
+[t=27.394722s, 96744 KB] g=65, 4022 evaluated, 4021 expanded, 353 reopened
+[t=27.397712s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 42
+[t=27.397712s, 96744 KB] g=66, 4023 evaluated, 4022 expanded, 353 reopened
+[t=27.410669s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 41
+[t=27.410669s, 96744 KB] g=67, 4027 evaluated, 4026 expanded, 353 reopened
+[t=27.448560s, 96744 KB] New best heuristic value for ff: 42
+[t=27.448560s, 96744 KB] g=67, 4039 evaluated, 4038 expanded, 353 reopened
+[t=27.652007s, 96744 KB] New best heuristic value for ff: 41
+[t=27.652007s, 96744 KB] g=68, 4104 evaluated, 4103 expanded, 353 reopened
+[t=27.722780s, 96744 KB] New best heuristic value for ff: 40
+[t=27.722780s, 96744 KB] g=71, 4127 evaluated, 4126 expanded, 353 reopened
+[t=27.775629s, 96744 KB] New best heuristic value for ff: 39
+[t=27.775629s, 96744 KB] g=73, 4144 evaluated, 4143 expanded, 353 reopened
+[t=27.788592s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 38
+[t=27.788592s, 96744 KB] g=74, 4148 evaluated, 4147 expanded, 353 reopened
+[t=27.806525s, 96744 KB] New best heuristic value for ff: 38
+[t=27.806525s, 96744 KB] g=75, 4154 evaluated, 4153 expanded, 353 reopened
+[t=27.830447s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 36
+[t=27.831446s, 96744 KB] g=76, 4162 evaluated, 4161 expanded, 353 reopened
+[t=27.873344s, 96744 KB] New best heuristic value for ff: 37
+[t=27.873344s, 96744 KB] g=78, 4176 evaluated, 4175 expanded, 353 reopened
+[t=27.987036s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 35
+[t=27.987036s, 96744 KB] g=79, 4214 evaluated, 4213 expanded, 353 reopened
+[t=28.159594s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 34
+[t=28.159594s, 96744 KB] g=81, 4272 evaluated, 4271 expanded, 353 reopened
+[t=28.221443s, 96744 KB] New best heuristic value for ff: 35
+[t=28.221443s, 96744 KB] g=83, 4293 evaluated, 4292 expanded, 353 reopened
+[t=28.232402s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 33
+[t=28.232402s, 96744 KB] New best heuristic value for ff: 34
+[t=28.232402s, 96744 KB] g=84, 4297 evaluated, 4296 expanded, 353 reopened
+[t=28.238381s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 32
+[t=28.238381s, 96744 KB] g=85, 4299 evaluated, 4298 expanded, 353 reopened
+[t=29.025504s, 96744 KB] New best heuristic value for ff: 33
+[t=29.025504s, 96744 KB] g=85, 4569 evaluated, 4568 expanded, 359 reopened
+[t=29.509394s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 31
+[t=29.509394s, 96744 KB] g=84, 4738 evaluated, 4737 expanded, 365 reopened
+[t=29.524356s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 30
+[t=29.525355s, 96744 KB] g=86, 4743 evaluated, 4742 expanded, 365 reopened
+[t=29.539318s, 96744 KB] New best heuristic value for ff: 32
+[t=29.539318s, 96744 KB] g=86, 4748 evaluated, 4747 expanded, 365 reopened
+[t=29.554281s, 96744 KB] New best heuristic value for ff: 31
+[t=29.554281s, 96744 KB] g=87, 4753 evaluated, 4752 expanded, 365 reopened
+[t=29.581195s, 96744 KB] New best heuristic value for ff: 30
+[t=29.581195s, 96744 KB] g=89, 4762 evaluated, 4761 expanded, 365 reopened
+[t=29.587170s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 29
+[t=29.587170s, 96744 KB] g=90, 4764 evaluated, 4763 expanded, 365 reopened
+[t=29.658985s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 28
+[t=29.658985s, 96744 KB] g=89, 4789 evaluated, 4788 expanded, 365 reopened
+[t=29.754768s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 27
+[t=29.754768s, 96744 KB] g=91, 4823 evaluated, 4822 expanded, 365 reopened
+[t=29.757756s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 26
+[t=29.757756s, 96744 KB] g=92, 4824 evaluated, 4823 expanded, 365 reopened
+[t=30.095907s, 96744 KB] New best heuristic value for ff: 29
+[t=30.095907s, 96744 KB] g=93, 4949 evaluated, 4948 expanded, 369 reopened
+[t=30.106858s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 25
+[t=30.106858s, 96744 KB] g=94, 4953 evaluated, 4952 expanded, 369 reopened
+[t=30.109848s, 96744 KB] New best heuristic value for ff: 27
+[t=30.109848s, 96744 KB] g=95, 4954 evaluated, 4953 expanded, 369 reopened
+[t=30.212528s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 23
+[t=30.212528s, 96744 KB] g=96, 4991 evaluated, 4990 expanded, 369 reopened
+[t=30.246431s, 96744 KB] New best heuristic value for ff: 26
+[t=30.246431s, 96744 KB] g=98, 5003 evaluated, 5002 expanded, 369 reopened
+[t=30.300284s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 22
+[t=30.300284s, 96744 KB] g=100, 5022 evaluated, 5021 expanded, 369 reopened
+[t=30.308262s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 21
+[t=30.308262s, 96744 KB] g=101, 5025 evaluated, 5024 expanded, 369 reopened
+[t=30.311249s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 20
+[t=30.311249s, 96744 KB] New best heuristic value for ff: 23
+[t=30.311249s, 96744 KB] g=102, 5026 evaluated, 5025 expanded, 369 reopened
+[t=30.316651s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 19
+[t=30.316795s, 96744 KB] New best heuristic value for ff: 22
+[t=30.316795s, 96744 KB] g=103, 5028 evaluated, 5027 expanded, 369 reopened
+[t=30.321669s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 17
+[t=30.321669s, 96744 KB] g=104, 5030 evaluated, 5029 expanded, 369 reopened
+[t=30.324659s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 16
+[t=30.324659s, 96744 KB] g=105, 5031 evaluated, 5030 expanded, 369 reopened
+[t=30.326654s, 96744 KB] New best heuristic value for ff: 21
+[t=30.326654s, 96744 KB] g=104, 5032 evaluated, 5031 expanded, 369 reopened
+[t=30.329634s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 15
+[t=30.329634s, 96744 KB] g=106, 5033 evaluated, 5032 expanded, 369 reopened
+[t=30.332625s, 96744 KB] New best heuristic value for ff: 20
+[t=30.332625s, 96744 KB] g=105, 5034 evaluated, 5033 expanded, 369 reopened
+[t=30.340595s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 14
+[t=30.340595s, 96744 KB] g=107, 5037 evaluated, 5036 expanded, 369 reopened
+[t=30.358528s, 96744 KB] New best heuristic value for ff: 19
+[t=30.358528s, 96744 KB] g=106, 5044 evaluated, 5043 expanded, 369 reopened
+[t=30.371489s, 96744 KB] New best heuristic value for ff: 17
+[t=30.371489s, 96744 KB] g=107, 5049 evaluated, 5048 expanded, 369 reopened
+[t=30.376474s, 96744 KB] New best heuristic value for ff: 16
+[t=30.376474s, 96744 KB] g=108, 5051 evaluated, 5050 expanded, 369 reopened
+[t=30.381457s, 96744 KB] New best heuristic value for ff: 15
+[t=30.381457s, 96744 KB] g=109, 5053 evaluated, 5052 expanded, 369 reopened
+[t=30.389423s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 13
+[t=30.389423s, 96744 KB] g=110, 5057 evaluated, 5056 expanded, 370 reopened
+[t=30.404384s, 96744 KB] New best heuristic value for ff: 14
+[t=30.404384s, 96744 KB] g=111, 5064 evaluated, 5063 expanded, 371 reopened
+[t=30.541014s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 12
+[t=30.542011s, 96744 KB] g=115, 5120 evaluated, 5119 expanded, 372 reopened
+[t=31.800020s, 96744 KB] New best heuristic value for ff: 13
+[t=31.800020s, 96744 KB] g=117, 5642 evaluated, 5641 expanded, 379 reopened
+[t=31.825940s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 11
+[t=31.825940s, 96744 KB] g=119, 5653 evaluated, 5652 expanded, 379 reopened
+[t=33.648170s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 10
+[t=33.648170s, 96744 KB] g=119, 6505 evaluated, 6504 expanded, 478 reopened
+[t=33.687055s, 96744 KB] New best heuristic value for ff: 12
+[t=33.687055s, 96744 KB] g=121, 6523 evaluated, 6522 expanded, 479 reopened
+[t=33.756874s, 96744 KB] New best heuristic value for ff: 11
+[t=33.756874s, 96744 KB] g=122, 6552 evaluated, 6551 expanded, 479 reopened
+[t=34.888990s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 9
+[t=34.888990s, 96744 KB] New best heuristic value for ff: 9
+[t=34.888990s, 96744 KB] g=124, 7043 evaluated, 7042 expanded, 490 reopened
+[t=34.894972s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 8
+[t=34.894972s, 96744 KB] New best heuristic value for ff: 8
+[t=34.894972s, 96744 KB] g=125, 7046 evaluated, 7045 expanded, 490 reopened
+[t=34.903944s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 7
+[t=34.903944s, 96744 KB] g=126, 7050 evaluated, 7049 expanded, 490 reopened
+[t=34.905935s, 96744 KB] New best heuristic value for ff: 7
+[t=34.905935s, 96744 KB] g=127, 7051 evaluated, 7050 expanded, 490 reopened
+[t=34.912777s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 6
+[t=34.912777s, 96744 KB] g=128, 7054 evaluated, 7053 expanded, 490 reopened
+[t=34.914769s, 96744 KB] New best heuristic value for ff: 6
+[t=34.914769s, 96744 KB] g=129, 7055 evaluated, 7054 expanded, 490 reopened
+[t=34.920750s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 5
+[t=34.920750s, 96744 KB] g=130, 7058 evaluated, 7057 expanded, 490 reopened
+[t=34.922746s, 96744 KB] New best heuristic value for ff: 5
+[t=34.922746s, 96744 KB] g=131, 7059 evaluated, 7058 expanded, 490 reopened
+[t=34.928722s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 4
+[t=34.929603s, 96744 KB] g=132, 7062 evaluated, 7061 expanded, 490 reopened
+[t=34.931149s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 3
+[t=34.932145s, 96744 KB] New best heuristic value for ff: 4
+[t=34.932145s, 96744 KB] g=133, 7063 evaluated, 7062 expanded, 490 reopened
+[t=34.935136s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 2
+[t=34.935136s, 96744 KB] g=134, 7065 evaluated, 7064 expanded, 490 reopened
+[t=34.978979s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 1
+[t=34.978979s, 96744 KB] g=136, 7086 evaluated, 7085 expanded, 490 reopened
+[t=35.095671s, 96744 KB] New best heuristic value for ff: 3
+[t=35.095671s, 96744 KB] g=139, 7142 evaluated, 7141 expanded, 490 reopened
+[t=35.189426s, 96744 KB] New best heuristic value for ff: 2
+[t=35.189426s, 96744 KB] g=138, 7188 evaluated, 7187 expanded, 490 reopened
+[t=36.203938s, 96744 KB] New best heuristic value for ff: 1
+[t=36.203938s, 96744 KB] g=139, 7708 evaluated, 7707 expanded, 499 reopened
+[t=36.204937s, 96744 KB] Solution found!
+[t=36.205236s, 96744 KB] Actual search time: 21.234110s
+pick-up-rack jig0002 factory_trailer_1 rack00 fside bside n18 n14 n32 (1)
+unload-beluga jig0003 jig0004 beluga_trailer_1 beluga1 (1)
+put-down-rack jig0003 beluga_trailer_1 rack00 bside n04 n32 n28 (1)
+unload-beluga jig0004 jig0005 beluga_trailer_1 beluga1 (1)
+stack-rack jig0004 jig0003 beluga_trailer_1 rack00 bside fside n04 n28 n24 (1)
+unload-beluga jig0005 jig0006 beluga_trailer_1 beluga1 (1)
+stack-rack jig0005 jig0004 beluga_trailer_1 rack00 bside fside n04 n24 n20 (1)
+unload-beluga jig0006 dummy-jig beluga_trailer_1 beluga1 (1)
+stack-rack jig0006 jig0005 beluga_trailer_1 rack00 bside fside n04 n20 n16 (1)
+pick-up-rack jig0001 beluga_trailer_1 rack01 bside fside n18 n05 n23 (1)
+load-beluga jig0001 typed dummy-type beluga1 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga1 beluga2 (1)
+unload-beluga jig0007 jig0008 beluga_trailer_1 beluga2 (1)
+put-down-rack jig0007 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0008 jig0009 beluga_trailer_1 beluga2 (1)
+stack-rack jig0008 jig0006 beluga_trailer_1 rack00 bside fside n04 n16 n12 (1)
+stack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n19 n01 (1)
+unload-beluga jig0009 jig0010 beluga_trailer_1 beluga2 (1)
+unstack-rack jig0003 jig0004 factory_trailer_1 rack00 fside bside n04 n12 n16 (1)
+deliver-to-hangar jig0003 jig0006 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+unstack-rack jig0004 jig0005 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+deliver-to-hangar jig0004 jig0002 factory_trailer_1 hangar2 pl1 n04 n04 (1)
+unstack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n18 n01 n19 (1)
+deliver-to-hangar jig0002 jig0008 factory_trailer_1 hangar3 pl1 n18 n09 (1)
+unstack-rack jig0005 jig0006 factory_trailer_1 rack00 fside bside n04 n20 n24 (1)
+stack-rack jig0009 jig0007 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0010 dummy-jig beluga_trailer_1 beluga2 (1)
+beluga-complete beluga2 beluga3 (1)
+stack-rack jig0005 jig0007 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+get-from-hangar jig0002 hangar3 factory_trailer_1 (1)
+stack-rack jig0002 jig0005 factory_trailer_1 rack01 fside bside n09 n11 n02 (1)
+unstack-rack jig0006 jig0008 factory_trailer_1 rack00 fside bside n04 n24 n28 (1)
+deliver-to-hangar jig0006 jig0009 factory_trailer_1 hangar3 pl0 n04 n04 (1)
+get-from-hangar jig0003 hangar1 factory_trailer_1 (1)
+stack-rack jig0003 jig0008 factory_trailer_1 rack00 fside bside n04 n28 n24 (1)
+unstack-rack jig0002 jig0005 factory_trailer_1 rack01 fside bside n09 n02 n11 (1)
+stack-rack jig0010 jig0009 beluga_trailer_1 rack01 bside fside n04 n11 n07 (1)
+stack-rack jig0002 jig0003 factory_trailer_1 rack00 fside bside n09 n24 n15 (1)
+unstack-rack jig0008 jig0003 beluga_trailer_1 rack00 bside fside n04 n15 n19 (1)
+stack-rack jig0008 jig0010 beluga_trailer_1 rack01 bside fside n04 n07 n03 (1)
+unstack-rack jig0005 jig0007 factory_trailer_1 rack01 fside bside n04 n03 n07 (1)
+stack-rack jig0005 jig0002 factory_trailer_1 rack00 fside bside n04 n19 n15 (1)
+unstack-rack jig0003 jig0002 beluga_trailer_1 rack00 bside fside n04 n15 n19 (1)
+load-beluga jig0003 typea dummy-type beluga3 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga3 beluga4 (1)
+unstack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n19 n28 (1)
+unstack-rack jig0007 jig0009 factory_trailer_1 rack01 fside bside n04 n07 n11 (1)
+stack-rack jig0007 jig0005 factory_trailer_1 rack00 fside bside n04 n28 n24 (1)
+unstack-rack jig0009 jig0010 factory_trailer_1 rack01 fside bside n04 n11 n15 (1)
+deliver-to-hangar jig0009 jig0005 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+get-from-hangar jig0009 hangar1 factory_trailer_1 (1)
+stack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n24 n20 (1)
+unstack-rack jig0010 jig0008 factory_trailer_1 rack01 fside bside n04 n15 n19 (1)
+stack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n20 n16 (1)
+pick-up-rack jig0008 factory_trailer_1 rack01 fside bside n04 n19 n23 (1)
+deliver-to-hangar jig0008 jig0010 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+get-from-hangar jig0008 hangar1 factory_trailer_1 (1)
+put-down-rack jig0008 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0010 jig0009 factory_trailer_1 rack00 fside bside n04 n16 n20 (1)
+deliver-to-hangar jig0010 jig0007 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+stack-rack jig0002 jig0005 beluga_trailer_1 rack00 bside fside n09 n20 n11 (1)
+pick-up-rack jig0008 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0008 typea dummy-type beluga4 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga4 beluga5 (1)
+unstack-rack jig0009 jig0007 factory_trailer_1 rack00 fside bside n04 n11 n15 (1)
+put-down-rack jig0009 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+get-from-hangar jig0010 hangar1 factory_trailer_1 (1)
+pick-up-rack jig0009 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0009 typea dummy-type beluga5 beluga_trailer_1 slot0 dummy-slot (1)
+put-down-rack jig0010 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+unstack-rack jig0007 jig0005 factory_trailer_1 rack00 fside bside n04 n15 n19 (1)
+deliver-to-hangar jig0007 jig0011 factory_trailer_1 hangar1 pl1 n04 n04 (1)
+get-from-hangar jig0007 hangar1 factory_trailer_1 (1)
+unload-beluga jig0011 dummy-jig beluga_trailer_1 beluga5 (1)
+stack-rack jig0007 jig0010 factory_trailer_1 rack01 fside bside n04 n19 n15 (1)
+unstack-rack jig0005 jig0002 factory_trailer_1 rack00 fside bside n04 n19 n23 (1)
+beluga-complete beluga5 beluga6 (1)
+deliver-to-hangar jig0005 jig0012 factory_trailer_1 hangar1 pl0 n04 n04 (1)
+stack-rack jig0011 jig0002 beluga_trailer_1 rack00 bside fside n11 n23 n12 (1)
+unload-beluga jig0012 dummy-jig beluga_trailer_1 beluga6 (1)
+unstack-rack jig0002 jig0011 factory_trailer_1 rack00 fside bside n09 n12 n21 (1)
+stack-rack jig0002 jig0007 factory_trailer_1 rack01 fside bside n09 n15 n06 (1)
+stack-rack jig0012 jig0011 beluga_trailer_1 rack00 bside fside n04 n21 n17 (1)
+unstack-rack jig0010 jig0007 beluga_trailer_1 rack01 bside fside n04 n06 n10 (1)
+load-beluga jig0010 typea typea beluga6 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0004 hangar2 factory_trailer_1 (1)
+stack-rack jig0004 jig0002 factory_trailer_1 rack01 fside bside n04 n10 n06 (1)
+unstack-rack jig0011 jig0012 factory_trailer_1 rack00 fside bside n11 n17 n28 (1)
+deliver-to-hangar jig0011 dummy-jig factory_trailer_1 hangar2 pl1 n11 n08 (1)
+unstack-rack jig0007 jig0002 beluga_trailer_1 rack01 bside fside n04 n06 n10 (1)
+load-beluga jig0007 typea typea beluga6 beluga_trailer_1 slot1 slot2 (1)
+unstack-rack jig0002 jig0004 beluga_trailer_1 rack01 bside fside n09 n10 n19 (1)
+get-from-hangar jig0011 hangar2 factory_trailer_1 (1)
+stack-rack jig0011 jig0004 factory_trailer_1 rack01 fside bside n08 n19 n11 (1)
+pick-up-rack jig0012 factory_trailer_1 rack00 fside bside n04 n28 n32 (1)
+deliver-to-hangar jig0012 jig0013 factory_trailer_1 hangar2 pl0 n04 n04 (1)
+put-down-rack jig0002 beluga_trailer_1 rack00 bside n09 n32 n23 (1)
+unstack-rack jig0004 jig0011 beluga_trailer_1 rack01 bside fside n04 n11 n15 (1)
+load-beluga jig0004 typea dummy-type beluga6 beluga_trailer_1 slot2 dummy-slot (1)
+pick-up-rack jig0002 beluga_trailer_1 rack00 bside fside n09 n23 n32 (1)
+beluga-complete beluga6 beluga7 (1)
+load-beluga jig0002 typec dummy-type beluga7 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga7 beluga8 (1)
+get-from-hangar jig0005 hangar1 factory_trailer_1 (1)
+unload-beluga jig0013 jig0014 beluga_trailer_1 beluga8 (1)
+put-down-rack jig0013 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+stack-rack jig0005 jig0011 factory_trailer_1 rack01 fside bside n04 n15 n11 (1)
+pick-up-rack jig0013 factory_trailer_1 rack00 fside bside n11 n21 n32 (1)
+deliver-to-hangar jig0013 dummy-jig factory_trailer_1 hangar1 pl0 n11 n08 (1)
+unload-beluga jig0014 dummy-jig beluga_trailer_1 beluga8 (1)
+put-down-rack jig0014 beluga_trailer_1 rack00 bside n11 n32 n21 (1)
+unstack-rack jig0011 jig0005 beluga_trailer_1 rack01 bside fside n08 n11 n19 (1)
+stack-rack jig0011 jig0014 beluga_trailer_1 rack00 bside fside n08 n21 n13 (1)
+pick-up-rack jig0005 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0005 typea typea beluga8 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0006 hangar3 factory_trailer_1 (1)
+put-down-rack jig0006 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0006 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0006 typea dummy-type beluga8 beluga_trailer_1 slot1 dummy-slot (1)
+beluga-complete beluga8 beluga9 (1)
+get-from-hangar jig0012 hangar2 factory_trailer_1 (1)
+put-down-rack jig0012 factory_trailer_1 rack01 fside n04 n23 n19 (1)
+pick-up-rack jig0012 beluga_trailer_1 rack01 bside fside n04 n19 n23 (1)
+load-beluga jig0012 typea dummy-type beluga9 beluga_trailer_1 slot0 dummy-slot (1)
+beluga-complete beluga9 beluga10 (1)
+unstack-rack jig0011 jig0014 beluga_trailer_1 rack00 bside fside n08 n13 n21 (1)
+load-beluga jig0011 typeb typeb beluga10 beluga_trailer_1 slot0 slot1 (1)
+get-from-hangar jig0013 hangar1 factory_trailer_1 (1)
+put-down-rack jig0013 factory_trailer_1 rack01 fside n08 n23 n15 (1)
+pick-up-rack jig0013 beluga_trailer_1 rack01 bside fside n08 n15 n23 (1)
+load-beluga jig0013 typeb dummy-type beluga10 beluga_trailer_1 slot1 dummy-slot (1)
+unload-beluga jig0015 jig0016 beluga_trailer_1 beluga10 (1)
+put-down-rack jig0015 beluga_trailer_1 rack01 bside n04 n23 n19 (1)
+unload-beluga jig0016 jig0017 beluga_trailer_1 beluga10 (1)
+stack-rack jig0016 jig0014 beluga_trailer_1 rack00 bside fside n04 n21 n17 (1)
+unload-beluga jig0017 jig0018 beluga_trailer_1 beluga10 (1)
+stack-rack jig0017 jig0015 beluga_trailer_1 rack01 bside fside n04 n19 n15 (1)
+unload-beluga jig0018 jig0019 beluga_trailer_1 beluga10 (1)
+stack-rack jig0018 jig0016 beluga_trailer_1 rack00 bside fside n04 n17 n13 (1)
+unload-beluga jig0019 dummy-jig beluga_trailer_1 beluga10 (1)
+[t=36.207284s, 96744 KB] Plan length: 140 step(s).
+[t=36.207284s, 96744 KB] Plan cost: 140
+[t=36.207342s, 96744 KB] Expanded 7708 state(s).
+[t=36.207342s, 96744 KB] Reopened 499 state(s).
+[t=36.207342s, 96744 KB] Evaluated 7709 state(s).
+[t=36.207524s, 96744 KB] Evaluations: 14919
+[t=36.207524s, 96744 KB] Generated 38023 state(s).
+[t=36.207524s, 96744 KB] Dead ends: 0 state(s).
+[t=36.207524s, 96744 KB] Number of registered states: 7210
+[t=36.207755s, 96744 KB] Int hash set load factor: 7210/8192 = 0.880127
+[t=36.207826s, 96744 KB] Int hash set resizes: 13
+[t=36.207893s, 96744 KB] Best solution cost so far: 140
+[t=36.208280s, 96744 KB] Solution found - keep searching
+[t=36.208355s, 96744 KB] Building successor generator... done!
+[t=36.208513s, 96744 KB] peak memory difference for successor generator creation: 0 KB
+[t=36.208631s, 96744 KB] time for successor generation creation: 0.000000s
+[t=36.208902s, 96744 KB] Variables: 796
+[t=36.209251s, 96744 KB] FactPairs: 1806
+[t=36.209272s, 96744 KB] Bytes per state: 112
+[t=36.209339s, 96744 KB] Starting search: lazy_wastar
+[t=36.209428s, 96744 KB] Conducting lazy best first search, (real) bound = 140
+[t=36.213362s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 99
+[t=36.213362s, 96744 KB] New best heuristic value for ff: 96
+[t=36.213579s, 96744 KB] g=0, 1 evaluated, 0 expanded
+[t=36.213656s, 96744 KB] Initial heuristic value for landmark_sum_heuristic: 99
+[t=36.213774s, 96744 KB] Initial heuristic value for ff: 96
+[t=36.218002s, 96744 KB] New best heuristic value for ff: 81
+[t=36.218002s, 96744 KB] g=1, 2 evaluated, 1 expanded
+[t=36.220994s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 97
+[t=36.220994s, 96744 KB] New best heuristic value for ff: 80
+[t=36.222004s, 96744 KB] g=2, 3 evaluated, 2 expanded
+[t=36.244203s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 96
+[t=36.244203s, 96744 KB] g=3, 9 evaluated, 8 expanded
+[t=36.255165s, 96744 KB] New best heuristic value for ff: 79
+[t=36.255165s, 96744 KB] g=3, 12 evaluated, 11 expanded
+[t=36.268131s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 95
+[t=36.269130s, 96744 KB] New best heuristic value for ff: 78
+[t=36.269130s, 96744 KB] g=4, 16 evaluated, 15 expanded
+[t=36.279100s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 94
+[t=36.279100s, 96744 KB] g=4, 19 evaluated, 18 expanded
+[t=36.327962s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 92
+[t=36.327962s, 96744 KB] g=6, 34 evaluated, 33 expanded, 1 reopened
+[t=36.337932s, 96744 KB] New best heuristic value for ff: 74
+[t=36.337932s, 96744 KB] g=7, 37 evaluated, 36 expanded, 1 reopened
+[t=36.345912s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 91
+[t=36.345912s, 96744 KB] g=7, 39 evaluated, 38 expanded, 1 reopened
+[t=36.362862s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 89
+[t=36.363860s, 96744 KB] g=8, 44 evaluated, 43 expanded, 1 reopened
+[t=36.387775s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 87
+[t=36.387775s, 96744 KB] g=10, 53 evaluated, 52 expanded, 3 reopened
+[t=36.394749s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 86
+[t=36.394749s, 96744 KB] g=11, 56 evaluated, 55 expanded, 4 reopened
+[t=36.502435s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 84
+[t=36.502435s, 96744 KB] g=13, 88 evaluated, 87 expanded, 5 reopened
+[t=36.591185s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 83
+[t=36.591185s, 96744 KB] g=11, 115 evaluated, 114 expanded, 6 reopened
+[t=36.605144s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 82
+[t=36.605144s, 96744 KB] g=12, 119 evaluated, 118 expanded, 6 reopened
+[t=36.632071s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 80
+[t=36.632071s, 96744 KB] g=13, 127 evaluated, 126 expanded, 6 reopened
+[t=36.639045s, 96744 KB] New best heuristic value for ff: 72
+[t=36.639045s, 96744 KB] g=14, 129 evaluated, 128 expanded, 6 reopened
+[t=36.643032s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 77
+[t=36.643032s, 96744 KB] g=15, 130 evaluated, 129 expanded, 6 reopened
+[t=36.647022s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 76
+[t=36.647022s, 96744 KB] g=16, 131 evaluated, 130 expanded, 6 reopened
+[t=36.653994s, 96744 KB] New best heuristic value for ff: 66
+[t=36.653994s, 96744 KB] g=15, 133 evaluated, 132 expanded, 6 reopened
+[t=36.667952s, 96744 KB] New best heuristic value for ff: 65
+[t=36.667952s, 96744 KB] g=16, 137 evaluated, 136 expanded, 6 reopened
+[t=36.685906s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 75
+[t=36.685906s, 96744 KB] g=17, 142 evaluated, 141 expanded, 6 reopened
+[t=36.754710s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 73
+[t=36.754710s, 96744 KB] g=18, 162 evaluated, 161 expanded, 6 reopened
+[t=36.844443s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 72
+[t=36.844443s, 96744 KB] g=20, 188 evaluated, 187 expanded, 6 reopened
+[t=36.859393s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 71
+[t=36.859393s, 96744 KB] g=20, 192 evaluated, 191 expanded, 6 reopened
+[t=36.866371s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 70
+[t=36.866371s, 96744 KB] g=21, 194 evaluated, 193 expanded, 6 reopened
+[t=37.115666s, 96744 KB] New best heuristic value for ff: 62
+[t=37.115666s, 96744 KB] g=21, 266 evaluated, 265 expanded, 6 reopened
+[t=37.147590s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 69
+[t=37.147590s, 96744 KB] g=22, 275 evaluated, 274 expanded, 6 reopened
+[t=37.154566s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 68
+[t=37.154566s, 96744 KB] g=23, 277 evaluated, 276 expanded, 6 reopened
+[t=37.998314s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 67
+[t=37.998314s, 96744 KB] g=24, 522 evaluated, 521 expanded, 6 reopened
+[t=38.002301s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 66
+[t=38.002301s, 96744 KB] g=25, 523 evaluated, 522 expanded, 6 reopened
+[t=38.033225s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 65
+[t=38.033225s, 96744 KB] g=26, 532 evaluated, 531 expanded, 6 reopened
+[t=39.070597s, 96744 KB] New best heuristic value for ff: 61
+[t=39.070597s, 96744 KB] g=27, 836 evaluated, 835 expanded, 9 reopened
+[t=39.691085s, 96744 KB] New best heuristic value for ff: 60
+[t=39.691085s, 96744 KB] g=24, 1017 evaluated, 1016 expanded, 10 reopened
+[t=39.860663s, 96744 KB] New best heuristic value for ff: 59
+[t=39.860663s, 96744 KB] g=27, 1070 evaluated, 1069 expanded, 14 reopened
+[t=39.891587s, 96744 KB] New best heuristic value for ff: 58
+[t=39.891587s, 96744 KB] g=28, 1079 evaluated, 1078 expanded, 14 reopened
+[t=56.041836s, 96744 KB] New best heuristic value for ff: 57
+[t=56.041836s, 96744 KB] g=25, 5854 evaluated, 5853 expanded, 97 reopened
+[t=56.052800s, 96744 KB] New best heuristic value for ff: 56
+[t=56.052800s, 96744 KB] g=26, 5857 evaluated, 5856 expanded, 97 reopened
+[t=83.014993s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 64
+[t=83.015995s, 96744 KB] g=30, 13874 evaluated, 13873 expanded, 279 reopened
+[t=87.959336s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 63
+[t=87.959336s, 96744 KB] g=29, 15328 evaluated, 15327 expanded, 296 reopened
+[t=101.789028s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 62
+[t=101.789028s, 96744 KB] g=31, 19585 evaluated, 19584 expanded, 534 reopened
+[t=119.286702s, 96744 KB] New best heuristic value for ff: 55
+[t=119.286702s, 96744 KB] g=30, 24907 evaluated, 24906 expanded, 777 reopened
+[t=123.643500s, 96744 KB] New best heuristic value for landmark_sum_heuristic: 61
+[t=123.643500s, 96744 KB] g=32, 26291 evaluated, 26290 expanded, 897 reopened
+[t=364.915697s, 101544 KB] New best heuristic value for ff: 54
+[t=364.916695s, 101544 KB] g=32, 99754 evaluated, 99753 expanded, 4648 reopened
+[t=364.923664s, 101544 KB] New best heuristic value for landmark_sum_heuristic: 60
+[t=364.923664s, 101544 KB] g=32, 99756 evaluated, 99755 expanded, 4648 reopened
+[t=365.026287s, 101544 KB] New best heuristic value for landmark_sum_heuristic: 59
+[t=365.026287s, 101544 KB] g=34, 99792 evaluated, 99791 expanded, 4656 reopened
+Peak memory: 123552 KB
+caught signal 24 -- exiting
+Time limit has been reached.
+search exit code: 23
+
+Driver aborting after search
+INFO     Planner time: 599.98s

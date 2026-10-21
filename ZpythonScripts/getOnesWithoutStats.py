@@ -8,16 +8,17 @@ auxiliaryAtoms = []
 translateExitCode = []
 plannerTime = []
 
-output_directory = "../FD-3-all-pddl"
+input_directory = "../FD-3-results/t-output-1"
+output_directory = "../FD-3-results/FD-3-pddl-3"
 
     
-for file in os.scandir("../FD-2-results/all-t-output"):
+for file in os.scandir(input_directory):
     path = file.path #os.fsdecode(file)
     #print(path)
     f = open(path)
 
     #paths = path.split("/")
-    filename = (path.split("/")[-1]) #.split("_")[1]
+    filename = (path.split("/")[-1]).split(".")[0] #.split("_")[1]
     #filename = path
 
     relevantAtomsAppeared = False
