@@ -1,7 +1,7 @@
 #!/bin/bash
 
-sudo apt install cmake g++ make python3
-
+#sudo apt install cmake g++ make python3
+cd ../
 
 
 wget -nc https://www.fast-downward.org/latest/files/release26.6/fast-downward-26.6.tar.gz
