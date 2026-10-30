@@ -17,7 +17,7 @@ for file in * ; do
         IFS="." read -r number rest<<< "$fileNumber"
         #echo $file
         echo $number
-	../../fast-downward-26.6/./fast-downward.py --translate --sas-file "../translations-hpc/$number.sas" --translate-time-limit 7200 --translate-memory-limit 200000  "$file" > ../output-translate-hpc/$number.txt
+	../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/FD-5/sas/$number.sas" --translate-time-limit 7200 --translate-memory-limit 200000  "$file" > ../output-translate-hpc/$number.txt
     fi 
 done
 

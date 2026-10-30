@@ -1,0 +1,59 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 1200s
+INFO     translator memory limit: 65000 MB
+INFO     translator command line string: /usr/local/bin/python3 -m fast_downward.translate domain.pddl 117.pddl --sas-file ../translations/117.sas
+Parsing...
+Parsing: [0.010s CPU, 0.017s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.004s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.006s wall-clock]
+Preparing model... [0.000s CPU, 0.008s wall-clock]
+Generated 150 rules.
+Computing model... [345.120s CPU, 345.803s wall-clock]
+31331092 relevant atoms
+9855245 auxiliary atoms
+41186337 final queue length
+181829058 total queue pushes
+Completing instantiation... 
+Translator ran out of memory, traceback:
+===============================================================================
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
+    main()
+    ~~~~^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
+    reachable_action_params) = instantiate.explore(task)
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 119, in explore
+    return instantiate(task, model)
+  File "/cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 92, in instantiate
+    inst_action = action.instantiate(
+        variable_mapping, init_facts, init_assignments,
+        fluent_facts, type_to_objects,
+        task.use_min_cost_metric)
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 1103.35s
