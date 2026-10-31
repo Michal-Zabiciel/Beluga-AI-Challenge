@@ -22,7 +22,7 @@ for file in * ; do
         IFS="." read -r number rest<<< "$fileNumber"
         #echo $file
         echo $number
-        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/FD-5/sas/$number.sas" --translate-time-limit 7200 --translate-memory-limit 200000  "$file" > $toutput/$number.txt
+        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/mz93/FD-5/sas/$number.sas" --translate-time-limit 7200 --translate-memory-limit 200000  "$file" > $toutput/$number.txt
         cat /sys/fs/cgroup/memory.current
     fi 
 done

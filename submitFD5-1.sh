@@ -23,7 +23,7 @@ for file in * ; do
         #echo $file
         echo $number
 	pwd 
-        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/FD-5/sas/$number.sas" --translate-time-limit 1200 --translate-memory-limit 30000  "$file" > $toutput/$number.txt
+        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/mz93/FD-5/sas/$number.sas" --translate-time-limit 1200 --translate-memory-limit 30000  "$file" > $toutput/$number.txt
         cat /sys/fs/cgroup/memory.current
     fi 
 done
