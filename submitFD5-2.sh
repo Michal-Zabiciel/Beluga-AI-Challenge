@@ -9,7 +9,7 @@
 #SBATCH --mem-per-cpu=200G
 
 source="./FD-5/pddl2"
-toutput="../FD-5/2-t"
+toutput="../2-t"
 
 # Run a script
 
