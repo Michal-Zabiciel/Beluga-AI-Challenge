@@ -8,7 +8,7 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=400G
 
-source="./FD-5/pddl400-9"
+source="./FD-5/pddl-400-9"
 toutput="../400-9-t"
 
 # Run a script
