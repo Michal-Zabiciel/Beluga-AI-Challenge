@@ -9,12 +9,14 @@ translateExitCode = []
 plannerTime = []
 translatorTimeLimit = []
 translatorMemoryLimit = []
+translatorPeakMemory = []
 
-outputPath = "../ZcsvFiles/script3.csv"
-outputPath2 = "../ZcsvFiles/script3-vertical.csv"
+inputPath = "../FD-5/t-output"
+outputPath = "../ZcsvFiles/FD5-results.csv"
+outputPath2 = "../ZcsvFiles/FD5-results-vertical.csv"
 
     
-for file in os.scandir("../FD-3-results/results-from2and3combined"):
+for file in os.scandir(inputPath):
     path = file.path #os.fsdecode(file)
     #print(path)
     f = open(path)
@@ -29,6 +31,7 @@ for file in os.scandir("../FD-3-results/results-from2and3combined"):
     plannerTimeAppeared = False
     tTLAppeared = False
     tMLAppeared = False
+    tPMAppeared = False
     fileNames.append(filename)
     for x in f:
         #print(x) 
@@ -58,12 +61,17 @@ for file in os.scandir("../FD-3-results/results-from2and3combined"):
             content = x.split(" ")
             translatorMemoryLimit.append(content[-2].replace("\n", ""))
             tMLAppeared = True
+        if "Translator peak memory" in x:
+            content = x.split(" ")
+            translatorPeakMemory.append(content[3])
+            tPMAppeared = True
     if not relevantAtomsAppeared: relevantAtoms.append("")
     if not auxiliaryAtomsAppeared: auxiliaryAtoms.append("")
     if not translateExitCodeAppeared: translateExitCode.append("")
     if not plannerTimeAppeared: plannerTime.append("")
     if not tTLAppeared: translatorTimeLimit.append("")
     if not tMLAppeared: translatorMemoryLimit.append("")
+    if not tPMAppeared: translatorPeakMemory.append("")
             
 
     f.close() 
@@ -77,11 +85,12 @@ with open(outputPath, 'w', newline='') as csvfile:
     spamwriter.writerow(['Planner Time'] + plannerTime)
     spamwriter.writerow(['Translate time limit'] + translatorTimeLimit)
     spamwriter.writerow(['Translate memory limit'] + translatorMemoryLimit)
+    spamwriter.writerow(['Translate peak memory (KB)'] + translatorPeakMemory)
 
 with open(outputPath2, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
-    spamwriter.writerow(["Filenames", "Relevant atoms", "Auxiliary atoms", "Translate Exit Code", "Planner Time", "Translate time limit", "Translate memory limit"])
+    spamwriter.writerow(["Filenames", "Relevant atoms", "Auxiliary atoms", "Translate Exit Code", "Planner Time", "Translate time limit", "Translate memory limit", "Translate peak memory (KB)"])
     for x in range(len(fileNames)):
         print(fileNames[x])
-        spamwriter.writerow([fileNames[x], relevantAtoms[x], auxiliaryAtoms[x], translateExitCode[x], plannerTime[x], translatorTimeLimit[x], translatorMemoryLimit[x]])
+        spamwriter.writerow([fileNames[x], relevantAtoms[x], auxiliaryAtoms[x], translateExitCode[x], plannerTime[x], translatorTimeLimit[x], translatorMemoryLimit[x], translatorPeakMemory[x]])
          
