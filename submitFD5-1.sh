@@ -2,14 +2,14 @@
 #SBATCH --job-name=fastd
 #SBATCH --output=fastdownward_test.out
 #SBATCH --error=fastdownward_test.err
-#SBATCH --time=24:00:00
+#SBATCH --time=12:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=30G
+#SBATCH --mem-per-cpu=50G
 
-source="./FD-5/pddl1"
-toutput="../1-t"
+source="./FD-5/pddl50"
+toutput="../50-t"
 
 # Run a script
 
@@ -23,7 +23,7 @@ for file in * ; do
         #echo $file
         echo $number
 	pwd 
-        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/mz93/FD-5/sas/$number.sas" --translate-time-limit 1200 --translate-memory-limit 30000  "$file" > $toutput/$number.txt
+        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/mz93/FD-5/sas/$number.sas" --translate-time-limit 3600 --translate-memory-limit 50000  "$file" > $toutput/$number.txt
         cat /sys/fs/cgroup/memory.current
     fi 
 done
