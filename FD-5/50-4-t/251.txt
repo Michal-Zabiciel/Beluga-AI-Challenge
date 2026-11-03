@@ -1,0 +1,83 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 3600s
+INFO     translator memory limit: 50000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 251.pddl --sas-file /sharedscratch/mz93/FD-5/sas/251.sas
+Parsing...
+Parsing: [0.020s CPU, 0.028s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.007s wall-clock]
+Preparing model... [0.000s CPU, 0.006s wall-clock]
+Generated 150 rules.
+Computing model... [220.000s CPU, 221.186s wall-clock]
+14242142 relevant atoms
+4724613 auxiliary atoms
+18966755 final queue length
+82835605 total queue pushes
+Completing instantiation... [688.220s CPU, 693.665s wall-clock]
+Instantiating: [915.270s CPU, 921.970s wall-clock]
+Computing fact groups...
+Finding invariants...
+30 initial candidates
+Finding invariants: [28.860s CPU, 29.063s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.030s CPU, 0.032s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.006s wall-clock]
+Choosing groups...
+17373 uncovered facts
+Choosing groups: [0.000s CPU, 0.007s wall-clock]
+Building translation key... [0.050s CPU, 0.051s wall-clock]
+Computing fact groups: [29.140s CPU, 29.338s wall-clock]
+Building STRIPS to SAS dictionary... [0.020s CPU, 0.020s wall-clock]
+Building dictionary for full mutex groups... [0.020s CPU, 0.016s wall-clock]
+Building mutex information...
+Building mutex information: [0.010s CPU, 0.017s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [22.040s CPU, 22.168s wall-clock]
+Translating task: [554.570s CPU, 559.298s wall-clock]
+14221032 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+
+Translator ran out of memory, traceback:
+===============================================================================
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
+    main()
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 597, in pddl_to_sas
+    simplify.filter_unreachable_propositions(sas_task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 518, in filter_unreachable_propositions
+    renaming.apply_to_task(sas_task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 234, in apply_to_task
+    self.apply_to_operators(task.operators)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 303, in apply_to_operators
+    new_op = self.translate_operator(op)
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 1772.30s
