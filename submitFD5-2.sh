@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=fastd2
-#SBATCH --output=fastdownward_test.out
-#SBATCH --error=fastdownward_test.err
+#SBATCH --output=fastdownward_2.out
+#SBATCH --error=fastdownward_2.err
 #SBATCH --time=12:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1

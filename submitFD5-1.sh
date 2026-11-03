@@ -8,8 +8,8 @@
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=50G
 
-source="./FD-5/pddl50"
-toutput="../50-t"
+source='./FD-5/pddl50'
+toutput='../50-t'
 
 # Run a script
 
@@ -17,15 +17,11 @@ free -h
 
 cd $source
 for file in * ; do 
-    if [ "$file" != domain.pddl ] ; then 
-        fileNumber="$file"
-        IFS="." read -r number rest<<< "$fileNumber"
-        #echo $file
+    if [ $file != domain.pddl ] ; then 
+        fileNumber=$file
+        IFS=. read -r number rest<<< $fileNumber
         echo $number
-	pwd 
-        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file "/sharedscratch/mz93/FD-5/sas/$number.sas" --translate-time-limit 3600 --translate-memory-limit 50000  "$file" > $toutput/$number.txt
-        cat /sys/fs/cgroup/memory.current
+        ../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$number.sas --translate-time-limit 3600 --translate-memory-limit 50000  $file > $toutput/$number.txt
     fi 
 done
-free -h
 
