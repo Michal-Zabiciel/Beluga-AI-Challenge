@@ -54,7 +54,7 @@ for x in range(1,5):
     script.write("\tfileNumber=$file\n")
     script.write("\tIFS=. read -r number rest<<< $fileNumber\n")
     script.write("\techo $number\n")
-    script.write("\t../../powerlifted/./powerlifted.py --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit " + timeLimit +  " --translate-memory-limit > $toutput/$number.txt\n")
+    script.write("\t../../powerlifted/./powerlifted.py -i $file --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit " + timeLimit +  " > $toutput/$number.txt\n")
     script.write("\tfi\n")
     script.write("done\n")
 
