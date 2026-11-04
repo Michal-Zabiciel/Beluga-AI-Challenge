@@ -31,6 +31,8 @@ for x in range(1,5):
 time = "12:00:00"
 partition = "small-short"
 mem = "200G"
+timeLimit = "7200"
+memoryLimit = "200000"
 
 for x in range(1,5):
     script = open("../submitFD-" + str(x) + ".sh", "w")
@@ -52,7 +54,7 @@ for x in range(1,5):
     script.write("\tfileNumber=$file\n")
     script.write("\tIFS=. read -r number rest<<< $fileNumber\n")
     script.write("\techo $number\n")
-    script.write("\t../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$number.sas --translate-time-limit 3600 --translate-memory-limit 50000  $file > $toutput/$number.txt\n")
+    script.write("\t../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$number.sas --translate-time-limit " + timeLimit +  " --translate-memory-limit " + memoryLimit + " $file > $toutput/$number.txt\n")
     script.write("\tfi\n")
     script.write("done\n")
 
