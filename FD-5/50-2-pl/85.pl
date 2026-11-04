@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.030s CPU, 0.049s wall-clock]
+Parsing: [0.030s CPU, 0.050s wall-clock]
 Processing task beluga-problem_85_s127_j594_r20_oc23_f139
 Normalizing task... [0.000s CPU, 0.001s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -8,17 +8,17 @@ Compiling types into unary predicates... [0.000s CPU, 0.002s wall-clock]
 Checking static predicates... [0.000s CPU, 0.000s wall-clock]
 Initial state size: 1527
 Getting dictionary of types... [0.000s CPU, 0.000s wall-clock]
-Removing function symbols from initial state... [0.000s CPU, 0.001s wall-clock]
+Removing function symbols from initial state... [0.010s CPU, 0.002s wall-clock]
 Removing unused predicate symbols... [0.000s CPU, 0.001s wall-clock]
 Removing unused predicate symbols... [0.000s CPU, 0.000s wall-clock]
 Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
 Printing objects (i.e., constants)... [0.000s CPU, 0.002s wall-clock]
-Printing initial state... [0.090s CPU, 0.085s wall-clock]
-Printing goal... [0.010s CPU, 0.003s wall-clock]
+Printing initial state... [0.070s CPU, 0.073s wall-clock]
+Printing goal... [0.000s CPU, 0.002s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.130s
+Total translation time: 0.120s
 Initializing planner
 Reading task description file.
 beluga beluga-problem_85_s127_j594_r20_oc23_f139
@@ -47,3 +47,5 @@ Total number of rules: 192
 Initial h-add value of the task: 4527
 Total number of goal atoms: 828
 Total number of relevant atoms: 5072
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-2-pl/85.plan"
+Iteration finished with error code -9.

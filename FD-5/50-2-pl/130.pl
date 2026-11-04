@@ -59,3 +59,10 @@ f = 1840 [1210 evaluated, 34 expanded, 1210 generated, t=353.954s, 23138668 KB]
 New heuristic value expanded: h=1767 [expansions: 45, evaluations: 1624, generations: 1623, time: 469.036]
 New heuristic value expanded: h=1765 [expansions: 79, evaluations: 2843, generations: 2842, time: 795.442]
 f = 1841 [3152 evaluated, 88 expanded, 3152 generated, t=867.573s, 23148844 KB]
+New heuristic value expanded: h=1712 [expansions: 94, evaluations: 3388, generations: 3387, time: 926.339]
+New heuristic value expanded: h=1711 [expansions: 120, evaluations: 4259, generations: 4258, time: 1197.9]
+New heuristic value expanded: h=1710 [expansions: 153, evaluations: 5389, generations: 5388, time: 1518.2]
+f = 1847 [5565 evaluated, 158 expanded, 5565 generated, t=1561.52s, 23161904 KB]
+f = 1848 [5818 evaluated, 164 expanded, 5818 generated, t=1613.2s, 23162796 KB]
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-2-pl/130.plan"
+Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-2-pl/130.plan']' timed out after 1800 seconds

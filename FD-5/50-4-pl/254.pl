@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.020s CPU, 0.045s wall-clock]
+Parsing: [0.030s CPU, 0.064s wall-clock]
 Processing task beluga-problem_254_s297_j346_r20_oc22_f199
 Normalizing task... [0.000s CPU, 0.001s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -14,11 +14,11 @@ Removing unused predicate symbols... [0.000s CPU, 0.000s wall-clock]
 Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
-Printing objects (i.e., constants)... [0.010s CPU, 0.001s wall-clock]
-Printing initial state... [0.040s CPU, 0.048s wall-clock]
-Printing goal... [0.000s CPU, 0.002s wall-clock]
+Printing objects (i.e., constants)... [0.000s CPU, 0.002s wall-clock]
+Printing initial state... [0.060s CPU, 0.057s wall-clock]
+Printing goal... [0.000s CPU, 0.003s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.080s
+Total translation time: 0.090s
 Initializing planner
 Reading task description file.
 beluga beluga-problem_254_s297_j346_r20_oc22_f199
@@ -48,18 +48,15 @@ Initial h-add value of the task: 2694
 Total number of goal atoms: 717
 Total number of relevant atoms: 3074
 Initial heuristic value 0
-f = 2498 [0 evaluated, 0 expanded, 0 generated, t=67.0817s, 54543052 KB]
-f = 2509 [19 evaluated, 2 expanded, 19 generated, t=100.475s, 54557736 KB]
-New heuristic value expanded: h=2490 [expansions: 3, evaluations: 37, generations: 36, time: 117.462]
-New heuristic value expanded: h=2484 [expansions: 6, evaluations: 87, generations: 86, time: 175.745]
-New heuristic value expanded: h=2476 [expansions: 13, evaluations: 209, generations: 208, time: 302.895]
-New heuristic value expanded: h=2469 [expansions: 17, evaluations: 269, generations: 268, time: 383.332]
-New heuristic value expanded: h=2468 [expansions: 27, evaluations: 392, generations: 391, time: 541.035]
-New heuristic value expanded: h=2466 [expansions: 36, evaluations: 498, generations: 497, time: 696.575]
-New heuristic value expanded: h=2449 [expansions: 47, evaluations: 629, generations: 628, time: 891.45]
-f = 2511 [652 evaluated, 48 expanded, 652 generated, 4 reopened, t=909.343s, 54609408 KB]
-f = 2517 [822 evaluated, 59 expanded, 822 generated, 4 reopened, t=1094.53s, 54615400 KB]
-New heuristic value expanded: h=2442 [expansions: 60, evaluations: 833, generations: 832, time: 1112.19]
-f = 2524 [933 evaluated, 67 expanded, 933 generated, 4 reopened, t=1231.89s, 54615400 KB]
+f = 2498 [0 evaluated, 0 expanded, 0 generated, t=79.0122s, 54543052 KB]
+f = 2509 [19 evaluated, 2 expanded, 19 generated, t=142.154s, 54557736 KB]
+New heuristic value expanded: h=2490 [expansions: 3, evaluations: 37, generations: 36, time: 169.422]
+New heuristic value expanded: h=2484 [expansions: 6, evaluations: 87, generations: 86, time: 241.177]
+New heuristic value expanded: h=2476 [expansions: 13, evaluations: 209, generations: 208, time: 433.48]
+New heuristic value expanded: h=2469 [expansions: 17, evaluations: 269, generations: 268, time: 534.869]
+New heuristic value expanded: h=2468 [expansions: 27, evaluations: 392, generations: 391, time: 794.722]
+New heuristic value expanded: h=2466 [expansions: 36, evaluations: 498, generations: 497, time: 1006.11]
+New heuristic value expanded: h=2449 [expansions: 47, evaluations: 629, generations: 628, time: 1241.31]
+f = 2511 [652 evaluated, 48 expanded, 652 generated, 4 reopened, t=1262.92s, 54609408 KB]
 Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-4-pl/254.plan"
-Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-4-pl/254.plan']' timed out after 1800 seconds
+Iteration finished with error code -9.

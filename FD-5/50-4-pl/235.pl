@@ -53,3 +53,12 @@ New heuristic value expanded: h=891 [expansions: 2, evaluations: 18, generations
 New heuristic value expanded: h=806 [expansions: 3, evaluations: 35, generations: 34, time: 8.41174]
 New heuristic value expanded: h=803 [expansions: 4, evaluations: 59, generations: 58, time: 9.33856]
 f = 903 [113 evaluated, 7 expanded, 113 generated, t=11.8692s, 5724252 KB]
+New heuristic value expanded: h=794 [expansions: 8, evaluations: 139, generations: 138, time: 12.6857]
+New heuristic value expanded: h=741 [expansions: 21, evaluations: 352, generations: 351, time: 23.65]
+New heuristic value expanded: h=733 [expansions: 22, evaluations: 371, generations: 370, time: 24.3067]
+New heuristic value expanded: h=729 [expansions: 33, evaluations: 569, generations: 568, time: 33.2756]
+New heuristic value expanded: h=726 [expansions: 369, evaluations: 7986, generations: 7985, time: 339.681]
+New heuristic value expanded: h=725 [expansions: 621, evaluations: 12945, generations: 12944, time: 613.06]
+f = 906 [15201 evaluated, 733 expanded, 15201 generated, 231 reopened, t=717.96s, 5734332 KB]
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-4-pl/235.plan"
+Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-4-pl/235.plan']' timed out after 1800 seconds

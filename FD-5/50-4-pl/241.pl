@@ -1,10 +1,10 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.020s CPU, 0.043s wall-clock]
+Parsing: [0.030s CPU, 0.047s wall-clock]
 Processing task beluga-problem_241_s284_j475_r19_oc80_f98
-Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Normalizing task... [0.000s CPU, 0.002s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
-Compiling types into unary predicates... [0.000s CPU, 0.002s wall-clock]
+Compiling types into unary predicates... [0.010s CPU, 0.002s wall-clock]
 Checking static predicates... [0.000s CPU, 0.000s wall-clock]
 Initial state size: 1282
 Getting dictionary of types... [0.000s CPU, 0.000s wall-clock]
@@ -15,10 +15,10 @@ Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
 Printing objects (i.e., constants)... [0.000s CPU, 0.001s wall-clock]
-Printing initial state... [0.050s CPU, 0.048s wall-clock]
-Printing goal... [0.000s CPU, 0.001s wall-clock]
+Printing initial state... [0.060s CPU, 0.051s wall-clock]
+Printing goal... [0.000s CPU, 0.002s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.080s
+Total translation time: 0.100s
 Initializing planner
 Reading task description file.
 beluga beluga-problem_241_s284_j475_r19_oc80_f98
@@ -48,6 +48,6 @@ Initial h-add value of the task: 3617
 Total number of goal atoms: 597
 Total number of relevant atoms: 3619
 Initial heuristic value 0
-f = 3451 [0 evaluated, 0 expanded, 0 generated, t=62.4043s, 57109748 KB]
+f = 3451 [0 evaluated, 0 expanded, 0 generated, t=122.114s, 57109748 KB]
 Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-4-pl/241.plan"
 Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-4-pl/241.plan']' timed out after 1800 seconds

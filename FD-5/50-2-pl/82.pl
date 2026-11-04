@@ -1,8 +1,8 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.010s CPU, 0.020s wall-clock]
+Parsing: [0.020s CPU, 0.030s wall-clock]
 Processing task beluga-problem_82_s124_j103_r6_oc82_f32
-Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
 Compiling types into unary predicates... [0.000s CPU, 0.001s wall-clock]
 Checking static predicates... [0.000s CPU, 0.000s wall-clock]
@@ -15,10 +15,10 @@ Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
 Printing objects (i.e., constants)... [0.000s CPU, 0.000s wall-clock]
-Printing initial state... [0.010s CPU, 0.011s wall-clock]
+Printing initial state... [0.010s CPU, 0.013s wall-clock]
 Printing goal... [0.000s CPU, 0.000s wall-clock]
-Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.020s
+Printing action schemas... [0.010s CPU, 0.001s wall-clock]
+Total translation time: 0.040s
 Initializing planner
 Reading task description file.
 beluga beluga-problem_82_s124_j103_r6_oc82_f32
@@ -48,19 +48,21 @@ Initial h-add value of the task: 720
 Total number of goal atoms: 142
 Total number of relevant atoms: 721
 Initial heuristic value 0
-f = 695 [0 evaluated, 0 expanded, 0 generated, t=3.00091s, 2600536 KB]
-f = 702 [0 evaluated, 1 expanded, 0 generated, t=3.8068s, 2616716 KB]
-New heuristic value expanded: h=635 [expansions: 2, evaluations: 40, generations: 39, time: 4.57008]
-New heuristic value expanded: h=615 [expansions: 3, evaluations: 68, generations: 67, time: 5.38741]
-New heuristic value expanded: h=612 [expansions: 23, evaluations: 650, generations: 649, time: 21.1764]
-New heuristic value expanded: h=599 [expansions: 27, evaluations: 765, generations: 764, time: 24.341]
-f = 704 [1087 evaluated, 38 expanded, 1087 generated, 4 reopened, t=31.6297s, 2643024 KB]
-New heuristic value expanded: h=593 [expansions: 62, evaluations: 1801, generations: 1800, time: 48.6066]
-New heuristic value expanded: h=591 [expansions: 84, evaluations: 2358, generations: 2357, time: 63.9358]
-New heuristic value expanded: h=588 [expansions: 102, evaluations: 2813, generations: 2812, time: 76.6893]
-New heuristic value expanded: h=581 [expansions: 124, evaluations: 3363, generations: 3362, time: 92.627]
-f = 705 [11219 evaluated, 419 expanded, 11219 generated, 10 reopened, t=311.984s, 2655400 KB]
-f = 708 [13408 evaluated, 499 expanded, 13408 generated, 10 reopened, t=371.786s, 2655400 KB]
-f = 710 [41071 evaluated, 1588 expanded, 41071 generated, 32 reopened, t=1164.71s, 2688320 KB]
+f = 695 [0 evaluated, 0 expanded, 0 generated, t=3.34063s, 2600536 KB]
+f = 702 [0 evaluated, 1 expanded, 0 generated, t=4.07909s, 2616716 KB]
+New heuristic value expanded: h=635 [expansions: 2, evaluations: 40, generations: 39, time: 4.77161]
+New heuristic value expanded: h=615 [expansions: 3, evaluations: 68, generations: 67, time: 5.58401]
+New heuristic value expanded: h=612 [expansions: 23, evaluations: 650, generations: 649, time: 14.7592]
+New heuristic value expanded: h=599 [expansions: 27, evaluations: 765, generations: 764, time: 16.3566]
+f = 704 [1087 evaluated, 38 expanded, 1087 generated, 4 reopened, t=20.9367s, 2643024 KB]
+New heuristic value expanded: h=593 [expansions: 62, evaluations: 1801, generations: 1800, time: 36.5647]
+New heuristic value expanded: h=591 [expansions: 84, evaluations: 2358, generations: 2357, time: 51.485]
+New heuristic value expanded: h=588 [expansions: 102, evaluations: 2813, generations: 2812, time: 62.1981]
+New heuristic value expanded: h=581 [expansions: 124, evaluations: 3363, generations: 3362, time: 73.8554]
+f = 705 [11219 evaluated, 419 expanded, 11219 generated, 10 reopened, t=231.253s, 2655400 KB]
+f = 708 [13408 evaluated, 499 expanded, 13408 generated, 10 reopened, t=282.173s, 2655400 KB]
+f = 710 [41071 evaluated, 1588 expanded, 41071 generated, 32 reopened, t=898.659s, 2688320 KB]
+f = 711 [65517 evaluated, 2578 expanded, 65517 generated, 110 reopened, t=1461.79s, 2711912 KB]
+f = 718 [69063 evaluated, 2721 expanded, 69063 generated, 110 reopened, t=1560.43s, 2711912 KB]
 Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-2-pl/82.plan"
 Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-2-pl/82.plan']' timed out after 1800 seconds

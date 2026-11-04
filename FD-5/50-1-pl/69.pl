@@ -53,3 +53,5 @@ New heuristic value expanded: h=1684 [expansions: 2, evaluations: 42, generation
 New heuristic value expanded: h=1591 [expansions: 3, evaluations: 63, generations: 62, time: 85.3251]
 New heuristic value expanded: h=1589 [expansions: 27, evaluations: 473, generations: 472, time: 407.154]
 f = 1876 [994 evaluated, 61 expanded, 994 generated, t=860.709s, 25899576 KB]
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file ../50-1-pl/69.plan"
+Iteration ran out of time: Command '['/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search', '-f', 'output.lifted', '-s', 'alt-bfws1', '-e', 'ff', '-g', 'yannakakis', '--seed', '1', '--plan-file', '../50-1-pl/69.plan']' timed out after 1800 seconds
