@@ -15,6 +15,6 @@ for file in * ; do
 	fileNumber=$file
 	IFS=. read -r number rest<<< $fileNumber
 	echo $number
-	../../powerlifted/./powerlifted.py --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit 7200 --translate-memory-limit > $toutput/$number.txt
+	../../powerlifted/./powerlifted.py -i $file --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit 7200 > $toutput/$number.txt
 	fi
 done
