@@ -3,78 +3,72 @@ INFO     planner memory limit: None
 
 INFO     Running translator.
 INFO     translator stdin: None
-INFO     translator time limit: 1200s
-INFO     translator memory limit: 30000 MB
+INFO     translator time limit: 7200s
+INFO     translator memory limit: 200000 MB
 INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 61.pddl --sas-file /sharedscratch/mz93/FD-5/sas/61.sas
 Parsing...
-Parsing: [0.020s CPU, 0.034s wall-clock]
-Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Parsing: [0.030s CPU, 0.041s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
 Instantiating...
-Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Generating Datalog program... [0.000s CPU, 0.004s wall-clock]
 Normalizing Datalog program...
-Normalizing Datalog program: [0.000s CPU, 0.005s wall-clock]
-Preparing model... [0.010s CPU, 0.010s wall-clock]
+Normalizing Datalog program: [0.000s CPU, 0.008s wall-clock]
+Preparing model... [0.020s CPU, 0.013s wall-clock]
 Generated 150 rules.
-Computing model... [239.430s CPU, 240.820s wall-clock]
+Computing model... [217.460s CPU, 218.480s wall-clock]
 18483229 relevant atoms
 6092197 auxiliary atoms
 24575426 final queue length
 107494722 total queue pushes
-Completing instantiation... 
-Translator ran out of memory, traceback:
-===============================================================================
-MemoryError
+Completing instantiation... [874.560s CPU, 878.828s wall-clock]
+Instantiating: [1100.760s CPU, 1106.098s wall-clock]
+Computing fact groups...
+Finding invariants...
+30 initial candidates
+Finding invariants: [29.100s CPU, 29.257s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.002s wall-clock]
+Instantiating groups... [0.040s CPU, 0.047s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.011s wall-clock]
+Choosing groups...
+16319 uncovered facts
+Choosing groups: [0.010s CPU, 0.010s wall-clock]
+Building translation key... [0.060s CPU, 0.057s wall-clock]
+Computing fact groups: [29.410s CPU, 29.564s wall-clock]
+Building STRIPS to SAS dictionary... [0.030s CPU, 0.027s wall-clock]
+Building dictionary for full mutex groups... [0.020s CPU, 0.019s wall-clock]
+Building mutex information...
+Building mutex information: [0.030s CPU, 0.037s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [33.370s CPU, 33.522s wall-clock]
+Translating task: [549.920s CPU, 552.621s wall-clock]
+18461507 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+53637 operators removed
+0 axioms removed
+702 propositions removed
+Detecting unreachable propositions: [381.580s CPU, 383.469s wall-clock]
+Reordering and filtering variables...
+16265 of 16265 variables necessary.
+0 of 198 mutex groups necessary.
+9151830 of 9151830 operators necessary.
+0 of 0 axiom rules necessary.
+Reordering and filtering variables: [149.280s CPU, 150.092s wall-clock]
+Translator variables: 16265
+Translator derived variables: 0
+Translator facts: 35221
+Translator goal facts: 175
+Translator mutex groups: 0
+Translator total mutex groups size: 0
+Translator operators: 9151830
+Translator axioms: 0
+Translator task size: 124890352
+Translator peak memory: 72110928 KB
+Writing output... [83.670s CPU, 84.203s wall-clock]
+Done! [2333.110s CPU, 2344.756s wall-clock]
+translate exit code: 0
 
-During handling of the above exception, another exception occurred:
-
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 119, in explore
-    return instantiate(task, model)
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 92, in instantiate
-    inst_action = action.instantiate(
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/actions.py", line 106, in instantiate
-    return PropositionalAction(name, precondition, effects, cost)
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
-    reachable_action_params) = instantiate.explore(task)
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-Traceback (most recent call last):
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
-    sas_task = pddl_to_sas(task)
-MemoryError
-
-During handling of the above exception, another exception occurred:
-
-MemoryError
-===============================================================================
-translate exit code: 20
-
-Driver aborting after translate
-INFO     Planner time: 715.21s
+INFO     Planner time: 2347.52s

@@ -12,8 +12,7 @@ translatorMemoryLimit = []
 translatorPeakMemory = []
 
 inputPath = "../FD-5/t-output-2"
-outputPath = "../ZcsvFiles/FD5-results-2.csv"
-outputPath2 = "../ZcsvFiles/FD5-results-2-vertical.csv"
+outputPath2 = "../ZcsvFiles/FD5-results-3-vertical.csv"
 
     
 for file in os.scandir(inputPath):
@@ -75,17 +74,6 @@ for file in os.scandir(inputPath):
             
 
     f.close() 
-
-with open(outputPath, 'w', newline='') as csvfile:
-    spamwriter = csv.writer(csvfile, delimiter=',')
-    spamwriter.writerow(['Filenames'] + fileNames)
-    spamwriter.writerow(['Relevant atoms'] + relevantAtoms)
-    spamwriter.writerow(['Auxiliary atoms'] + auxiliaryAtoms)
-    spamwriter.writerow(['Translate Exit Code'] + translateExitCode)
-    spamwriter.writerow(['Planner Time'] + plannerTime)
-    spamwriter.writerow(['Translate time limit'] + translatorTimeLimit)
-    spamwriter.writerow(['Translate memory limit'] + translatorMemoryLimit)
-    spamwriter.writerow(['Translate peak memory (KB)'] + translatorPeakMemory)
 
 with open(outputPath2, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')

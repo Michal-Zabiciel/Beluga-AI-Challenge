@@ -2,7 +2,7 @@
 #SBATCH --job-name=pl-3
 #SBATCH --output=pl-3.out
 #SBATCH --error=pl-3.err
-#SBATCH --time=15:00:00
+#SBATCH --time=48:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1

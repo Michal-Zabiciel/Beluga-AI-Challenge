@@ -10,7 +10,7 @@ runOutOfTimes = []
 exitCodes = []
 
 inputPath = "../FD-5/pl-results"
-outputPath = "../ZcsvFiles/pl-results-1-v.csv"
+outputPath = "../ZcsvFiles/pl-results-2-v.csv"
 
     
 for file in os.scandir(inputPath):
@@ -47,12 +47,17 @@ for file in os.scandir(inputPath):
             memory = int(x.split(" ")[-2])
             if memory > peakMemory:
                 peakMemory = memory
+        if "Peak memory usage" in x:
+            peakMemory = int(x.split(" ")[-2])
         if "Iteration ran out of time" in x:
             runOutOfTime = True
             runOutOfTimes.append("True")
         if "Iteration finished with error code" in x:
             exitCodeB = True
             exitCodes.append(x.split(" ")[-1].replace("\n", "").replace(".", ""))
+        if "Iteration finished correctly." in x:
+            exitCodeB = True
+            exitCodes.append("0")
 
     if not atomsIS: atomsIScounts.append("")
     if not hAddB: hAdds.append("")

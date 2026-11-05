@@ -28,11 +28,10 @@ for x in range(1,5):
 
 #scripts
 
-time = "15:00:00"
+time = "48:00:00"
 partition = "small-short"
-mem = "200G"
+mem = "100G"
 timeLimit = "7200"
-memoryLimit = "200000"
 
 for x in range(1,5):
     script = open("../submitPL-" + str(x) + ".sh", "w")
@@ -79,7 +78,6 @@ for file in os.scandir(input_directory):
     runOutOfTime = False
     
     time = 0.0
-    memoryLimit = 0
 
     for x in f:
         if "Total number of atoms in the initial state" in x:

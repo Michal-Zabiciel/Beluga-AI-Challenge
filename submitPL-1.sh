@@ -2,11 +2,11 @@
 #SBATCH --job-name=pl-1
 #SBATCH --output=pl-1.out
 #SBATCH --error=pl-1.err
-#SBATCH --time=15:00:00
+#SBATCH --time=48:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=200G
+#SBATCH --mem-per-cpu=100G
 source='./FD-5/pl-pddl1'
 toutput='../pl-t1'
 cd $source

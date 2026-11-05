@@ -3,39 +3,76 @@ INFO     planner memory limit: None
 
 INFO     Running translator.
 INFO     translator stdin: None
-INFO     translator time limit: 3600s
-INFO     translator memory limit: 50000 MB
+INFO     translator time limit: 7200s
+INFO     translator memory limit: 200000 MB
 INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 158.pddl --sas-file /sharedscratch/mz93/FD-5/sas/158.sas
 Parsing...
-Parsing: [0.030s CPU, 0.038s wall-clock]
+Parsing: [0.020s CPU, 0.071s wall-clock]
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Instantiating...
 Generating Datalog program... [0.010s CPU, 0.004s wall-clock]
 Normalizing Datalog program...
-Normalizing Datalog program: [0.000s CPU, 0.005s wall-clock]
-Preparing model... [0.010s CPU, 0.011s wall-clock]
+Normalizing Datalog program: [0.000s CPU, 0.007s wall-clock]
+Preparing model... [0.010s CPU, 0.010s wall-clock]
 Generated 150 rules.
-Computing model... 
+Computing model... [1349.380s CPU, 1356.223s wall-clock]
+120041426 relevant atoms
+38373331 auxiliary atoms
+158414757 final queue length
+697752459 total queue pushes
+Completing instantiation... 
 Translator ran out of memory, traceback:
 ===============================================================================
 Traceback (most recent call last):
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
-    main()
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
-    sas_task = pddl_to_sas(task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 92, in instantiate
+    inst_action = action.instantiate(
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/actions.py", line 95, in instantiate
+    eff.instantiate(var_mapping, init_facts, fluent_facts,
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/effects.py", line 63, in instantiate
+    self._instantiate(var_mapping, init_facts, fluent_facts, result)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/effects.py", line 74, in _instantiate
+    result.append((condition, effects[0]))
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
   File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
     reachable_action_params) = instantiate.explore(task)
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 117, in explore
-    model = build_model.compute_model(prog)
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 321, in compute_model
-    rule.fire(next_atom, cond_index, queue.push)
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 161, in fire
-    enqueue_func(self.effect.predicate, eff_args)
-  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/build_model.py", line 290, in push
-    eff_tuple = (predicate,) + tuple(args)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
 MemoryError
 ===============================================================================
 translate exit code: 20
 
 Driver aborting after translate
-INFO     Planner time: 1313.84s
+INFO     Planner time: 4395.22s

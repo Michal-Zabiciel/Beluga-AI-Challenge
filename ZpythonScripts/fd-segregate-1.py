@@ -14,7 +14,7 @@ translateExitCode = []
 plannerTime = []
 
 input_directory = "../FD-5/t-output-2"
-output_directory = "../FD-5/t-pddl"
+output_directory = "../FD-5/fd-pddl"
 results_directory = "../FD-5/fd-t"
 
 for x in range(1,5):
@@ -28,7 +28,7 @@ for x in range(1,5):
 
 #scripts
 
-time = "12:00:00"
+time = "24:00:00"
 partition = "small-short"
 mem = "200G"
 timeLimit = "7200"

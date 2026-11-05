@@ -2,12 +2,12 @@
 #SBATCH --job-name=fastd-1
 #SBATCH --output=fastdownward-1.out
 #SBATCH --error=fastdownward-1.err
-#SBATCH --time=12:00:00
+#SBATCH --time=24:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
 #SBATCH --mem-per-cpu=200G
-source='./FD-5/t-pddl1'
+source='./FD-5/fd-pddl1'
 toutput='../fd-t1'
 cd $source
 for file in * ; do
