@@ -31,15 +31,15 @@ for x in range(1,5):
 time = "48:00:00"
 partition = "small-short"
 mem = "100G"
-timeLimit = "7200"
+timeLimit = "172800"
 
 for x in range(1,5):
     script = open("../submitPL-" + str(x) + ".sh", "w")
 
     script.write("#!/bin/bash\n")
     script.write("#SBATCH --job-name=pl-" + str(x) + "\n")
-    script.write("#SBATCH --output=pl-" + str(x) + ".out\n")
-    script.write("#SBATCH --error=pl-" + str(x) + ".err\n")
+    script.write("#SBATCH --output=./sbatch-output/pl-" + str(x) + ".out\n")
+    script.write("#SBATCH --error=./sbatch-output/pl-" + str(x) + ".err\n")
     script.write("#SBATCH --time=" + time + "\n")
     script.write("#SBATCH --partition=" + partition +"\n")
     script.write("#SBATCH --ntasks=1\n")
@@ -93,7 +93,7 @@ for file in os.scandir(input_directory):
         if "Iteration ran out of time" in x:
             runOutOfTime = True
     # if not atomsIS: 
-    if (runOutOfTime):
+    '''if (runOutOfTime):
         fpddl_output = open(output_directory + "1/" + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
 
@@ -101,7 +101,7 @@ for file in os.scandir(input_directory):
             fpddl_output.write(x)
 
         fpddl.close()
-        fpddl_output.close()
+        fpddl_output.close()'''
 
 
     f.close() 

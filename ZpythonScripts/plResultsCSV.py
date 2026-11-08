@@ -8,9 +8,10 @@ hAdds = []
 peakMemorys = []
 runOutOfTimes = []
 exitCodes = []
+totalTimes = []
 
-inputPath = "../FD-5/pl-results"
-outputPath = "../ZcsvFiles/pl-results-2-v.csv"
+inputPath = "../FD-5/pl-output-11-8"
+outputPath = "../ZcsvFiles/pl-output-11-8.csv"
 
     
 for file in os.scandir(inputPath):
@@ -32,13 +33,14 @@ for file in os.scandir(inputPath):
     memory = 0
     runOutOfTime = False
     exitCodeB = False
+    totalTimeB = False
     
     for x in f:
         if "Total number of atoms in the initial state" in x:
             atomsIS = True
             atomsIScount = x.split(":")[1].replace("\n", "")
             atomsIScounts.append(atomsIScount)
-        if "Initial h-add value of the task " in x:
+        if "Initial h-add value of the task" in x:
             hAddB = True
             hAdd = x.split(":")[1].replace("\n", "")
             hAdds.append(hAdd)
@@ -58,6 +60,9 @@ for file in os.scandir(inputPath):
         if "Iteration finished correctly." in x:
             exitCodeB = True
             exitCodes.append("0")
+        if "Total time" in x:
+            totalTimeB = True
+            totalTimes.append(x.split(":")[1].replace("\n", ""))
 
     if not atomsIS: atomsIScounts.append("")
     if not hAddB: hAdds.append("")
@@ -69,14 +74,15 @@ for file in os.scandir(inputPath):
     
     if not runOutOfTime: runOutOfTimes.append("False")
     if not exitCodeB: exitCodes.append("")
+    if not totalTimeB: totalTimes.append("")
             
     f.close() 
 
 with open(outputPath, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
-    spamwriter.writerow(["Filenames", "Atoms in initial state", "Initial h-add value of the task", "Peak memory in KB", "Iteration ran out of time", "Exit code"])
+    spamwriter.writerow(["Filenames", "Atoms in initial state", "Initial h-add value of the task", "Peak memory in KB", "Iteration ran out of time", "Total time", "Exit code"])
     print(f"file count : {len(fileNames)}")
     print(f"atomsIScount count : {len(atomsIScounts)}")
     print(len(fileNames))
     for x in range(len(fileNames)):
-        spamwriter.writerow([fileNames[x], atomsIScounts[x], hAdds[x], peakMemorys[x], runOutOfTimes[x], exitCodes[x]])
+        spamwriter.writerow([fileNames[x], atomsIScounts[x], hAdds[x], peakMemorys[x], runOutOfTimes[x], totalTimes[x], exitCodes[x]])

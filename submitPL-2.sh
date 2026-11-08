@@ -1,7 +1,7 @@
 #!/bin/bash
 #SBATCH --job-name=pl-2
-#SBATCH --output=pl-2.out
-#SBATCH --error=pl-2.err
+#SBATCH --output=./sbatch-output/pl-2.out
+#SBATCH --error=./sbatch-output/pl-2.err
 #SBATCH --time=48:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
@@ -15,6 +15,6 @@ for file in * ; do
 	fileNumber=$file
 	IFS=. read -r number rest<<< $fileNumber
 	echo $number
-	../../powerlifted/./powerlifted.py -i $file --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit 7200 > $toutput/$number.txt
+	../../powerlifted/./powerlifted.py -i $file --plan-file /sharedscratch/mz93/FD-5/pl/$number.plan --time-limit 172800 > $toutput/$number.txt
 	fi
 done
