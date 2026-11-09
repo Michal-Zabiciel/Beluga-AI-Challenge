@@ -12,12 +12,13 @@ relevantAtoms = []
 auxiliaryAtoms = []
 translateExitCode = []
 plannerTime = []
+ranger = range(5,9)
 
 input_directory = "../FD-5/pl-results"
 output_directory = "../FD-5/pl-pddl"
 results_directory = "../FD-5/pl-t"
 
-for x in range(1,5):
+for x in ranger:
     shutil.rmtree(output_directory + str(x), ignore_errors=True)
     os.makedirs(output_directory + str(x), exist_ok=True)
     shutil.rmtree(results_directory + str(x), ignore_errors=True)
@@ -30,10 +31,11 @@ for x in range(1,5):
 
 time = "48:00:00"
 partition = "small-short"
-mem = "100G"
-timeLimit = "172800"
+mem = "50G"
+timeLimit = "21600"
+count = 0
 
-for x in range(1,5):
+for x in ranger:
     script = open("../submitPL-" + str(x) + ".sh", "w")
 
     script.write("#!/bin/bash\n")
@@ -93,35 +95,37 @@ for file in os.scandir(input_directory):
         if "Iteration ran out of time" in x:
             runOutOfTime = True
     # if not atomsIS: 
-    '''if (runOutOfTime):
-        fpddl_output = open(output_directory + "1/" + filename + ".pddl", "w")
+    if (runOutOfTime):
+        text = "5/"
+    
+        if (count % 4 == 0): text = "5/"
+        if (count % 4 == 1): text = "6/"
+        if (count % 4 == 2): text = "7/"
+        if (count % 4 == 3): text = "8/"
+
+        count += 1
+
+        fpddl_output = open(output_directory + text + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
 
         for x in fpddl:
             fpddl_output.write(x)
 
         fpddl.close()
-        fpddl_output.close()'''
+        fpddl_output.close()
 
 
     f.close() 
 
 domain = open("../problem-instances-stripped/domain.pddl")
-domain_output1 = open(output_directory + "1/domain.pddl", "w")
-domain_output2 = open(output_directory + "2/domain.pddl", "w")
-domain_output3 = open(output_directory + "3/domain.pddl", "w")
-domain_output4 = open(output_directory + "4/domain.pddl", "w")
+domain_outputs = []
+for x in ranger:
+    domain_outputs.append(open(output_directory + str(x) + "/domain.pddl", "w"))
 
-for x in domain:
-    domain_output1.write(x)
-    domain_output2.write(x)
-    domain_output3.write(x)
-    domain_output4.write(x)
-directory1 = Path(output_directory + "1")
-directory2 = Path(output_directory + "2")
-directory3 = Path(output_directory + "3")
-directory4 = Path(output_directory + "4")
-print(len([f for f in directory1.iterdir() if f.is_file()]))
-print(len([f for f in directory2.iterdir() if f.is_file()]))
-print(len([f for f in directory3.iterdir() if f.is_file()]))
-print(len([f for f in directory4.iterdir() if f.is_file()]))
+
+for line in domain:
+    for x in domain_outputs:
+        x.write(line)
+
+for x in ranger:
+    print(len([f for f in Path(output_directory + str(x)).iterdir() if f.is_file()]))
