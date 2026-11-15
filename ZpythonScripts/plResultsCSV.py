@@ -9,9 +9,10 @@ peakMemorys = []
 runOutOfTimes = []
 exitCodes = []
 totalTimes = []
+timeLimits = []
 
-inputPath = "../FD-5/pl-output-11-8"
-outputPath = "../ZcsvFiles/pl-output-11-8.csv"
+inputPath = "../FD-5/pl-output-11-15"
+outputPath = "../ZcsvFiles/pl-output-11-15.csv"
 
     
 for file in os.scandir(inputPath):
@@ -34,6 +35,7 @@ for file in os.scandir(inputPath):
     runOutOfTime = False
     exitCodeB = False
     totalTimeB = False
+    timeLimitB = False
     
     for x in f:
         if "Total number of atoms in the initial state" in x:
@@ -54,6 +56,10 @@ for file in os.scandir(inputPath):
         if "Iteration ran out of time" in x:
             runOutOfTime = True
             runOutOfTimes.append("True")
+            limit = x.split(" ")[-2]
+            timeLimitB = True
+            timeLimits.append(limit)
+            print(limit)
         if "Iteration finished with error code" in x:
             exitCodeB = True
             exitCodes.append(x.split(" ")[-1].replace("\n", "").replace(".", ""))
@@ -75,14 +81,15 @@ for file in os.scandir(inputPath):
     if not runOutOfTime: runOutOfTimes.append("False")
     if not exitCodeB: exitCodes.append("")
     if not totalTimeB: totalTimes.append("")
+    if not timeLimitB: timeLimits.append("")
             
     f.close() 
 
 with open(outputPath, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
-    spamwriter.writerow(["Filenames", "Atoms in initial state", "Initial h-add value of the task", "Peak memory in KB", "Iteration ran out of time", "Total time", "Exit code"])
+    spamwriter.writerow(["Filenames", "Atoms in initial state", "Initial h-add value of the task", "Peak memory in KB", "Iteration ran out of time", "Time limit", "Total time", "Exit code"])
     print(f"file count : {len(fileNames)}")
     print(f"atomsIScount count : {len(atomsIScounts)}")
     print(len(fileNames))
     for x in range(len(fileNames)):
-        spamwriter.writerow([fileNames[x], atomsIScounts[x], hAdds[x], peakMemorys[x], runOutOfTimes[x], totalTimes[x], exitCodes[x]])
+        spamwriter.writerow([fileNames[x], atomsIScounts[x], hAdds[x], peakMemorys[x], runOutOfTimes[x], timeLimits[x], totalTimes[x], exitCodes[x]])
