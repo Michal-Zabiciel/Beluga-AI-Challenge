@@ -10,7 +10,7 @@
 #SBATCH --array=4-267%10
 
 
-source='./FD-5/pl-pddl1'
+source='./FD-5/pl-pddl-time'
 toutput='../pl-t-time'
 cd $source
 
