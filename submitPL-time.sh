@@ -12,6 +12,21 @@
 
 source='./FD-5/pl-pddl-time'
 toutput='../pl-t-time'
+
+
+
+myArray=("alt-bfws1" "alt-bfws2" "astar" "bfs" "bfws1" "bfws2" "bfws1-rx" "bfws2-rx" "dq-bfws1-rx" "dq-bfws2-rx" "gbfs" "iw1" "iw2" "lazy" "lazy-po" "lazy-prune")
+
 cd $source
 
-../../powerlifted/./powerlifted.py -i $SLURM_ARRAY_TASK_ID.pddl --time-limit 240 > $toutput/default/$SLURM_ARRAY_TASK_ID.txt
+for str in ${myArray[@]}; do
+    mkdir ../pl-t-time/$str
+done
+
+input="$SLURM_ARRAY_TASK_ID.pddl"
+
+if [ -f "$input" ]; then
+    for str in ${myArray[@]}; do
+        ../../powerlifted/./powerlifted.py -i $input --time-limit 240 > $toutput/$str/$SLURM_ARRAY_TASK_ID.txt
+    done
+fi
