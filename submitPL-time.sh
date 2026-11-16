@@ -27,6 +27,6 @@ input="$SLURM_ARRAY_TASK_ID.pddl"
 
 if [ -f "$input" ]; then
     for str in ${myArray[@]}; do
-        ../../powerlifted/./powerlifted.py -i $input --time-limit 240 > $toutput/$str/$SLURM_ARRAY_TASK_ID.txt
+        ../../powerlifted/./powerlifted.py -i $input -s $str --time-limit 240 > $toutput/$str/$SLURM_ARRAY_TASK_ID.txt
     done
 fi
