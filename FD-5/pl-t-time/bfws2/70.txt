@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.010s CPU, 0.003s wall-clock]
+Parsing: [0.010s CPU, 0.004s wall-clock]
 Processing task beluga-problem_70_s112_j8_r2_oc86_f5
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -29,8 +29,7 @@ Total number of atoms in the initial state: 335
 Total number of fluent atoms in the goal state: 13
 Total number of action schemas: 9
 IMPORTANT: Assuming that negative effects are always listed first. (This is guaranteed by the default translator.)
-Creating search factory for method alt-bfws1...
-Using Dual-Queue BFWS
+Creating search factory for method bfws2...
 Creating heuristic factory...
 Iteration removed 259 equivalent rules.
 Iteration removed 0 equivalent rules.
@@ -38,67 +37,60 @@ Materialized static stratum: 71 atoms from 13 rules
 Total number of static atoms in the EDB: 353
 Total number of rules: 192
 Creating successor generator factory...
-Starting AlternatedBFWS
-Iteration removed 259 equivalent rules.
-Iteration removed 0 equivalent rules.
-Materialized static stratum: 71 atoms from 13 rules
-Total number of static atoms in the EDB: 353
-Total number of rules: 192
-Initial h-add value of the task: 34
+Starting BFWS
 Total number of goal atoms: 13
-Total number of relevant atoms: 36
+Total number of relevant atoms: 0
 Initial heuristic value 0
-f = 34 [0 evaluated, 0 expanded, 0 generated, t=0.0221674s, 23456 KB]
-New heuristic value expanded: h=32 [expansions: 2, evaluations: 9, generations: 8, time: 0.021663]
-New heuristic value expanded: h=31 [expansions: 3, evaluations: 17, generations: 16, time: 0.02383]
-New heuristic value expanded: h=30 [expansions: 4, evaluations: 25, generations: 24, time: 0.026235]
-New heuristic value expanded: h=29 [expansions: 5, evaluations: 32, generations: 31, time: 0.029148]
-New heuristic value expanded: h=24 [expansions: 7, evaluations: 45, generations: 44, time: 0.034941]
-New heuristic value expanded: h=22 [expansions: 8, evaluations: 53, generations: 52, time: 0.037324]
-New heuristic value expanded: h=21 [expansions: 12, evaluations: 91, generations: 90, time: 0.047248]
-f = 35 [184 evaluated, 22 expanded, 184 generated, t=0.0785024s, 24064 KB]
-f = 37 [319 evaluated, 36 expanded, 319 generated, t=0.111426s, 24160 KB]
-New heuristic value expanded: h=20 [expansions: 41, evaluations: 375, generations: 374, time: 0.119044]
-f = 38 [398 evaluated, 44 expanded, 398 generated, t=0.132185s, 24224 KB]
-f = 39 [468 evaluated, 52 expanded, 468 generated, t=0.152314s, 24292 KB]
-New heuristic value expanded: h=19 [expansions: 57, evaluations: 505, generations: 504, time: 0.159569]
-f = 40 [558 evaluated, 64 expanded, 558 generated, t=0.181914s, 24340 KB]
-f = 41 [566 evaluated, 65 expanded, 566 generated, t=0.184585s, 24352 KB]
-f = 42 [592 evaluated, 68 expanded, 592 generated, t=0.192237s, 24352 KB]
-New heuristic value expanded: h=18 [expansions: 107, evaluations: 895, generations: 894, time: 0.283219]
-f = 44 [981 evaluated, 118 expanded, 981 generated, 1 reopened, t=0.316456s, 24512 KB]
-New heuristic value expanded: h=17 [expansions: 164, evaluations: 1297, generations: 1296, time: 0.422383]
-New heuristic value expanded: h=15 [expansions: 167, evaluations: 1312, generations: 1311, time: 0.427153]
-New heuristic value expanded: h=13 [expansions: 170, evaluations: 1328, generations: 1327, time: 0.431401]
-New heuristic value expanded: h=12 [expansions: 171, evaluations: 1331, generations: 1330, time: 0.432394]
-New heuristic value expanded: h=9 [expansions: 173, evaluations: 1338, generations: 1337, time: 0.43441]
-New heuristic value expanded: h=6 [expansions: 174, evaluations: 1343, generations: 1342, time: 0.43543]
-New heuristic value expanded: h=4 [expansions: 177, evaluations: 1358, generations: 1357, time: 0.43818]
-New heuristic value expanded: h=2 [expansions: 180, evaluations: 1375, generations: 1374, time: 0.440535]
-New heuristic value expanded: h=1 [expansions: 181, evaluations: 1379, generations: 1378, time: 0.441054]
-Goal found at: 0.441208
-Total time: 0.441258
-Total plan cost: 33
-Plan length: 33 step(s).
-Expanded 181 state(s).
-Reopened 7 state(s).
-Evaluated 1382 state(s).
-Evaluations: 1383 state(s).
-Generated 1382 state(s).
+f = 0 [0 evaluated, 0 expanded, 0 generated, t=0.00558564s, 7920 KB]
+f = 1 [8 evaluated, 1 expanded, 8 generated, t=0.00594334s, 7920 KB]
+f = 2 [39 evaluated, 9 expanded, 65 generated, t=0.00749655s, 7920 KB]
+f = 3 [64 evaluated, 13 expanded, 96 generated, t=0.00856926s, 7920 KB]
+f = 4 [75 evaluated, 14 expanded, 107 generated, t=0.00901267s, 7920 KB]
+f = 5 [100 evaluated, 16 expanded, 135 generated, t=0.0096366s, 7920 KB]
+f = 6 [169 evaluated, 30 expanded, 277 generated, t=0.0127582s, 8052 KB]
+f = 7 [262 evaluated, 40 expanded, 395 generated, t=0.0151472s, 8052 KB]
+f = 8 [294 evaluated, 43 expanded, 430 generated, t=0.0160348s, 8052 KB]
+f = 9 [309 evaluated, 44 expanded, 445 generated, t=0.016376s, 8180 KB]
+f = 10 [385 evaluated, 59 expanded, 609 generated, t=0.0194115s, 8180 KB]
+f = 11 [454 evaluated, 66 expanded, 690 generated, t=0.0212215s, 8312 KB]
+f = 12 [1405 evaluated, 249 expanded, 2413 generated, t=0.0608815s, 8828 KB]
+f = 13 [1411 evaluated, 250 expanded, 2422 generated, t=0.061242s, 8828 KB]
+f = 14 [2035 evaluated, 379 expanded, 3603 generated, t=0.0875911s, 9220 KB]
+f = 15 [2051 evaluated, 386 expanded, 3639 generated, t=0.0885908s, 9220 KB]
+f = 16 [2075 evaluated, 390 expanded, 3671 generated, t=0.0894148s, 9220 KB]
+f = 17 [2099 evaluated, 406 expanded, 3750 generated, t=0.0914175s, 9220 KB]
+f = 18 [2140 evaluated, 428 expanded, 3878 generated, t=0.0951214s, 9348 KB]
+f = 19 [2144 evaluated, 429 expanded, 3882 generated, t=0.0952979s, 9348 KB]
+f = 20 [2148 evaluated, 430 expanded, 3886 generated, t=0.0955163s, 9348 KB]
+f = 21 [2153 evaluated, 431 expanded, 3891 generated, t=0.0957058s, 9348 KB]
+f = 22 [2164 evaluated, 436 expanded, 3917 generated, t=0.0964837s, 9348 KB]
+f = 23 [2174 evaluated, 439 expanded, 3932 generated, t=0.0971172s, 9348 KB]
+f = 24 [2183 evaluated, 441 expanded, 3944 generated, t=0.0974194s, 9348 KB]
+f = 25 [2193 evaluated, 447 expanded, 3968 generated, t=0.0982235s, 9480 KB]
+f = 26 [2210 evaluated, 451 expanded, 3996 generated, t=0.0989885s, 9480 KB]
+f = 27 [2214 evaluated, 452 expanded, 4002 generated, t=0.0992324s, 9480 KB]
+f = 28 [2218 evaluated, 453 expanded, 4006 generated, t=0.0993927s, 9480 KB]
+Goal found at: 0.094249
+Total time: 0.094256
+Total plan cost: 29
+Plan length: 29 step(s).
+Expanded 454 state(s).
+Reopened 0 state(s).
+Evaluated 2222 state(s).
+Evaluations: 2223 state(s).
+Generated 4010 state(s).
 Dead ends: 0 state(s).
 Pruned: 0 state(s).
-Expanded until last jump: 118 state(s).
-Reopened until last jump: 1 state(s).
-Evaluated until last jump: 981 state(s).
-Generated until last jump: 981 state(s).
-Peak memory usage: 24624 kB
-Number of registered states: 1013
-Int hash set load factor: 1013/2048 = 0.494629
-Int hash set resizes: 11
-Total atoms produced by grounder: 1239245
-Total queue pushes by grounder: 745310
+Expanded until last jump: 453 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 2218 state(s).
+Generated until last jump: 4006 state(s).
+Peak memory usage: 9480 kB
+Number of registered states: 2223
+Int hash set load factor: 2223/4096 = 0.542725
+Int hash set resizes: 12
 Total atoms produced by grounder: 0
 Total queue pushes by grounder: 0
 Solution found.
-Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file plan"
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s bfws2 -e ff -g yannakakis --seed 1 --plan-file plan"
 Iteration finished correctly.

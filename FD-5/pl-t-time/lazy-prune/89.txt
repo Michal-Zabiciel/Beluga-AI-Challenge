@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.010s CPU, 0.004s wall-clock]
+Parsing: [0.010s CPU, 0.005s wall-clock]
 Processing task beluga-problem_89_s131_j30_r3_oc32_f19
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -15,7 +15,7 @@ Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
 Printing objects (i.e., constants)... [0.000s CPU, 0.000s wall-clock]
-Printing initial state... [0.000s CPU, 0.005s wall-clock]
+Printing initial state... [0.000s CPU, 0.004s wall-clock]
 Printing goal... [0.000s CPU, 0.000s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
 Total translation time: 0.010s
@@ -29,8 +29,7 @@ Total number of atoms in the initial state: 818
 Total number of fluent atoms in the goal state: 58
 Total number of action schemas: 9
 IMPORTANT: Assuming that negative effects are always listed first. (This is guaranteed by the default translator.)
-Creating search factory for method alt-bfws1...
-Using Dual-Queue BFWS
+Creating search factory for method lazy-prune...
 Creating heuristic factory...
 Iteration removed 259 equivalent rules.
 Iteration removed 0 equivalent rules.
@@ -38,130 +37,110 @@ Materialized static stratum: 127 atoms from 13 rules
 Total number of static atoms in the EDB: 831
 Total number of rules: 192
 Creating successor generator factory...
-Starting AlternatedBFWS
-Iteration removed 259 equivalent rules.
-Iteration removed 0 equivalent rules.
-Materialized static stratum: 127 atoms from 13 rules
-Total number of static atoms in the EDB: 831
-Total number of rules: 192
-Initial h-add value of the task: 196
-Total number of goal atoms: 58
-Total number of relevant atoms: 198
-Initial heuristic value 0
-f = 196 [0 evaluated, 0 expanded, 0 generated, t=0.182307s, 303456 KB]
-New heuristic value expanded: h=177 [expansions: 2, evaluations: 11, generations: 10, time: 0.214948]
-New heuristic value expanded: h=176 [expansions: 3, evaluations: 19, generations: 18, time: 0.236382]
-New heuristic value expanded: h=170 [expansions: 5, evaluations: 35, generations: 34, time: 0.273333]
-New heuristic value expanded: h=161 [expansions: 9, evaluations: 65, generations: 64, time: 0.347239]
-f = 199 [93 evaluated, 12 expanded, 93 generated, t=0.409746s, 308204 KB]
-New heuristic value expanded: h=159 [expansions: 28, evaluations: 238, generations: 237, time: 0.70574]
-f = 200 [244 evaluated, 29 expanded, 244 generated, t=0.730644s, 308204 KB]
-New heuristic value expanded: h=155 [expansions: 42, evaluations: 365, generations: 364, time: 0.970863]
-New heuristic value expanded: h=153 [expansions: 47, evaluations: 408, generations: 407, time: 1.06578]
-New heuristic value expanded: h=152 [expansions: 49, evaluations: 426, generations: 425, time: 1.1037]
-New heuristic value expanded: h=151 [expansions: 51, evaluations: 445, generations: 444, time: 1.14141]
-f = 201 [506 evaluated, 59 expanded, 506 generated, t=1.29864s, 308204 KB]
-New heuristic value expanded: h=140 [expansions: 102, evaluations: 927, generations: 926, time: 2.1121]
-New heuristic value expanded: h=139 [expansions: 103, evaluations: 935, generations: 934, time: 2.13099]
-f = 202 [1477 evaluated, 163 expanded, 1477 generated, 2 reopened, t=3.2747s, 308204 KB]
-f = 203 [1813 evaluated, 198 expanded, 1813 generated, 2 reopened, t=3.92072s, 308336 KB]
-f = 204 [2085 evaluated, 224 expanded, 2085 generated, 2 reopened, t=4.39092s, 308544 KB]
-f = 207 [2807 evaluated, 296 expanded, 2807 generated, 2 reopened, t=5.69775s, 308856 KB]
-New heuristic value expanded: h=129 [expansions: 343, evaluations: 3266, generations: 3265, time: 6.5513]
-New heuristic value expanded: h=126 [expansions: 405, evaluations: 3835, generations: 3834, time: 7.683]
-New heuristic value expanded: h=117 [expansions: 602, evaluations: 5693, generations: 5692, time: 11.2086]
-New heuristic value expanded: h=115 [expansions: 660, evaluations: 6265, generations: 6264, time: 12.1506]
-New heuristic value expanded: h=114 [expansions: 732, evaluations: 6964, generations: 6963, time: 13.3632]
-New heuristic value expanded: h=104 [expansions: 952, evaluations: 9199, generations: 9198, time: 16.7967]
-New heuristic value expanded: h=103 [expansions: 1020, evaluations: 9845, generations: 9844, time: 17.8086]
-New heuristic value expanded: h=100 [expansions: 1068, evaluations: 10298, generations: 10297, time: 18.5336]
-New heuristic value expanded: h=98 [expansions: 1101, evaluations: 10625, generations: 10624, time: 19.0385]
-New heuristic value expanded: h=97 [expansions: 1172, evaluations: 11346, generations: 11345, time: 20.1061]
-New heuristic value expanded: h=94 [expansions: 1173, evaluations: 11356, generations: 11355, time: 20.1212]
-New heuristic value expanded: h=93 [expansions: 1182, evaluations: 11455, generations: 11454, time: 20.2565]
-New heuristic value expanded: h=92 [expansions: 1237, evaluations: 12038, generations: 12037, time: 21.014]
-New heuristic value expanded: h=91 [expansions: 1256, evaluations: 12240, generations: 12239, time: 21.2836]
-New heuristic value expanded: h=90 [expansions: 1269, evaluations: 12374, generations: 12373, time: 21.4689]
-New heuristic value expanded: h=87 [expansions: 1386, evaluations: 13673, generations: 13672, time: 23.0558]
-New heuristic value expanded: h=85 [expansions: 1387, evaluations: 13682, generations: 13681, time: 23.0689]
-New heuristic value expanded: h=84 [expansions: 1388, evaluations: 13691, generations: 13690, time: 23.0822]
-New heuristic value expanded: h=83 [expansions: 1389, evaluations: 13700, generations: 13699, time: 23.0952]
-New heuristic value expanded: h=81 [expansions: 1413, evaluations: 13949, generations: 13948, time: 23.4181]
-New heuristic value expanded: h=80 [expansions: 1414, evaluations: 13959, generations: 13958, time: 23.4322]
-New heuristic value expanded: h=74 [expansions: 1420, evaluations: 14014, generations: 14013, time: 23.5175]
-New heuristic value expanded: h=72 [expansions: 1461, evaluations: 14468, generations: 14467, time: 24.0648]
-New heuristic value expanded: h=68 [expansions: 1466, evaluations: 14535, generations: 14534, time: 24.1316]
-New heuristic value expanded: h=66 [expansions: 1469, evaluations: 14574, generations: 14573, time: 24.1716]
-New heuristic value expanded: h=65 [expansions: 1474, evaluations: 14635, generations: 14634, time: 24.2384]
-New heuristic value expanded: h=64 [expansions: 1476, evaluations: 14652, generations: 14651, time: 24.265]
-New heuristic value expanded: h=63 [expansions: 1491, evaluations: 14831, generations: 14830, time: 24.4654]
-New heuristic value expanded: h=61 [expansions: 1515, evaluations: 15122, generations: 15121, time: 24.797]
-New heuristic value expanded: h=60 [expansions: 1586, evaluations: 15926, generations: 15925, time: 25.7238]
-New heuristic value expanded: h=58 [expansions: 1631, evaluations: 16436, generations: 16435, time: 26.233]
-New heuristic value expanded: h=57 [expansions: 1633, evaluations: 16460, generations: 16459, time: 26.2548]
-New heuristic value expanded: h=55 [expansions: 1636, evaluations: 16495, generations: 16494, time: 26.2876]
-New heuristic value expanded: h=53 [expansions: 1644, evaluations: 16581, generations: 16580, time: 26.3769]
-New heuristic value expanded: h=50 [expansions: 1652, evaluations: 16659, generations: 16658, time: 26.4634]
-New heuristic value expanded: h=49 [expansions: 1668, evaluations: 16825, generations: 16824, time: 26.6378]
-New heuristic value expanded: h=48 [expansions: 1694, evaluations: 17081, generations: 17080, time: 26.9222]
-New heuristic value expanded: h=47 [expansions: 1752, evaluations: 17661, generations: 17660, time: 27.5438]
-New heuristic value expanded: h=46 [expansions: 1754, evaluations: 17681, generations: 17680, time: 27.5647]
-New heuristic value expanded: h=44 [expansions: 1760, evaluations: 17742, generations: 17741, time: 27.6273]
-New heuristic value expanded: h=42 [expansions: 1763, evaluations: 17771, generations: 17770, time: 27.6597]
-New heuristic value expanded: h=41 [expansions: 1772, evaluations: 17875, generations: 17874, time: 27.753]
-New heuristic value expanded: h=40 [expansions: 1777, evaluations: 17925, generations: 17924, time: 27.8051]
-New heuristic value expanded: h=39 [expansions: 1781, evaluations: 17965, generations: 17964, time: 27.8456]
-New heuristic value expanded: h=38 [expansions: 1782, evaluations: 17978, generations: 17977, time: 27.8559]
-New heuristic value expanded: h=37 [expansions: 1786, evaluations: 18014, generations: 18013, time: 27.896]
-New heuristic value expanded: h=36 [expansions: 1852, evaluations: 18740, generations: 18739, time: 28.5613]
-New heuristic value expanded: h=34 [expansions: 1904, evaluations: 19282, generations: 19281, time: 29.0219]
-New heuristic value expanded: h=33 [expansions: 1909, evaluations: 19338, generations: 19337, time: 29.0576]
-New heuristic value expanded: h=32 [expansions: 1911, evaluations: 19358, generations: 19357, time: 29.0716]
-New heuristic value expanded: h=28 [expansions: 1912, evaluations: 19368, generations: 19367, time: 29.0784]
-New heuristic value expanded: h=25 [expansions: 1914, evaluations: 19387, generations: 19386, time: 29.092]
-New heuristic value expanded: h=22 [expansions: 1916, evaluations: 19408, generations: 19407, time: 29.1055]
-New heuristic value expanded: h=21 [expansions: 1919, evaluations: 19445, generations: 19444, time: 29.1254]
-New heuristic value expanded: h=20 [expansions: 1936, evaluations: 19637, generations: 19636, time: 29.2375]
-New heuristic value expanded: h=18 [expansions: 1952, evaluations: 19818, generations: 19817, time: 29.3436]
-New heuristic value expanded: h=16 [expansions: 1954, evaluations: 19844, generations: 19843, time: 29.3561]
-New heuristic value expanded: h=15 [expansions: 1955, evaluations: 19856, generations: 19855, time: 29.3623]
-New heuristic value expanded: h=14 [expansions: 1957, evaluations: 19879, generations: 19878, time: 29.3738]
-New heuristic value expanded: h=13 [expansions: 1958, evaluations: 19889, generations: 19888, time: 29.3793]
-New heuristic value expanded: h=12 [expansions: 1962, evaluations: 19929, generations: 19928, time: 29.4001]
-New heuristic value expanded: h=11 [expansions: 1975, evaluations: 20057, generations: 20056, time: 29.4678]
-New heuristic value expanded: h=10 [expansions: 1980, evaluations: 20118, generations: 20117, time: 29.4941]
-New heuristic value expanded: h=9 [expansions: 1986, evaluations: 20202, generations: 20201, time: 29.525]
-New heuristic value expanded: h=8 [expansions: 2001, evaluations: 20397, generations: 20396, time: 29.604]
-New heuristic value expanded: h=6 [expansions: 2004, evaluations: 20440, generations: 20439, time: 29.6177]
-New heuristic value expanded: h=5 [expansions: 2006, evaluations: 20464, generations: 20463, time: 29.6259]
-New heuristic value expanded: h=4 [expansions: 2012, evaluations: 20541, generations: 20540, time: 29.649]
-New heuristic value expanded: h=3 [expansions: 2015, evaluations: 20584, generations: 20583, time: 29.6614]
-New heuristic value expanded: h=2 [expansions: 2017, evaluations: 20613, generations: 20612, time: 29.6674]
-f = 208 [20627 evaluated, 2018 expanded, 20627 generated, 38 reopened, t=29.6755s, 311012 KB]
-New heuristic value expanded: h=1 [expansions: 2023, evaluations: 20700, generations: 20699, time: 29.6815]
-Goal found at: 29.682
-Total time: 29.6821
-Total plan cost: 208
-Plan length: 208 step(s).
-Expanded 2023 state(s).
-Reopened 38 state(s).
-Evaluated 20705 state(s).
-Evaluations: 20706 state(s).
-Generated 20714 state(s).
+Starting greedy best first search
+Initial heuristic value 196
+f = 196 [0 evaluated, 0 expanded, 0 generated, t=0.0311637s, 29296 KB]
+New heuristic value expanded: h=190 [expansions: 2, evaluations: 3, generations: 10, time: 0.057623]
+New heuristic value expanded: h=162 [expansions: 3, evaluations: 4, generations: 17, time: 0.072396]
+f = 197 [14 evaluated, 13 expanded, 100 generated, t=0.239731s, 34188 KB]
+New heuristic value expanded: h=153 [expansions: 18, evaluations: 19, generations: 132, time: 0.293561]
+New heuristic value expanded: h=149 [expansions: 21, evaluations: 22, generations: 157, time: 0.338032]
+New heuristic value expanded: h=140 [expansions: 62, evaluations: 63, generations: 510, time: 0.955239]
+New heuristic value expanded: h=138 [expansions: 348, evaluations: 349, generations: 3080, time: 5.21404]
+New heuristic value expanded: h=137 [expansions: 349, evaluations: 350, generations: 3087, time: 5.22885]
+New heuristic value expanded: h=131 [expansions: 431, evaluations: 432, generations: 3857, time: 6.44034]
+New heuristic value expanded: h=127 [expansions: 1656, evaluations: 1657, generations: 15860, time: 24.6706]
+New heuristic value expanded: h=126 [expansions: 1665, evaluations: 1666, generations: 15937, time: 24.7809]
+New heuristic value expanded: h=124 [expansions: 1666, evaluations: 1667, generations: 15947, time: 24.7929]
+New heuristic value expanded: h=122 [expansions: 1675, evaluations: 1676, generations: 16042, time: 24.9003]
+New heuristic value expanded: h=115 [expansions: 1813, evaluations: 1814, generations: 17391, time: 26.541]
+New heuristic value expanded: h=110 [expansions: 1818, evaluations: 1819, generations: 17436, time: 26.6001]
+New heuristic value expanded: h=108 [expansions: 1914, evaluations: 1915, generations: 18362, time: 27.7268]
+New heuristic value expanded: h=107 [expansions: 1962, evaluations: 1963, generations: 18876, time: 28.2731]
+New heuristic value expanded: h=104 [expansions: 2035, evaluations: 2036, generations: 19694, time: 29.1047]
+New heuristic value expanded: h=97 [expansions: 2048, evaluations: 2049, generations: 19824, time: 29.2539]
+New heuristic value expanded: h=95 [expansions: 2065, evaluations: 2066, generations: 20011, time: 29.4418]
+New heuristic value expanded: h=93 [expansions: 2124, evaluations: 2125, generations: 20634, time: 30.1064]
+New heuristic value expanded: h=92 [expansions: 2125, evaluations: 2126, generations: 20642, time: 30.1174]
+New heuristic value expanded: h=91 [expansions: 2126, evaluations: 2127, generations: 20653, time: 30.1285]
+New heuristic value expanded: h=89 [expansions: 2181, evaluations: 2182, generations: 21253, time: 30.7312]
+New heuristic value expanded: h=87 [expansions: 2269, evaluations: 2270, generations: 22187, time: 31.6837]
+New heuristic value expanded: h=86 [expansions: 2449, evaluations: 2450, generations: 24106, time: 33.6148]
+New heuristic value expanded: h=84 [expansions: 2454, evaluations: 2455, generations: 24164, time: 33.6656]
+New heuristic value expanded: h=81 [expansions: 2461, evaluations: 2462, generations: 24234, time: 33.7344]
+New heuristic value expanded: h=78 [expansions: 2467, evaluations: 2468, generations: 24296, time: 33.7941]
+New heuristic value expanded: h=77 [expansions: 2468, evaluations: 2469, generations: 24305, time: 33.8039]
+New heuristic value expanded: h=76 [expansions: 2469, evaluations: 2470, generations: 24315, time: 33.8137]
+New heuristic value expanded: h=74 [expansions: 2497, evaluations: 2498, generations: 24626, time: 34.0916]
+New heuristic value expanded: h=67 [expansions: 2505, evaluations: 2506, generations: 24699, time: 34.1707]
+New heuristic value expanded: h=66 [expansions: 2526, evaluations: 2527, generations: 24929, time: 34.3784]
+New heuristic value expanded: h=63 [expansions: 2548, evaluations: 2549, generations: 25156, time: 34.594]
+New heuristic value expanded: h=60 [expansions: 2639, evaluations: 2640, generations: 26218, time: 35.4843]
+New heuristic value expanded: h=59 [expansions: 3018, evaluations: 3019, generations: 30391, time: 39.1292]
+New heuristic value expanded: h=58 [expansions: 3024, evaluations: 3025, generations: 30454, time: 39.18]
+New heuristic value expanded: h=53 [expansions: 3032, evaluations: 3033, generations: 30533, time: 39.2452]
+New heuristic value expanded: h=52 [expansions: 3033, evaluations: 3034, generations: 30543, time: 39.2535]
+New heuristic value expanded: h=49 [expansions: 3053, evaluations: 3054, generations: 30760, time: 39.4168]
+New heuristic value expanded: h=48 [expansions: 3062, evaluations: 3063, generations: 30836, time: 39.4898]
+New heuristic value expanded: h=47 [expansions: 3076, evaluations: 3077, generations: 30968, time: 39.5997]
+New heuristic value expanded: h=46 [expansions: 3181, evaluations: 3182, generations: 32023, time: 40.3975]
+New heuristic value expanded: h=45 [expansions: 3185, evaluations: 3186, generations: 32071, time: 40.4277]
+New heuristic value expanded: h=43 [expansions: 3207, evaluations: 3208, generations: 32305, time: 40.5927]
+New heuristic value expanded: h=42 [expansions: 3216, evaluations: 3217, generations: 32414, time: 40.6602]
+New heuristic value expanded: h=40 [expansions: 3225, evaluations: 3226, generations: 32522, time: 40.7291]
+New heuristic value expanded: h=39 [expansions: 3231, evaluations: 3232, generations: 32599, time: 40.7742]
+New heuristic value expanded: h=38 [expansions: 3235, evaluations: 3236, generations: 32648, time: 40.8037]
+New heuristic value expanded: h=37 [expansions: 3236, evaluations: 3237, generations: 32662, time: 40.8113]
+New heuristic value expanded: h=36 [expansions: 3238, evaluations: 3239, generations: 32684, time: 40.8261]
+New heuristic value expanded: h=35 [expansions: 3263, evaluations: 3264, generations: 32980, time: 41.0121]
+New heuristic value expanded: h=34 [expansions: 3477, evaluations: 3478, generations: 35277, time: 42.5585]
+New heuristic value expanded: h=33 [expansions: 3481, evaluations: 3482, generations: 35317, time: 42.5835]
+New heuristic value expanded: h=32 [expansions: 3482, evaluations: 3483, generations: 35326, time: 42.5895]
+New heuristic value expanded: h=31 [expansions: 3484, evaluations: 3485, generations: 35344, time: 42.6013]
+New heuristic value expanded: h=29 [expansions: 3485, evaluations: 3486, generations: 35358, time: 42.6071]
+New heuristic value expanded: h=26 [expansions: 3486, evaluations: 3487, generations: 35370, time: 42.613]
+New heuristic value expanded: h=25 [expansions: 3487, evaluations: 3488, generations: 35382, time: 42.6188]
+New heuristic value expanded: h=23 [expansions: 3492, evaluations: 3493, generations: 35430, time: 42.6465]
+New heuristic value expanded: h=19 [expansions: 3493, evaluations: 3494, generations: 35439, time: 42.6518]
+New heuristic value expanded: h=18 [expansions: 3494, evaluations: 3495, generations: 35451, time: 42.6571]
+New heuristic value expanded: h=17 [expansions: 3495, evaluations: 3496, generations: 35461, time: 42.6622]
+New heuristic value expanded: h=16 [expansions: 3496, evaluations: 3497, generations: 35471, time: 42.6674]
+New heuristic value expanded: h=15 [expansions: 3497, evaluations: 3498, generations: 35482, time: 42.6725]
+New heuristic value expanded: h=14 [expansions: 3499, evaluations: 3500, generations: 35505, time: 42.6823]
+New heuristic value expanded: h=13 [expansions: 3500, evaluations: 3501, generations: 35516, time: 42.687]
+New heuristic value expanded: h=12 [expansions: 3504, evaluations: 3505, generations: 35558, time: 42.7055]
+New heuristic value expanded: h=11 [expansions: 3507, evaluations: 3508, generations: 35594, time: 42.7194]
+New heuristic value expanded: h=10 [expansions: 3510, evaluations: 3511, generations: 35638, time: 42.7335]
+New heuristic value expanded: h=9 [expansions: 3513, evaluations: 3514, generations: 35690, time: 42.7473]
+New heuristic value expanded: h=8 [expansions: 3690, evaluations: 3691, generations: 38252, time: 43.5767]
+New heuristic value expanded: h=6 [expansions: 3693, evaluations: 3694, generations: 38294, time: 43.5888]
+New heuristic value expanded: h=5 [expansions: 3695, evaluations: 3696, generations: 38318, time: 43.5961]
+New heuristic value expanded: h=4 [expansions: 3697, evaluations: 3698, generations: 38347, time: 43.6031]
+New heuristic value expanded: h=3 [expansions: 3699, evaluations: 3700, generations: 38376, time: 43.6098]
+New heuristic value expanded: h=2 [expansions: 3701, evaluations: 3702, generations: 38405, time: 43.6153]
+New heuristic value expanded: h=1 [expansions: 3703, evaluations: 3704, generations: 38434, time: 43.6196]
+New heuristic value expanded: h=0 [expansions: 3704, evaluations: 3705, generations: 38449, time: 43.6204]
+Goal found at: 43.6204
+Total time: 43.6204
+Total plan cost: 232
+Plan length: 232 step(s).
+Expanded 3704 state(s).
+Reopened 904 state(s).
+Evaluated 3704 state(s).
+Evaluations: 3705 state(s).
+Generated 38449 state(s).
 Dead ends: 0 state(s).
 Pruned: 0 state(s).
-Expanded until last jump: 2018 state(s).
-Reopened until last jump: 38 state(s).
-Evaluated until last jump: 20627 state(s).
-Generated until last jump: 20627 state(s).
-Peak memory usage: 311012 kB
-Number of registered states: 13807
-Int hash set load factor: 13807/16384 = 0.842712
-Int hash set resizes: 14
-Total atoms produced by grounder: 116835228
-Total queue pushes by grounder: 52260352
-Total atoms produced by grounder: 0
-Total queue pushes by grounder: 0
+Expanded until last jump: 13 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 14 state(s).
+Generated until last jump: 100 state(s).
+Peak memory usage: 40072 kB
+Number of registered states: 24215
+Int hash set load factor: 24215/32768 = 0.738983
+Int hash set resizes: 15
+Total atoms produced by grounder: 225095877
+Total queue pushes by grounder: 99992056
 Solution found.
-Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file plan"
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s lazy-prune -e ff -g yannakakis --seed 1 --plan-file plan"
 Iteration finished correctly.

@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.010s CPU, 0.003s wall-clock]
+Parsing: [0.000s CPU, 0.004s wall-clock]
 Processing task beluga-problem_181_s224_j8_r2_oc84_f4
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -8,7 +8,6 @@ Compiling types into unary predicates... [0.000s CPU, 0.000s wall-clock]
 Checking static predicates... [0.000s CPU, 0.000s wall-clock]
 Initial state size: 43
 Getting dictionary of types... [0.000s CPU, 0.000s wall-clock]
-WARNING: file output.lifted already exists, it will be overwritten
 Removing function symbols from initial state... [0.000s CPU, 0.000s wall-clock]
 Removing unused predicate symbols... [0.000s CPU, 0.000s wall-clock]
 Removing unused predicate symbols... [0.000s CPU, 0.000s wall-clock]
@@ -19,9 +18,77 @@ Printing objects (i.e., constants)... [0.000s CPU, 0.000s wall-clock]
 Printing initial state... [0.010s CPU, 0.002s wall-clock]
 Printing goal... [0.000s CPU, 0.000s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.020s
+Total translation time: 0.010s
 Initializing planner
 Reading task description file.
- 
-Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file plan"
-Iteration finished with error code 33.
+beluga beluga-problem_181_s224_j8_r2_oc84_f4
+Total number of types: 12
+Total number of predicates: 30
+Total number of objects: 64
+Total number of atoms in the initial state: 417
+Total number of fluent atoms in the goal state: 12
+Total number of action schemas: 9
+IMPORTANT: Assuming that negative effects are always listed first. (This is guaranteed by the default translator.)
+Creating search factory for method bfs...
+Creating heuristic factory...
+Iteration removed 259 equivalent rules.
+Iteration removed 0 equivalent rules.
+Materialized static stratum: 68 atoms from 13 rules
+Total number of static atoms in the EDB: 442
+Total number of rules: 192
+Creating successor generator factory...
+Starting breadth first search
+Initial heuristic value 0
+f = 0 [0 evaluated, 0 expanded, 0 generated, t=0.00540943s, 7512 KB]
+f = 1 [0 evaluated, 1 expanded, 8 generated, t=0.00578107s, 7512 KB]
+f = 2 [0 evaluated, 9 expanded, 54 generated, t=0.00717355s, 7512 KB]
+f = 3 [0 evaluated, 34 expanded, 173 generated, t=0.0108569s, 7512 KB]
+f = 4 [0 evaluated, 79 expanded, 467 generated, t=0.0171319s, 7644 KB]
+f = 5 [0 evaluated, 184 expanded, 1013 generated, t=0.032548s, 7644 KB]
+f = 6 [0 evaluated, 277 expanded, 1579 generated, t=0.0453386s, 7644 KB]
+f = 7 [0 evaluated, 388 expanded, 2188 generated, t=0.0614394s, 7644 KB]
+f = 8 [0 evaluated, 512 expanded, 2922 generated, t=0.0801294s, 7768 KB]
+f = 9 [0 evaluated, 666 expanded, 3852 generated, t=0.102709s, 7768 KB]
+f = 10 [0 evaluated, 889 expanded, 5250 generated, t=0.138468s, 7892 KB]
+f = 11 [0 evaluated, 1159 expanded, 7026 generated, t=0.181142s, 8148 KB]
+f = 12 [0 evaluated, 1545 expanded, 9439 generated, t=0.24164s, 8404 KB]
+f = 13 [0 evaluated, 2054 expanded, 12873 generated, t=0.324286s, 8644 KB]
+f = 14 [0 evaluated, 2826 expanded, 18221 generated, t=0.456251s, 9268 KB]
+f = 15 [0 evaluated, 4211 expanded, 28191 generated, t=0.702219s, 10484 KB]
+f = 16 [0 evaluated, 6918 expanded, 48868 generated, t=1.21765s, 12928 KB]
+f = 17 [0 evaluated, 12441 expanded, 90918 generated, t=2.29645s, 17580 KB]
+f = 18 [0 evaluated, 22947 expanded, 172616 generated, t=4.35707s, 25776 KB]
+f = 19 [0 evaluated, 41498 expanded, 316567 generated, t=8.05316s, 39540 KB]
+f = 20 [0 evaluated, 72057 expanded, 554135 generated, t=14.0881s, 59892 KB]
+f = 21 [0 evaluated, 116784 expanded, 900643 generated, t=22.9744s, 87416 KB]
+f = 22 [0 evaluated, 180302 expanded, 1392971 generated, t=35.6576s, 126664 KB]
+f = 23 [0 evaluated, 266002 expanded, 2055273 generated, t=52.8643s, 175544 KB]
+f = 24 [0 evaluated, 378656 expanded, 2929067 generated, t=75.5244s, 240784 KB]
+f = 25 [0 evaluated, 519501 expanded, 4017029 generated, t=103.902s, 315740 KB]
+f = 26 [0 evaluated, 691519 expanded, 5354257 generated, t=138.706s, 414760 KB]
+f = 27 [0 evaluated, 899940 expanded, 6956750 generated, t=180.443s, 521276 KB]
+f = 28 [0 evaluated, 1143914 expanded, 8857004 generated, t=229.522s, 649232 KB]
+Goal found at: 232.974
+Total time: 232.974
+Total plan cost: 29
+Plan length: 29 step(s).
+Expanded 1160514 state(s).
+Reopened 0 state(s).
+Evaluated 0 state(s).
+Evaluations: 0 state(s).
+Generated 8986689 state(s).
+Dead ends: 0 state(s).
+Pruned: 0 state(s).
+Expanded until last jump: 1143914 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 0 state(s).
+Generated until last jump: 8857004 state(s).
+Peak memory usage: 659704 kB
+Number of registered states: 1460455
+Int hash set load factor: 1460455/2097152 = 0.696399
+Int hash set resizes: 21
+Total atoms produced by grounder: 0
+Total queue pushes by grounder: 0
+Solution found.
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s bfs -e ff -g yannakakis --seed 1 --plan-file plan"
+Iteration finished correctly.

@@ -1,6 +1,6 @@
 Parsing...
 WARNING: Your PDDL domain file probably uses functions for action costs. These are parsed but ignored.
-Parsing: [0.000s CPU, 0.003s wall-clock]
+Parsing: [0.000s CPU, 0.004s wall-clock]
 Processing task beluga-problem_136_s178_j5_r2_oc82_f5
 Normalizing task... [0.000s CPU, 0.000s wall-clock]
 Performing sanity checks...... [0.000s CPU, 0.000s wall-clock]
@@ -15,12 +15,70 @@ Printing names and representation type... [0.000s CPU, 0.000s wall-clock]
 Printing types... [0.000s CPU, 0.000s wall-clock]
 Printing predicates... [0.000s CPU, 0.000s wall-clock]
 Printing objects (i.e., constants)... [0.000s CPU, 0.000s wall-clock]
-Printing initial state... [0.000s CPU, 0.002s wall-clock]
+Printing initial state... [0.010s CPU, 0.002s wall-clock]
 Printing goal... [0.000s CPU, 0.000s wall-clock]
 Printing action schemas... [0.000s CPU, 0.001s wall-clock]
-Total translation time: 0.000s
+Total translation time: 0.010s
 Initializing planner
 Reading task description file.
- 
-Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s alt-bfws1 -e ff -g yannakakis --seed 1 --plan-file plan"
-Iteration finished with error code 33.
+beluga beluga-problem_136_s178_j5_r2_oc82_f5
+Total number of types: 12
+Total number of predicates: 30
+Total number of objects: 60
+Total number of atoms in the initial state: 332
+Total number of fluent atoms in the goal state: 12
+Total number of action schemas: 9
+IMPORTANT: Assuming that negative effects are always listed first. (This is guaranteed by the default translator.)
+Creating search factory for method bfs...
+Creating heuristic factory...
+Iteration removed 259 equivalent rules.
+Iteration removed 0 equivalent rules.
+Materialized static stratum: 68 atoms from 13 rules
+Total number of static atoms in the EDB: 361
+Total number of rules: 192
+Creating successor generator factory...
+Starting breadth first search
+Initial heuristic value 0
+f = 0 [0 evaluated, 0 expanded, 0 generated, t=0.00535984s, 7508 KB]
+f = 1 [0 evaluated, 1 expanded, 8 generated, t=0.00568451s, 7508 KB]
+f = 2 [0 evaluated, 9 expanded, 56 generated, t=0.00697596s, 7508 KB]
+f = 3 [0 evaluated, 35 expanded, 202 generated, t=0.010696s, 7508 KB]
+f = 4 [0 evaluated, 88 expanded, 531 generated, t=0.0176431s, 7508 KB]
+f = 5 [0 evaluated, 202 expanded, 1112 generated, t=0.0327032s, 7640 KB]
+f = 6 [0 evaluated, 318 expanded, 1724 generated, t=0.046869s, 7640 KB]
+f = 7 [0 evaluated, 453 expanded, 2358 generated, t=0.0637057s, 7640 KB]
+f = 8 [0 evaluated, 572 expanded, 2991 generated, t=0.0775292s, 7772 KB]
+f = 9 [0 evaluated, 712 expanded, 3627 generated, t=0.0951091s, 7772 KB]
+f = 10 [0 evaluated, 824 expanded, 4141 generated, t=0.108047s, 7772 KB]
+f = 11 [0 evaluated, 927 expanded, 4569 generated, t=0.120077s, 7892 KB]
+f = 12 [0 evaluated, 1015 expanded, 4947 generated, t=0.129686s, 7892 KB]
+f = 13 [0 evaluated, 1086 expanded, 5240 generated, t=0.137695s, 7892 KB]
+f = 14 [0 evaluated, 1167 expanded, 5585 generated, t=0.14695s, 7892 KB]
+f = 15 [0 evaluated, 1248 expanded, 5918 generated, t=0.156208s, 8024 KB]
+f = 16 [0 evaluated, 1329 expanded, 6254 generated, t=0.165873s, 8024 KB]
+f = 17 [0 evaluated, 1413 expanded, 6593 generated, t=0.175437s, 8024 KB]
+f = 18 [0 evaluated, 1500 expanded, 6962 generated, t=0.185444s, 8024 KB]
+Goal found at: 0.181614
+Total time: 0.181624
+Total plan cost: 19
+Plan length: 19 step(s).
+Expanded 1513 state(s).
+Reopened 0 state(s).
+Evaluated 0 state(s).
+Evaluations: 0 state(s).
+Generated 7011 state(s).
+Dead ends: 0 state(s).
+Pruned: 0 state(s).
+Expanded until last jump: 1500 state(s).
+Reopened until last jump: 0 state(s).
+Evaluated until last jump: 0 state(s).
+Generated until last jump: 6962 state(s).
+Peak memory usage: 8024 kB
+Number of registered states: 1595
+Int hash set load factor: 1595/2048 = 0.778809
+Int hash set resizes: 11
+Total atoms produced by grounder: 0
+Total queue pushes by grounder: 0
+Solution found.
+Executing "/home/mz93/Beluga-AI-Challenge/powerlifted/builds/release/search/search -f output.lifted -s bfs -e ff -g yannakakis --seed 1 --plan-file plan"
+Iteration finished correctly.
