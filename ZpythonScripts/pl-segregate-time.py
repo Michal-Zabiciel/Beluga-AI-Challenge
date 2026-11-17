@@ -46,7 +46,7 @@ for file in os.scandir(input_directory):
             totalTime = x.split(":")[1].replace("\n", "")
             print(totalTime)
 
-            if float(totalTime) < 110.0:
+            if float(totalTime) < 50.0 and float(totalTime) > 14.0:
                 shutil.copyfile("../problem-instances-stripped/" + filename + ".pddl", output_directory + "/" + filename + ".pddl")
 
 print(count)

@@ -4,10 +4,8 @@ import os
 results = {}
 algorithms = []
 
-fileNames = []
 belugaProblems = []
 
-atomsIScounts = []
 hAdds = []
 peakMemorys = []
 runOutOfTimes = []
@@ -16,13 +14,14 @@ totalTimes = []
 timeLimits = []
 
 inputPath = "../FD-5/pl-t-time"
-outputPath = "../ZcsvFiles/pl-output-time-11-15.csv"
+outputPath = "../ZcsvFiles/pl-output-time-11-17.csv"
 # For each folder in input directory
 for folder in os.scandir(inputPath):
     path = folder.path #os.fsdecode(file)
 
     #paths = path.split("/")
     algorithm = (path.split("/")[-1])
+    print(algorithm)
     algorithms.append(algorithm)
 
     for file in os.scandir(inputPath + "/" + algorithm):
@@ -44,7 +43,6 @@ for folder in os.scandir(inputPath):
                 atomsIScount = x.split(":")[1].replace("\n", "")
                 results[filename][algorithm]["Atoms in initial state"] = atomsIScount
             if "Initial h-add value of the task" in x:
-                hAddB = True
                 hAdd = x.split(":")[1].replace("\n", "")
                 results[filename][algorithm]["Initial h-add value of the task"] = hAdd
             if "KB" in x:
@@ -57,9 +55,11 @@ for folder in os.scandir(inputPath):
             if "Iteration ran out of time" in x:
                 runOutOfTime = True
                 results[filename][algorithm]["Iteration ran out of time"] = "True"
+                results[filename][algorithm]["Error code"] = "Time"
                 limit = x.split(" ")[-2]
             if "Plan length" in x:
                 results[filename][algorithm]["Plan length"] = x.split(" ")[-2]
+                results[filename][algorithm]["Error code"] = "0"
             if "Expanded" in x and "until last jump" not in x:
                 results[filename][algorithm]["Expanded"] = x.split(" ")[-2]
             if "Reopened" in x and "until last jump" not in x:
@@ -70,11 +70,14 @@ for folder in os.scandir(inputPath):
                 results[filename][algorithm]["Evaluations"] = x.split(" ")[-2]
             if "Generated" in x and "until last jump" not in x:
                 results[filename][algorithm]["Generated"] = x.split(" ")[-2]
+            if "Iteration finished with error code" in x:
+                results[filename][algorithm]["Error code"] = x.split(" ")[-1].replace(".\n", "")
             
 
         if not atomsIS: results[filename][algorithm]["Atoms in initial state"] = ""
-        if not hAddB: results[filename][algorithm]["Initial h-add value of the task"] = ""
 
+        results[filename][algorithm].setdefault("Initial h-add value of the task", "")
+        results[filename][algorithm].setdefault("Error code", "")
         results[filename][algorithm].setdefault("Expanded", "")
         results[filename][algorithm].setdefault("Reopened", "")
         results[filename][algorithm].setdefault("Evaluated", "")
@@ -103,10 +106,9 @@ with open(outputPath, 'w', newline='') as csvfile:
         "Reopened",
         "Evaluated",
         "Evaluations",
-        "Generated"
+        "Generated",
+        "Error code"
         ]
-    print(f"file count : {len(fileNames)}")
-    print(f"atomsIScount count : {len(atomsIScounts)}")
 
     header = ["Filenames"]
     subheader = [""]
@@ -115,13 +117,10 @@ with open(outputPath, 'w', newline='') as csvfile:
         header.append(h)
         for x in range(1, len(algorithms)):
             header.append("")
-        for x in range(0, len(algorithms)):
-            subheader.append(algorithms[x])
+        for a in algorithms:
+            subheader.append(a)
     spamwriter.writerow(header)
     spamwriter.writerow(subheader)
-
-    #for x in range(len(fileNames)):
-    #    spamwriter.writerow([fileNames[x], atomsIScounts[x], hAdds[x], peakMemorys[x], runOutOfTimes[x], timeLimits[x], totalTimes[x], exitCodes[x]])
 
     print(f"count: {len(results)}")
     #print(results.items())
@@ -132,6 +131,5 @@ with open(outputPath, 'w', newline='') as csvfile:
         for h in headers:
             for algorithm in algorithms:
                 row.append(data[algorithm].get(h, ""))
-
 
         spamwriter.writerow(row)
