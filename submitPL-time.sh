@@ -40,7 +40,7 @@ if [ -f "$input" ]; then
     for str in ${myArray[@]}; do
         for e in ${evaluators[@]}; do
             for g in ${generators[@]}; do
-                if ! grep -q "Plan length" "..pl-t-time/$str/$e/$g/$txt"; then
+                if ! grep -q "Plan length" "../pl-t-time/$str/$e/$g/$txt"; then
                     ../../powerlifted/./powerlifted.py -i $input -s $str -e $e -g $g --time-limit 120 > $toutput/$str/$e/$g/$SLURM_ARRAY_TASK_ID.txt
                 fi
             done
