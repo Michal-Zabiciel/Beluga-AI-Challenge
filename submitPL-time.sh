@@ -19,7 +19,7 @@ mkdir -p './FD-5/pl-t-time'
 #myArray=("alt-bfws1" "alt-bfws2" "astar" "bfs" "bfws1" "bfws2" "bfws1-rx" "bfws2-rx" "dq-bfws1-rx" "dq-bfws2-rx" "gbfs" "iw1" "iw2" "lazy" "lazy-po" "lazy-prune")
 myArray=("alt-bfws1" "alt-bfws2" "bfws1" "bfws2" "bfws1-rx" "bfws2-rx" "dq-bfws1-rx" "dq-bfws2-rx")
 evaluators=("add" "blind" "ff" "goalcount" "hmax" "rff")
-generators=("join" "random_join" "ordered_join" "full_reducer" "yannakis")
+generators=("join" "random_join" "ordered_join" "full_reducer" "yannakakis")
 
 cd 'FD-5/pl-t-time'
 
@@ -40,7 +40,7 @@ if [ -f "$input" ]; then
     for str in ${myArray[@]}; do
         for e in ${evaluators[@]}; do
             for g in ${generators[@]}; do
-                if ! grep -q "Plan length" "../pl-t-time/$str/$e/$g/$txt"; then
+                if ! grep -q "Plan length" "../pl-t-time/$str/$e/$g/$txt" && ! grep -q "finished with error code 33" "../pl-t-time/$str/$e/$g/$txt"; then
                     ../../powerlifted/./powerlifted.py -i $input -s $str -e $e -g $g --time-limit 120 > $toutput/$str/$e/$g/$SLURM_ARRAY_TASK_ID.txt
                 fi
             done

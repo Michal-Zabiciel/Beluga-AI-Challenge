@@ -72,15 +72,19 @@ for algorithm_folder in os.scandir(inputPath):
                         if memory > peakMemory:
                             peakMemory = memory
                     if "Peak memory usage" in x:
-                        peakMemory = int(x.split(" ")[-2])
+                        peakMemory = int(x.split(" ")[-2])'''
                     if "Iteration ran out of time" in x:
                         runOutOfTime = True
                         results[filename][algorithm][evaluator][generator]["Iteration ran out of time"] = "True"
                         results[filename][algorithm][evaluator][generator]["Error code"] = "Time"
-                        limit = x.split(" ")[-2]'''
+                        limit = x.split(" ")[-2]
                     if "Plan length" in x:
                         results[filename][algorithm][evaluator][generator]["Plan length"] = x.split(" ")[-2]
-                        #results[filename][algorithm][evaluator][generator]["Error code"] = "0"
+                        results[filename][algorithm][evaluator][generator]["Error code"] = "0"
+                    if "Total time" in x:
+                        results[filename][algorithm][evaluator][generator]["Total time"] = x.split(" ")[-1]
+                    if "Iteration finished with error code" in x:
+                        results[filename][algorithm][evaluator][generator]["Error code"] = x.split(" ")[-1].replace(".\n", "")
                     '''if "Expanded" in x and "until last jump" not in x:
                         results[filename][algorithm][evaluator][generator]["Expanded"] = x.split(" ")[-2]
                     if "Reopened" in x and "until last jump" not in x:
@@ -91,8 +95,7 @@ for algorithm_folder in os.scandir(inputPath):
                         results[filename][algorithm][evaluator][generator]["Evaluations"] = x.split(" ")[-2]
                     if "Generated" in x and "until last jump" not in x:
                         results[filename][algorithm][evaluator][generator]["Generated"] = x.split(" ")[-2]
-                    if "Iteration finished with error code" in x:
-                        results[filename][algorithm][evaluator][generator]["Error code"] = x.split(" ")[-1].replace(".\n", "")'''
+                    '''
                     
 
                 '''if not atomsIS: results[filename][algorithm][evaluator][generator]["Atoms in initial state"] = ""
@@ -135,7 +138,7 @@ with open(outputPath, 'w', newline='') as csvfile:
         ]'''
 
     headers = [
-        "Plan length",
+        "Error code",
         ]
 
     header = ["Filenames"]
@@ -173,3 +176,30 @@ with open(outputPath, 'w', newline='') as csvfile:
                         row.append(data[algorithm][evaluator][generator].get(h, ""))
 
         spamwriter.writerow(row)
+
+    spamwriter.writerow("Average")
+    
+    row = [""]
+    average = 0
+
+    '''for h in headers:
+        for algorithm in algorithms:
+            for evaluator in evaluators:
+                for generator in generators:
+                    average = 0
+                    sumOfFiles = 0
+                    count = 0
+                    for filename, data in results.items():
+                        sumOfFiles += float(data[algorithm][evaluator][generator].get(h, "0.0"))
+                        if float(data[algorithm][evaluator][generator].get(h, "0.0")) != 0.0:
+                            count += 1
+
+                    print(sumOfFiles)
+                    if count != 0.0 and count > 8:
+                        average = sumOfFiles / count
+                        row.append(average)
+                    else:
+                        row.append("")'''
+                    
+    
+    spamwriter.writerow(row)
