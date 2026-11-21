@@ -121,6 +121,36 @@ for algorithm_folder in os.scandir(inputPath):
 
 
 '''
+
+x = 1
+time = "48:00:00"
+script = open("../submitPL-differentS-" + str(x) + ".sh", "w")
+partition = "small-short"
+mem = "12G"
+source_directory="./FD-5/pl-pddl-diffS"
+output_directory="../pl-t-diffS"
+
+
+script.write("#!/bin/bash\n")
+script.write("#SBATCH --job-name=differentS-" + str(x) + "\n")
+script.write("#SBATCH --output=differentS-" + str(x) + ".out\n")
+script.write("#SBATCH --error=differentS-" + str(x) + ".err\n")
+script.write("#SBATCH --time=" + time + "\n")
+script.write("#SBATCH --partition=" + partition +"\n")
+script.write("#SBATCH --ntasks=1\n")
+script.write("#SBATCH --cpus-per-task=1\n")
+script.write("#SBATCH --mem-per-cpu=" + mem + "\n")
+script.write("#SBATCH --array=34-259%11\n")
+script.write("source='" + source_directory + "'\n")
+script.write("toutput='" + output_directory + "'\n")
+
+script.write("mkdir -p " + output_directory + "\n")
+script.write("cd $source\n")
+script.write("input=\"$SLURM_ARRAY_TASK_ID.pddl\"\n")
+script.write("txt=\"$SLURM_ARRAY_TASK_ID.txt\"\n")
+script.write("if [ -f \"$input\" ]; then\n")
+
+
 with open(outputPath, 'w', newline='') as csvfile:
     spamwriter = csv.writer(csvfile, delimiter=',')
     '''headers = [
@@ -134,11 +164,12 @@ with open(outputPath, 'w', newline='') as csvfile:
         "Evaluated",
         "Evaluations",
         "Generated",
-        "Error code"
+        "Error code",
+        "Total time",
         ]'''
 
     headers = [
-        "Error code",
+        "Total time",
         ]
 
     header = ["Filenames"]
@@ -181,25 +212,35 @@ with open(outputPath, 'w', newline='') as csvfile:
     
     row = [""]
     average = 0
+    sumOfAverages = 0
+    averageCount = 0
 
-    '''for h in headers:
-        for algorithm in algorithms:
-            for evaluator in evaluators:
-                for generator in generators:
-                    average = 0
-                    sumOfFiles = 0
-                    count = 0
-                    for filename, data in results.items():
-                        sumOfFiles += float(data[algorithm][evaluator][generator].get(h, "0.0"))
-                        if float(data[algorithm][evaluator][generator].get(h, "0.0")) != 0.0:
-                            count += 1
+    for algorithm in algorithms:
+        for evaluator in evaluators:
+            for generator in generators:
+                average = 0
+                sumOfFiles = 0
+                count = 0
+                for filename, data in results.items():
+                    sumOfFiles += float(data[algorithm][evaluator][generator].get("Total time", "0.0"))
+                    if float(data[algorithm][evaluator][generator].get("Total time", "0.0")) != 0.0:
+                        count += 1
 
-                    print(sumOfFiles)
-                    if count != 0.0 and count > 8:
-                        average = sumOfFiles / count
-                        row.append(average)
-                    else:
-                        row.append("")'''
+                #print(sumOfFiles)
+                if count != 0.0 and count > 8:
+                    average = sumOfFiles / count
+                    print(average)
+                    sumOfAverages += average
+                    averageCount += 1
+                    row.append(average)
+                    if (average < 12.0):
+                        print(f"Algorithm {algorithm}, evaluator {evaluator}, generator {generator}")
+                        script.write(f"mkdir -p {output_directory}/{algorithm}/{evaluator}/{generator}\n")
+                        script.write(f"../../powerlifted/./powerlifted.py -i $input -s {algorithm} -e {evaluator} -g {generator} --time-limit 500 > $toutput/{algorithm}/{evaluator}/{generator}/$SLURM_ARRAY_TASK_ID.txt\n")
+                else:
+                    row.append("")
                     
-    
+    averageOfAverages = sumOfAverages / averageCount
+    print(f"Average average: {averageOfAverages}")
     spamwriter.writerow(row)
+    script.write("fi")
