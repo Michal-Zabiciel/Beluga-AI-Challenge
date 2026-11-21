@@ -6,8 +6,8 @@
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=12G
-#SBATCH --array=34-259%11
+#SBATCH --mem-per-cpu=10G
+#SBATCH --array=9-259%14
 source='./FD-5/pl-pddl-diffS'
 toutput='../pl-t-diffS'
 mkdir -p ../pl-t-diffS
