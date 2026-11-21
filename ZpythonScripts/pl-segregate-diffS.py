@@ -64,7 +64,7 @@ for file in os.scandir(input_directory):
         if "Total time" in x:
            time = x.split(" ")[-1]
     # if not atomsIS: 
-    if (not runOutOfTime and float(time) < 500.0):
+    if ((not runOutOfTime and float(time) >= 500.0) or (runOutOfTime and int(atomsIScount) < 2500)):
 
         fpddl_output = open(output_directory + "/" + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
