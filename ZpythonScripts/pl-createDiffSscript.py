@@ -74,3 +74,5 @@ for algorithm in algorithms:
             script.write(f"if [ ! -f \"../pl-t-diffS/{algorithm}/{evaluator}/{generator}/$txt\" ] || ! grep -q \"Plan length\" \"../{inputP2}/{algorithm}/{evaluator}/{generator}/$txt\" ; then\n")
             script.write(f"../../powerlifted/./powerlifted.py -i $input -s {algorithm} -e {evaluator} -g {generator} --time-limit 1000 > $toutput/{algorithm}/{evaluator}/{generator}/$SLURM_ARRAY_TASK_ID.txt\n")
             script.write(f"fi\n")
+
+script.write("fi\n")

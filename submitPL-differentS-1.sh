@@ -63,3 +63,4 @@ mkdir -p ../pl-t-diffS/bfws2/blind/full_reducer
 if [ ! -f "../pl-t-diffS/bfws2/blind/full_reducer/$txt" ] || ! grep -q "Plan length" "../pl-t-diffS/bfws2/blind/full_reducer/$txt" ; then
 ../../powerlifted/./powerlifted.py -i $input -s bfws2 -e blind -g full_reducer --time-limit 1000 > $toutput/bfws2/blind/full_reducer/$SLURM_ARRAY_TASK_ID.txt
 fi
+fi
