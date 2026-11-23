@@ -13,52 +13,51 @@ auxiliaryAtoms = []
 translateExitCode = []
 plannerTime = []
 
-input_directory = "../FD-5/t-output-2"
+input_directory = "../FD-5/fd-t-output-11-8"
 output_directory = "../FD-5/fd-pddl"
 results_directory = "../FD-5/fd-t"
 
-for x in range(1,5):
-    shutil.rmtree(output_directory + str(x), ignore_errors=True)
-    os.makedirs(output_directory + str(x), exist_ok=True)
-    shutil.rmtree(results_directory + str(x), ignore_errors=True)
-    os.makedirs(results_directory + str(x), exist_ok=True)
-    gi1 = open(output_directory + str(x) + "/.gitignore", "w")
-    g = open(results_directory + str(x) + "/.gitignore", "w")
+#for x in range(1,5):
+shutil.rmtree(output_directory, ignore_errors=True)
+os.makedirs(output_directory, exist_ok=True)
+shutil.rmtree(results_directory, ignore_errors=True)
+os.makedirs(results_directory, exist_ok=True)
+gi1 = open(output_directory + "/.gitignore", "w")
+g = open(results_directory + "/.gitignore", "w")
 
 
 #scripts
 
 time = "24:00:00"
 partition = "small-short"
-mem = "200G"
+mem = "210G"
 timeLimit = "7200"
 memoryLimit = "200000"
 
-for x in range(1,5):
-    script = open("../submitFD-" + str(x) + ".sh", "w")
+#for x in range(1,5):
+script = open("../submitFD.sh", "w")
 
-    script.write("#!/bin/bash\n")
-    script.write("#SBATCH --job-name=fastd-" + str(x) + "\n")
-    script.write("#SBATCH --output=fastdownward-" + str(x) + ".out\n")
-    script.write("#SBATCH --error=fastdownward-" + str(x) + ".err\n")
-    script.write("#SBATCH --time=" + time + "\n")
-    script.write("#SBATCH --partition=" + partition +"\n")
-    script.write("#SBATCH --ntasks=1\n")
-    script.write("#SBATCH --cpus-per-task=1\n")
-    script.write("#SBATCH --mem-per-cpu=" + mem + "\n")
-    script.write("source='" + output_directory.replace("..", ".") + str(x) + "'\n")
-    script.write("toutput='" + results_directory.replace("FD-5/", "") + str(x) + "'\n")
-    script.write("cd $source\n")
-    script.write("for file in * ; do\n")
-    script.write("\tif [ $file != domain.pddl ] ; then\n")
-    script.write("\tfileNumber=$file\n")
-    script.write("\tIFS=. read -r number rest<<< $fileNumber\n")
-    script.write("\techo $number\n")
-    script.write("\t../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$number.sas --translate-time-limit " + timeLimit +  " --translate-memory-limit " + memoryLimit + " $file > $toutput/$number.txt\n")
-    script.write("\tfi\n")
-    script.write("done\n")
+script.write("#!/bin/bash\n")
+script.write("#SBATCH --job-name=fastd"  + "\n")
+script.write("#SBATCH --output=fastdownward"  + ".out\n")
+script.write("#SBATCH --error=fastdownward"  + ".err\n")
+script.write("#SBATCH --time=" + time + "\n")
+script.write("#SBATCH --partition=" + partition +"\n")
+script.write("#SBATCH --ntasks=1\n")
+script.write("#SBATCH --cpus-per-task=1\n")
+script.write("#SBATCH --mem-per-cpu=" + mem + "G\n")
+script.write("#SBATCH --array=0-269%11\n")
+script.write("source='" + output_directory.replace("..", ".")  + "'\n")
+script.write("toutput='" + results_directory.replace("FD-5/", "")  + "'\n")
+script.write(f"mkdir -p {results_directory.replace("FD-5/", "")} \n")
+script.write("cd $source\n")
+script.write("input=\"$SLURM_ARRAY_TASK_ID.pddl\"\n")
+script.write("txt=\"$SLURM_ARRAY_TASK_ID.txt\"\n")
+script.write("if [ -f \"$input\" ] ; then\n")
+script.write(f"\t../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas --translate-time-limit {timeLimit} --translate-memory-limit  {memoryLimit}  $input > $toutput/$SLURM_ARRAY_TASK_ID.txt\n")
+script.write("fi\n")
 
-    script.close()
+script.close()
 
 
   
@@ -72,7 +71,7 @@ for file in os.scandir(input_directory):
     #filename = path
 
     relevantAtomsAppeared = False
-    exit_code = None
+    exit_code = -99
     peakMemory = 0
     time = 0.0
     memoryLimit = 0
@@ -91,8 +90,9 @@ for file in os.scandir(input_directory):
             memoryLimit = int(x.split(" ")[-2])
     # relevant stats
     # if not relevantAtomsAppeared: 
-    if (not relevantAtomsAppeared and memoryLimit == 50000):
-        fpddl_output = open(output_directory + "1/" + filename + ".pddl", "w")
+    print(int(exit_code) == 20)
+    if (int(exit_code) == 20 and memoryLimit == 50000):
+        fpddl_output = open(output_directory + "/" + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
 
         for x in fpddl:
@@ -105,21 +105,7 @@ for file in os.scandir(input_directory):
     f.close() 
 
 domain = open("../problem-instances-stripped/domain.pddl")
-domain_output1 = open(output_directory + "1/domain.pddl", "w")
-domain_output2 = open(output_directory + "2/domain.pddl", "w")
-domain_output3 = open(output_directory + "3/domain.pddl", "w")
-domain_output4 = open(output_directory + "4/domain.pddl", "w")
+domain_output1 = open(output_directory + "/domain.pddl", "w")
 
 for x in domain:
     domain_output1.write(x)
-    domain_output2.write(x)
-    domain_output3.write(x)
-    domain_output4.write(x)
-directory1 = Path(output_directory + "1")
-directory2 = Path(output_directory + "2")
-directory3 = Path(output_directory + "3")
-directory4 = Path(output_directory + "4")
-print(len([f for f in directory1.iterdir() if f.is_file()]))
-print(len([f for f in directory2.iterdir() if f.is_file()]))
-print(len([f for f in directory3.iterdir() if f.is_file()]))
-print(len([f for f in directory4.iterdir() if f.is_file()]))
