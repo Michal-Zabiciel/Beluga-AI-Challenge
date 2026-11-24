@@ -6,7 +6,7 @@
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=210GG
+#SBATCH --mem-per-cpu=210G
 #SBATCH --array=0-269%11
 source='./FD-5/fd-pddl'
 toutput='../fd-t'
