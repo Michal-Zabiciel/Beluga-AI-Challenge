@@ -12,7 +12,6 @@ source='./FD-5/fd-pddl'
 toutput='../fd-t'
 mkdir -p ../fd-t 
 cd $source
-SLURM_ARRAY_TASK_ID="34"
 input="$SLURM_ARRAY_TASK_ID.pddl"
 txt="$SLURM_ARRAY_TASK_ID.txt"
 if [ -f "$input" ] ; then
