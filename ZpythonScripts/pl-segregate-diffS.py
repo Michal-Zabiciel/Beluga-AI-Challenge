@@ -15,7 +15,7 @@ plannerTime = []
 ranger = range(1, 2)
 
 input_directory = "../FD-5/pl-output-11-15"
-output_directory = "../FD-5/pl-pddl-diffS"
+output_directory = "../FD-5/pl-pddl-bfws2-hmax-full_reducer"
 #results_directory = "../FD-5/pl-t"
 
 for x in ranger:
@@ -64,7 +64,7 @@ for file in os.scandir(input_directory):
         if "Total time" in x:
            time = x.split(" ")[-1]
     # if not atomsIS: 
-    if ((not runOutOfTime and float(time) > 0.0 )):
+    if ((runOutOfTime and int(atomsIScount) < 4000 )):
 
         fpddl_output = open(output_directory + "/" + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
