@@ -17,10 +17,10 @@ totalTimes = []
 timeLimits = []
 
 x = 1
-time = "48:00:00"
+time = "18:00:00"
 script = open("../submitPL-differentS-" + str(x) + ".sh", "w")
 partition = "small-short"
-mem = "14G"
+mem = "9G"
 source_directory="./FD-5/pl-pddl-diffS"
 output_directory="../pl-t-diffS"
 
@@ -34,7 +34,7 @@ script.write("#SBATCH --partition=" + partition +"\n")
 script.write("#SBATCH --ntasks=1\n")
 script.write("#SBATCH --cpus-per-task=1\n")
 script.write("#SBATCH --mem-per-cpu=" + mem + "\n")
-script.write("#SBATCH --array=0-269%11\n")
+script.write("#SBATCH --array=0-269%13\n")
 script.write("source='" + source_directory + "'\n")
 script.write("toutput='" + output_directory + "'\n")
 
@@ -72,7 +72,7 @@ for algorithm in algorithms:
         for generator in generators:
             script.write(f"mkdir -p {output_directory}/{algorithm}/{evaluator}/{generator}\n")
             script.write(f"if [ ! -f \"../pl-t-diffS/{algorithm}/{evaluator}/{generator}/$txt\" ] || ! grep -q \"Plan length\" \"../{inputP2}/{algorithm}/{evaluator}/{generator}/$txt\" ; then\n")
-            script.write(f"echo $input")
+            script.write(f"echo $input\n")
             script.write(f"../../powerlifted/./powerlifted.py -i $input -s {algorithm} -e {evaluator} -g {generator} --time-limit 8000 > $toutput/{algorithm}/{evaluator}/{generator}/$SLURM_ARRAY_TASK_ID.txt\n")
             script.write(f"fi\n")
 
