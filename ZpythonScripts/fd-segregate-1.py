@@ -31,7 +31,7 @@ g = open(results_directory + "/.gitignore", "w")
 time = "24:00:00"
 partition = "small-short"
 mem = "210G"
-timeLimit = "7200"
+timeLimit = "14000"
 memoryLimit = "200000"
 
 #for x in range(1,5):
@@ -45,7 +45,7 @@ script.write("#SBATCH --time=" + time + "\n")
 script.write("#SBATCH --partition=" + partition +"\n")
 script.write("#SBATCH --ntasks=1\n")
 script.write("#SBATCH --cpus-per-task=1\n")
-script.write("#SBATCH --mem-per-cpu=" + mem + "G\n")
+script.write("#SBATCH --mem-per-cpu=" + mem + "\n")
 script.write("#SBATCH --array=0-269%11\n")
 script.write("source='" + output_directory.replace("..", ".")  + "'\n")
 script.write("toutput='" + results_directory.replace("FD-5/", "")  + "'\n")
@@ -91,7 +91,7 @@ for file in os.scandir(input_directory):
     # relevant stats
     # if not relevantAtomsAppeared: 
     print(int(exit_code) == 20)
-    if (int(exit_code) == 20 and memoryLimit == 50000):
+    if ((int(exit_code) == 21) or (int(exit_code) == -9) or (int(exit_code) == -99)):
         fpddl_output = open(output_directory + "/" + filename + ".pddl", "w")
         fpddl = open("../problem-instances-stripped/" + filename + ".pddl")
 

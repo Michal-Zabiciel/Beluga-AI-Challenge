@@ -15,5 +15,5 @@ cd $source
 input="$SLURM_ARRAY_TASK_ID.pddl"
 txt="$SLURM_ARRAY_TASK_ID.txt"
 if [ -f "$input" ] ; then
-	../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas --translate-time-limit 7200 --translate-memory-limit  200000  $input > $toutput/$SLURM_ARRAY_TASK_ID.txt
+	../../fast-downward-26.6/./fast-downward.py --translate --sas-file /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas --translate-time-limit 14000 --translate-memory-limit  200000  $input > $toutput/$SLURM_ARRAY_TASK_ID.txt
 fi
