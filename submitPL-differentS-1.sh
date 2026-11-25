@@ -2,12 +2,12 @@
 #SBATCH --job-name=differentS-1
 #SBATCH --output=differentS-1.out
 #SBATCH --error=differentS-1.err
-#SBATCH --time=48:00:00
+#SBATCH --time=16:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=14G
-#SBATCH --array=0-269%11
+#SBATCH --mem-per-cpu=9G
+#SBATCH --array=0-269%13
 source='./FD-5/pl-pddl-diffS'
 toutput='../pl-t-diffS'
 mkdir -p ../pl-t-diffS
