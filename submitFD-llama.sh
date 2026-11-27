@@ -15,9 +15,9 @@ cd $toutput
 mkdir -p ../fd-plans-11-27 
 input="$SLURM_ARRAY_TASK_ID.sas"
 txt="$SLURM_ARRAY_TASK_ID.txt"
-if [ -f /$source/$input ] ; then
+if [ ! -f $SLURM_ARRAY_TASK_ID.txt ] || ! grep -q "Solution found" "$SLURM_ARRAY_TASK_ID.txt" ; then
 	echo solving $SLURM_ARRAY_TASK_ID
-	../../fast-downward-26.6/./fast-downward.py --plan-file ../fd-plans-11-27/$SLURM_ARRAY_TASK_ID --alias seq-sat-lama-2011 --translate-time-limit 600 --translate-memory-limit  5000  /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas > $SLURM_ARRAY_TASK_ID.txt 
+	../../fast-downward-26.6/./fast-downward.py --plan-file ../fd-plans-11-27/$SLURM_ARRAY_TASK_ID --alias seq-sat-lama-2011 --translate-time-limit 60 --translate-memory-limit  5000  /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas > $SLURM_ARRAY_TASK_ID.txt 
 else
 	echo not solving $SLURM_ARRAY_TASK_ID
 fi
