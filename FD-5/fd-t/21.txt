@@ -1,0 +1,79 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 14000s
+INFO     translator memory limit: 200000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 21.pddl --sas-file /sharedscratch/mz93/FD-5/sas/21.sas
+Parsing...
+Parsing: [0.020s CPU, 0.116s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.000s CPU, 0.006s wall-clock]
+Preparing model... [0.010s CPU, 0.008s wall-clock]
+Generated 150 rules.
+Computing model... [642.780s CPU, 645.236s wall-clock]
+58044338 relevant atoms
+18815716 auxiliary atoms
+76860054 final queue length
+337515632 total queue pushes
+Completing instantiation... [1908.320s CPU, 1915.901s wall-clock]
+Instantiating: [2575.120s CPU, 2585.270s wall-clock]
+Computing fact groups...
+Finding invariants...
+30 initial candidates
+Finding invariants: [75.000s CPU, 75.304s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.060s CPU, 0.060s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.010s wall-clock]
+Choosing groups...
+42747 uncovered facts
+Choosing groups: [0.010s CPU, 0.012s wall-clock]
+Building translation key... [0.100s CPU, 0.101s wall-clock]
+Computing fact groups: [75.500s CPU, 75.812s wall-clock]
+Building STRIPS to SAS dictionary... [0.040s CPU, 0.032s wall-clock]
+Building dictionary for full mutex groups... [0.020s CPU, 0.027s wall-clock]
+Building mutex information...
+Building mutex information: [0.030s CPU, 0.030s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [65.200s CPU, 65.485s wall-clock]
+Translating task: [1595.910s CPU, 1602.317s wall-clock]
+57994753 effect conditions simplified
+0 implied preconditions added
+Detecting unreachable propositions...
+
+Translator ran out of memory, traceback:
+===============================================================================
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
+    main()
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 597, in pddl_to_sas
+    simplify.filter_unreachable_propositions(sas_task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 518, in filter_unreachable_propositions
+    renaming.apply_to_task(sas_task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 234, in apply_to_task
+    self.apply_to_operators(task.operators)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 303, in apply_to_operators
+    new_op = self.translate_operator(op)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/simplify.py", line 380, in translate_operator
+    return sas_tasks.SASOperator(
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/sas_tasks.py", line 285, in __init__
+    self.pre_post = self._canonical_pre_post(pre_post)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/sas_tasks.py", line 300, in _canonical_pre_post
+    pre_post = list(map(listify, pre_post))
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/sas_tasks.py", line 297, in listify
+    return var, pre, post, list(cond)
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 5173.68s

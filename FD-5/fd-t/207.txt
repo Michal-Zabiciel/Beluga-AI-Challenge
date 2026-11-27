@@ -1,0 +1,92 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 14000s
+INFO     translator memory limit: 200000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 207.pddl --sas-file /sharedscratch/mz93/FD-5/sas/207.sas
+Parsing...
+Parsing: [0.030s CPU, 0.059s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.006s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.009s wall-clock]
+Preparing model... [0.020s CPU, 0.017s wall-clock]
+Generated 150 rules.
+Computing model... [1113.520s CPU, 1119.071s wall-clock]
+75359035 relevant atoms
+24476326 auxiliary atoms
+99835361 final queue length
+438305595 total queue pushes
+Completing instantiation... [3550.300s CPU, 3568.770s wall-clock]
+Instantiating: [4705.440s CPU, 4729.903s wall-clock]
+Computing fact groups...
+Finding invariants...
+30 initial candidates
+Finding invariants: [113.660s CPU, 114.212s wall-clock]
+Checking invariant weight... [0.010s CPU, 0.010s wall-clock]
+Instantiating groups... [0.090s CPU, 0.087s wall-clock]
+Collecting mutex groups... [0.010s CPU, 0.012s wall-clock]
+Choosing groups...
+48243 uncovered facts
+Choosing groups: [0.020s CPU, 0.019s wall-clock]
+Building translation key... [0.140s CPU, 0.137s wall-clock]
+Computing fact groups: [114.380s CPU, 114.925s wall-clock]
+Building STRIPS to SAS dictionary... [0.040s CPU, 0.044s wall-clock]
+Building dictionary for full mutex groups... [0.030s CPU, 0.035s wall-clock]
+Building mutex information...
+Building mutex information: [0.040s CPU, 0.042s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [109.620s CPU, 110.475s wall-clock]
+
+Translator ran out of memory, traceback:
+===============================================================================
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 240, in translate_strips_operator_aux
+    for val, conds in del_effects_by_variable[var].items():
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 6047.10s

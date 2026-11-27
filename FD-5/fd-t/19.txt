@@ -1,0 +1,104 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 14000s
+INFO     translator memory limit: 200000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 19.pddl --sas-file /sharedscratch/mz93/FD-5/sas/19.sas
+Parsing...
+Parsing: [0.020s CPU, 0.043s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.003s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.006s wall-clock]
+Preparing model... [0.000s CPU, 0.008s wall-clock]
+Generated 150 rules.
+Computing model... [783.890s CPU, 786.854s wall-clock]
+71979240 relevant atoms
+22086947 auxiliary atoms
+94066187 final queue length
+417368405 total queue pushes
+Completing instantiation... [2587.360s CPU, 2597.434s wall-clock]
+Instantiating: [3401.380s CPU, 3414.728s wall-clock]
+Computing fact groups...
+Finding invariants...
+30 initial candidates
+Finding invariants: [95.010s CPU, 95.418s wall-clock]
+Checking invariant weight... [0.000s CPU, 0.001s wall-clock]
+Instantiating groups... [0.050s CPU, 0.053s wall-clock]
+Collecting mutex groups... [0.020s CPU, 0.017s wall-clock]
+Choosing groups...
+43333 uncovered facts
+Choosing groups: [0.010s CPU, 0.012s wall-clock]
+Building translation key... [0.100s CPU, 0.099s wall-clock]
+Computing fact groups: [95.530s CPU, 95.933s wall-clock]
+Building STRIPS to SAS dictionary... [0.030s CPU, 0.033s wall-clock]
+Building dictionary for full mutex groups... [0.030s CPU, 0.027s wall-clock]
+Building mutex information...
+Building mutex information: [0.030s CPU, 0.030s wall-clock]
+Translating task...
+Processing axioms...
+Simplifying axioms... [0.000s CPU, 0.000s wall-clock]
+Translator axioms removed by simplifying: 0
+Processing axioms: [97.500s CPU, 97.935s wall-clock]
+
+Translator ran out of memory, traceback:
+===============================================================================
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 327, in build_sas_operator
+    return sas_tasks.SASOperator(name, prevail, pre_post, cost)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 4845.76s
