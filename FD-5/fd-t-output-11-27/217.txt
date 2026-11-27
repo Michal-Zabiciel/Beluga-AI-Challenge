@@ -1,0 +1,44 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 7200s
+INFO     translator memory limit: 200000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 217.pddl --sas-file /sharedscratch/mz93/FD-5/sas/217.sas
+Parsing...
+Parsing: [0.010s CPU, 0.037s wall-clock]
+Normalizing task... [0.000s CPU, 0.000s wall-clock]
+Instantiating...
+Generating Datalog program... [0.000s CPU, 0.004s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.006s wall-clock]
+Preparing model... [0.010s CPU, 0.009s wall-clock]
+Generated 150 rules.
+Computing model... [1069.020s CPU, 1073.059s wall-clock]
+98937849 relevant atoms
+31906359 auxiliary atoms
+130844208 final queue length
+575285695 total queue pushes
+Completing instantiation... 
+Translator ran out of memory, traceback:
+===============================================================================
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/__main__.py", line 37, in <module>
+    main()
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
+    reachable_action_params) = instantiate.explore(task)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 119, in explore
+    return instantiate(task, model)
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 92, in instantiate
+    inst_action = action.instantiate(
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/actions.py", line 85, in instantiate
+    name = "(%s %s)" % (self.name, " ".join(arg_list))
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 3658.47s

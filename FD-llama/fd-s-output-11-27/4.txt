@@ -1,0 +1,28 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running search (release).
+INFO     search stdin: ../small-problems-translations/4.sas
+INFO     search time limit: None
+INFO     search memory limit: None
+INFO     search command line string: /cs/home/mz93/Documents/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/downward --search --if-unit-cost 'let(hlm,landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),let(hff,ff(),iterated([lazy_greedy([hff,hlm],preferred=[hff,hlm]),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=5),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=3),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=2),lazy_wastar([hff,hlm],preferred=[hff,hlm],w=1)],repeat_last=true)))' --if-non-unit-cost 'let(hlm1,eval_modify_costs(landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),cost_type=one),let(hff1,eval_modify_costs(ff(),cost_type=one),let(hlm2,eval_modify_costs(landmark_sum(lm_reasonable_orders_hps(lm_rhw()),pref=true),cost_type=plusone),let(hff2,eval_modify_costs(ff(),cost_type=plusone),iterated([lazy_greedy([hff1,hlm1],preferred=[hff1,hlm1],cost_type=one,reopen_closed=false),lazy_greedy([hff2,hlm2],preferred=[hff2,hlm2],reopen_closed=false),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=5),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=3),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=2),lazy_wastar([hff2,hlm2],preferred=[hff2,hlm2],w=1)],repeat_last=true)))))' --always --internal-plan-file ../FD-llama/fd-plans-11-27/4 < ../small-problems-translations/4.sas
+[t=0.000140s, 9788 KB] Search code revision: 0631332-dirty
+[t=0.000233s, 9788 KB] reading input...
+[t=1.365601s, 89928 KB] done reading input!
+[t=1.367702s, 90324 KB] Building successor generator... done!
+[t=1.420326s, 116336 KB] peak memory difference for successor generator creation: 26012 KB
+[t=1.420351s, 116336 KB] time for successor generation creation: 0.050162s
+[t=1.421069s, 116336 KB] Variables: 1129
+[t=1.421094s, 116336 KB] FactPairs: 2502
+[t=1.421107s, 116336 KB] Bytes per state: 152
+[t=1.486461s, 195724 KB] Simplifying 1121875 unary operators... done! [1121875 unary operators]
+[t=3.403172s, 289976 KB] time to simplify: 1.916790s
+[t=3.419884s, 328708 KB] Initializing additive heuristic...
+[t=3.419945s, 328708 KB] Initializing FF heuristic...
+[t=3.419978s, 328708 KB] Initializing landmark sum heuristic...
+[t=3.419989s, 328708 KB] Generating landmark graph...
+[t=3.426687s, 328708 KB] Building a landmark graph with reasonable orders.
+[t=3.434232s, 328708 KB] Initializing Exploration...
+[t=3.508043s, 328708 KB] Generating landmarks using the RPG/SAS+ approach
+Peak memory: 328708 KB
+caught signal 2 -- exiting

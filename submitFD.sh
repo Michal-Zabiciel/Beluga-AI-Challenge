@@ -2,11 +2,11 @@
 #SBATCH --job-name=fastd
 #SBATCH --output=fastdownward.out
 #SBATCH --error=fastdownward.err
-#SBATCH --time=24:00:00
+#SBATCH --time=6:00:00
 #SBATCH --partition=small-short
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=1
-#SBATCH --mem-per-cpu=210G
+#SBATCH --mem-per-cpu=208G
 #SBATCH --array=0-269%11
 source='./FD-5/fd-pddl'
 toutput='../fd-t'

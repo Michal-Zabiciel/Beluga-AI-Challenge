@@ -1,0 +1,87 @@
+INFO     planner time limit: None
+INFO     planner memory limit: None
+
+INFO     Running translator.
+INFO     translator stdin: None
+INFO     translator time limit: 7200s
+INFO     translator memory limit: 200000 MB
+INFO     translator command line string: /usr/bin/python3 -m fast_downward.translate domain.pddl 51.pddl --sas-file /sharedscratch/mz93/FD-5/sas/51.sas
+Parsing...
+Parsing: [0.030s CPU, 0.065s wall-clock]
+Normalizing task... [0.000s CPU, 0.001s wall-clock]
+Instantiating...
+Generating Datalog program... [0.010s CPU, 0.007s wall-clock]
+Normalizing Datalog program...
+Normalizing Datalog program: [0.010s CPU, 0.008s wall-clock]
+Preparing model... [0.020s CPU, 0.019s wall-clock]
+Generated 150 rules.
+Computing model... [3385.430s CPU, 3405.637s wall-clock]
+232231192 relevant atoms
+70004238 auxiliary atoms
+302235430 final queue length
+1345981110 total queue pushes
+Completing instantiation... 
+Translator ran out of memory, traceback:
+===============================================================================
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/pddl/conditions.py", line 366, in instantiate
+    result.append(NegatedAtom(self.predicate, args))
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/instantiate.py", line 92, in instantiate
+    inst_action = action.instantiate(
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 537, in pddl_to_sas
+    reachable_action_params) = instantiate.explore(task)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/mz93/Beluga-AI-Challenge/fast-downward-26.6/builds/release/bin/fast_downward/translate/main.py", line 708, in main
+    sas_task = pddl_to_sas(task)
+MemoryError
+
+During handling of the above exception, another exception occurred:
+
+MemoryError
+===============================================================================
+translate exit code: 20
+
+Driver aborting after translate
+INFO     Planner time: 5846.01s

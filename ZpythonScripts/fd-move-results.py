@@ -12,10 +12,10 @@ translateExitCode = []
 plannerTime = []
 
 
-input_directory = "../FD-5/fd-t-output-11-8"
+input_directory = "../FD-5/fd-t-output-11-25"
 input_directory2 = "../FD-5/fd-t"
 
-output_directory = "../FD-5/fd-t-output-11-25"
+output_directory = "../FD-5/fd-t-output-11-27"
 
 shutil.rmtree(output_directory, ignore_errors=True)
 os.makedirs(output_directory, exist_ok=True)

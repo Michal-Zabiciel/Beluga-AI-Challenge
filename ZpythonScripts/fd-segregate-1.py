@@ -13,7 +13,7 @@ auxiliaryAtoms = []
 translateExitCode = []
 plannerTime = []
 
-input_directory = "../FD-5/fd-t-output-11-8"
+input_directory = "../FD-5/fd-t-output-11-27"
 output_directory = "../FD-5/fd-pddl"
 results_directory = "../FD-5/fd-t"
 
@@ -28,9 +28,9 @@ g = open(results_directory + "/.gitignore", "w")
 
 #scripts
 
-time = "24:00:00"
+time = "6:00:00"
 partition = "small-short"
-mem = "210G"
+mem = "208G"
 timeLimit = "14000"
 memoryLimit = "200000"
 

@@ -11,8 +11,8 @@ translatorTimeLimit = []
 translatorMemoryLimit = []
 translatorPeakMemory = []
 
-inputPath = "../FD-5/fd-t-output-11-25"
-outputPath2 = "../ZcsvFiles/fd-t-output-11-25.csv"
+inputPath = "../FD-5/fd-t-output-11-27"
+outputPath2 = "../ZcsvFiles/fd-t-output-11-27.csv"
 
     
 for file in os.scandir(inputPath):
