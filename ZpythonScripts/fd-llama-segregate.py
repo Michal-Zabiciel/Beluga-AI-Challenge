@@ -21,11 +21,11 @@ os.makedirs(output_directory, exist_ok=True)
 
 gi1 = open(output_directory + "/.gitignore", "w")
 
-time = "00:10:00"
+time = "01:00:00"
 partition = "small-short"
-mem = "5G"
-timeLimit = "60"
-memoryLimit = "5000"
+mem = "15G"
+timeLimit = "3600"
+memoryLimit = "15000"
 
 script = open("../submitFD-llama.sh", "w")
 script.write("#!/bin/bash\n")
@@ -47,7 +47,7 @@ script.write("input=\"$SLURM_ARRAY_TASK_ID.sas\"\n")
 script.write("txt=\"$SLURM_ARRAY_TASK_ID.txt\"\n")
 script.write(f"if [ ! -f $SLURM_ARRAY_TASK_ID.txt ] || ! grep -q \"Solution found\" \"$SLURM_ARRAY_TASK_ID.txt\" ; then\n")
 script.write(f"\techo solving $SLURM_ARRAY_TASK_ID\n")
-script.write(f"\t../../fast-downward-26.6/./fast-downward.py --plan-file {plan_directory}/$SLURM_ARRAY_TASK_ID --alias seq-sat-lama-2011 --translate-time-limit {timeLimit} --translate-memory-limit  {memoryLimit}  /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas > $SLURM_ARRAY_TASK_ID.txt \n")
+script.write(f"\t../../fast-downward-26.6/./fast-downward.py --plan-file {plan_directory}/$SLURM_ARRAY_TASK_ID --alias seq-sat-lama-2011 --search-time-limit {timeLimit} --search-memory-limit  {memoryLimit}  /sharedscratch/mz93/FD-5/sas/$SLURM_ARRAY_TASK_ID.sas > $SLURM_ARRAY_TASK_ID.txt \n")
 script.write(f"else\n")
 script.write("\techo not solving $SLURM_ARRAY_TASK_ID\n")
 script.write("fi\n")
